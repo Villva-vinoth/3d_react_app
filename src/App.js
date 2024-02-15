@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
    <div className="app-display">
-    <Header />
+    {/* <Header /> */}
     
       <Router >
         <Routes>
@@ -14,7 +14,7 @@ function App() {
           <Route path="/product" element={<Product />} />
         </Routes>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
    </div>
   );
 }

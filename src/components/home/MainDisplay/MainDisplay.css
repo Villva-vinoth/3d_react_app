@@ -1,5 +1,33 @@
-.mainDisplay-display{
+.mainDisplay-display {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-image: none; */
+    background-image: radial-gradient(circle, white, grey);
+
+}
+
+.mainDisplay-picture {
+    /* flex-basis: 50%; */
+}
+
+.mainDisplay-innerContent {
+    /* flex-basis: 50%; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.mainDisplay-topic {
+    font-family: "Poppins";
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(194, 38, 241);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5);
+    background-image: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZSUyMGFuZCUyMHB1cnBsZXxlbnwwfHwwfHx8MA%3D%3D');
+    background-clip:text;
+    color: transparent;
+    background-size: cover;
 }
