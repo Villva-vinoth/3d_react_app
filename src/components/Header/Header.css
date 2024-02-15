@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+.Header-display{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Poppins";
+    font-weight: 560;
+    font-size: 15px;
+    background: darkgray;
+
+}
+.header-picture{
+    flex-basis: 40%;
+    padding: 10px 10px;
+    user-select: none;
+
+}
+.Header-inner{
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Header-logo{
+    width: 250px;
+    height:100px;
+    filter: brightness(0) grayscale(100%);
+    
+}
+.header-div{
+    /* background-color: red; */
+    color: #C7C8CC;
+    padding: 1%;
+    cursor: pointer;
+    user-select: none;
+}
+.header-div:hover{
+    color: rgb(135, 91, 238) ;
+}
+
+.header-select-div {
+    border-bottom: 1.5px solid rgb(231, 124, 241);
+    border-radius: 1px;
+    color: black ;
+    transform: scale(1.1);
+}
+
+.hambarger{
+    display: none;
+}
+
+@media (max-width:767px) {
+    .Header-inner{
+        display: none;
+    }
+    .Header-logo{
+        width: 180px;
+        height: 100px;
+    }
+    .hambarger{
+        display: block;
+        flex-basis: 20%;
+        width: 100px;
+    }
+    .Header-display{
+        justify-content: space-between;
+    }
+    .hambarger-inner{
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    .header-hamberger{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border: 2px solid #c2c1c1;
+        align-items: center;
+        position: absolute;
+        width: 100px;
+        height: 35vh;
+        top: 20%;
+        right: 5%;
+        color: #c2c1c1;
+        animation: swipe  1s linear;
+    }
+    @keyframes swipe {
+        0%{
+            top: -40%;
+        }
+        100%{
+            top: 20%;
+        }
+    }
+    .header-hamberger div:hover{
+        color: #3a3838;
+    }
+    .header-hamberger-hide{
+        animation: swipe alternate-reverse 2s linear;
+        display: none;
+    }
+}
