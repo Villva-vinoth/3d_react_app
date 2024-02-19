@@ -1,8 +1,12 @@
 import React from 'react'
+import ProductHeader from './ProductHeader'
 
 const Product = () => {
   return (
-    <div>product</div>
+    <div>
+      <ProductHeader />
+      
+    </div>
   )
 }
 
