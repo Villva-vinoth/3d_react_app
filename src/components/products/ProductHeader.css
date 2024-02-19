@@ -1,0 +1,85 @@
+.product-header-display {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(45deg, blue ,grey,blue);
+}
+
+.product-header-topic {
+    margin: 4%;
+    font-size: 4rem;
+    position: relative;
+    padding-left:10px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5);
+    letter-spacing: 2px;
+    font-weight: bold;
+
+
+}
+
+
+.product-header-underlineGlow {
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    width: 40%;
+    height: 2px;
+    background-color: #0eebdc; 
+    transform: matrix(1, 0, 2, 1, 4, 2);
+    box-shadow: 2px 1px 0px rgb(132, 28, 230);
+    border-radius: 10px; 
+    overflow: hidden;
+}
+
+.crackle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #bd10ed 25%, transparent 25%, transparent 50%, #ae00ff 50%, #00b3ff 75%, transparent 75%, transparent 100%);
+    background-size: 20px 100%; 
+    animation: crackle-animation 1s linear infinite; 
+}
+
+@keyframes crackle-animation {
+    to {
+        background-position: 20px 0;
+    }
+}
+
+.product-header-description{
+    margin: 1%;
+    padding: 10px 15px;
+}
+
+@media (max-width:1023px) {
+    .product-header-topic {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:767px) {
+    .product-header-topic {
+        margin: 4%;
+        font-size: 1.5rem;
+        position: relative;
+        padding-left:10px;
+        color: white;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5);
+        letter-spacing: 2px;
+    
+    
+    }
+}
+
+@media (max-width:375px) {
+    .product-header-topic{
+        letter-spacing: 0px;
+    }
+    .product-header-underlineGlow{
+        left: 10px;
+        width: 45%;
+    }
+    
+}
