@@ -7,21 +7,12 @@
     font-family: "Poppins";
     font-weight: 560;
     font-size: 15px;
-<<<<<<< HEAD
     background: darkgray;
     /* position: fixed; 
     top: 0; 
     left: 0;  */
     /* width: 100%;  */
     /* z-index: 1000; */
-=======
-    background: black;
-    position: fixed;
-    width: 1550px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
->>>>>>> 2057a0ca5fc2264005935799322487b7aeda95cc
 
 }
 .header-picture{
