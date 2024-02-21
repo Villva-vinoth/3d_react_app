@@ -1,0 +1,23 @@
+.hm-product-inner{
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+}
+
+.hm-product-upper{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    margin: 5%;
+}
+
+.pagination{
+    position: relative;
+    top: -100px;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pagination button{
+    /* border: none; */
+}

@@ -1,0 +1,31 @@
+.Bussiness-inner{
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px 1px grey;
+}
+
+.Bussiness-upper{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+}
+
+.Bussiness-header{
+    text-align: left;
+    padding: 0px 10px;
+    margin: 5%;
+}
+
+@media (max-width:767px) {
+    .Bussiness-upper{
+        grid-template-columns: 1fr;
+    }
+    .Bussiness-header{
+        text-align: center;
+        /* padding: 0px 10px; */
+    }
+}
