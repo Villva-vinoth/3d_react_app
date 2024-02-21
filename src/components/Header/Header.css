@@ -8,6 +8,11 @@
     font-weight: 560;
     font-size: 15px;
     background: darkgray;
+    /* position: fixed; 
+    top: 0; 
+    left: 0;  */
+    /* width: 100%;  */
+    /* z-index: 1000; */
 
 }
 .header-picture{

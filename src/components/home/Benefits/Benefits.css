@@ -1,0 +1,59 @@
+.Benefits-display{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+}
+
+.Benefit-img{
+    flex-basis: 50%;
+    background-image: linear-gradient(to right, grey 0%, white 100%);
+}
+.Benefit-TAFM{
+    letter-spacing: 4rem;
+    list-style: circle;
+}
+.Benefits-outer-display{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Benefits-inner-display{
+    padding: 5px 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 2px grey;
+    height: 50vh;
+
+}
+
+.Benefits-pagination{
+    display: flex;
+    /* background-color: red; */
+    width: 100px;
+    height: 2px;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Benefits-pagination button {
+    background-color: rgb(175, 173, 173);
+    box-shadow: 1px 1px 4px grey;
+    border: none;
+    width: 10px;
+    height: 2px;
+    cursor: pointer;
+
+}
+
+.Benefits-pagination button.selected {
+    background-color: black;
+  }
