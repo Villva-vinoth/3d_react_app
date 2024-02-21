@@ -4,41 +4,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressCard, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FaSquareWhatsapp, FaLinkedin } from "react-icons/fa6";
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+import  img  from "../../imgs/sesami.png"
 
 
 const Footer = () => {
     return (
         <div className='footer-display'>
             <picture className='footer-image'>
-                <img src='https://www.torusrobotics.com/images/logo-white.png' alt='' className='Footer-logo' />
+                <img src={img} alt='' className='Footer-logo' />
             </picture>
-            <div className='footer-content'>
-                <div ><label className='footer-po'> Home </label></div>
-                <div> <label className='footer-po'>Products</label></div>
-                <div><label className='footer-po'>Why Torus?</label></div>
-                <div><label className='footer-po'>Gallery</label></div>
-                <div><label className='footer-po'>Blogs</label></div>
-                <div><label className='footer-po'>Testimonials</label></div>
-            </div>
+           
             <div className='footer-content-2'>
                 <div className='footer-inner'>
                     <div className='footer-inner-header'><FontAwesomeIcon icon={faAddressCard} /> &nbsp; contact us</div>
                     <div className='footer-inside-div'>
-                        New No.28, 2nd Main Rd, Kalaimagal Nagar,
-                        Ekkatuthangal, Chennai, Tamil Nadu 600032
+                    1 Changi Business Park Crescent
+
+#02-17 Plaza 8 @ CBP, Podium C
+
+Singapore 486025
                     </div>
                 </div>
                 <div className='footer-inner'>
                     <div> <FontAwesomeIcon icon={faEnvelope} /> &nbsp; Email Address :</div>
                     <div>
-                        info@torusrobotics.com
+                    customercare@sesami.com
 
                     </div>
                 </div>
                 <div className='footer-inner'>
                     <div> <FontAwesomeIcon icon={faPhone} /> &nbsp; Phone :</div>
                     <div>
-                        089395 65425
+                    General: +65 6302 5300
+
+Hotline: +65 6302 5314
+
+
                     </div>
                 </div>
 

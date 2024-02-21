@@ -7,12 +7,21 @@
     font-family: "Poppins";
     font-weight: 560;
     font-size: 15px;
+<<<<<<< HEAD
     background: darkgray;
     /* position: fixed; 
     top: 0; 
     left: 0;  */
     /* width: 100%;  */
     /* z-index: 1000; */
+=======
+    background: black;
+    position: fixed;
+    width: 1550px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+>>>>>>> 2057a0ca5fc2264005935799322487b7aeda95cc
 
 }
 .header-picture{
@@ -30,24 +39,24 @@
 .Header-logo{
     width: 250px;
     height:100px;
-    filter: brightness(0) grayscale(100%);
+    /* filter: brightness(0) grayscale(100%); */
     
 }
 .header-div{
     /* background-color: red; */
-    color: #C7C8CC;
+    color:white;
     padding: 1%;
     cursor: pointer;
     user-select: none;
 }
 .header-div:hover{
-    color: rgb(135, 91, 238) ;
+    color: #a8e6cf ;
 }
 
 .header-select-div {
     border-bottom: 1.5px solid rgb(231, 124, 241);
     border-radius: 1px;
-    color: black ;
+    color: #ffe0e0 ;
     transform: scale(1.1);
 }
 
