@@ -7,9 +7,14 @@ const MainDisplay = () => {
                 <img src='' />
             </picture>
             <div className='mainDisplay-innerContent'>
-                <div><label className='mainDisplay-topic'>AXIAL FLUX <br /> MOTOR </label></div>
-                <div><h4>WHERE SPEED, RANGE AND AFFORDABILITY MEETS</h4></div>
-                <div><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br /> Facilis, veniam atque ipsum cupiditate totam perferendis voluptatem ab iusto omnis, <br />itaque odit in ad quos cum? Temporibus ea nulla iure aliquid.</p></div>
+                <div><label className='mainDisplay-topic'> <br /> 
+Are you open for success? </label></div>
+                <div><h4>GET MORE BUSINESS,
+SEE HOW IT WORKS!</h4></div>
+                <div><p>
+SESAMi opens up a world of new possibilities for companies. We provide the right e-business solutions that directly impact the success of businesses.<br /> 
+Connecting Buyers with Suppliers via SESAMi
+SESAMi provides the tools and the platform where businesses of all sizes come together to manage their buying and selling processes online.</p></div>
             </div>
         </div>
     )
