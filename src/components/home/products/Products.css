@@ -1,5 +1,6 @@
 .home-product-display{
     /* background-color: red; */
+    height: 100vh;
 }
 .hm-product-inner{
     display: flex;

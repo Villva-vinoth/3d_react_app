@@ -4,6 +4,7 @@
     justify-content: center;
     /* background-image: none; */
     background-image: radial-gradient(circle, white, grey);
+    height: 100vh;
 
 }
 

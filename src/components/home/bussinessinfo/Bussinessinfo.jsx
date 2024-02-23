@@ -72,7 +72,7 @@ const Bussinessinfo = () => {
     }, [Cpercentage]);
 
     return (
-        <div>
+        <div className='Bussiness-display'>
             <div className='Bussiness-header'><h4>dsfsa</h4></div>
             <div className='Bussiness-upper'>
                 <div className='Bussiness-inner'>
