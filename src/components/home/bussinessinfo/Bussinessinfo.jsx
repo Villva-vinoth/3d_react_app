@@ -12,7 +12,7 @@ const Bussinessinfo = () => {
 
 
     useEffect(() => {
-        const targetPercentage = 96;
+        const targetPercentage = 66;
         const interval = setInterval(() => {
             setPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -27,7 +27,7 @@ const Bussinessinfo = () => {
     }, [percentage]);
 
     useEffect(() => {
-        const targetPercentage = 98;
+        const targetPercentage = 65;
         const interval = setInterval(() => {
             setAPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -42,7 +42,7 @@ const Bussinessinfo = () => {
     }, [Apercentage]);
 
     useEffect(() => {
-        const targetPercentage = 97;
+        const targetPercentage = 77;
         const interval = setInterval(() => {
             setBPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -73,8 +73,7 @@ const Bussinessinfo = () => {
 
     return (
         <div>
-            <div className='Bussiness-header'><h3>SESAMi E-HUB TRANSACTIONS
-(last 12 months)</h3></div>
+            <div className='Bussiness-header'><h4>dsfsa</h4></div>
             <div className='Bussiness-upper'>
                 <div className='Bussiness-inner'>
                     <CircularProgressbar
@@ -106,9 +105,8 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div><h3>Opportunities</h3></div>
-                        <div>4,858,280
-Business Opportunity Matchings to Suppliers</div>
+                        <div>sdgdsf</div>
+                        <div><pre>dsrgerhdrg</pre></div>
                     </div>
                 </div>
 
@@ -142,9 +140,8 @@ Business Opportunity Matchings to Suppliers</div>
                         }}
                     />
                     <div>
-                        <div><h3>E-Bids</h3></div>
-                        <div>$10,822,009,763
-Worth of e-Bids Value Transacted</div>
+                        <div>sdgdsf</div>
+                        <div><pre>dsrgerhdrg</pre></div>
                     </div>
                 </div>
                 <div className='Bussiness-inner'>
@@ -177,10 +174,8 @@ Worth of e-Bids Value Transacted</div>
                         }}
                     />
                     <div>
-                        <div><h3>E-Po</h3></div>
-                        <div>$6,225,874,323
-Worth of E-PO Value
-Transacted</div>
+                        <div>sdgdsf</div>
+                        <div><pre>dsrgerhdrg</pre></div>
                     </div>
                 </div>
                 <div className='Bussiness-inner'>
@@ -213,9 +208,8 @@ Transacted</div>
                         }}
                     />
                     <div>
-                        <div><h3>E-INVOICE</h3></div>
-                        <div>$1,978,053,268
-Worth of E-Invoice Value Transacted</div>
+                        <div>sdgdsf</div>
+                        <div><pre>dsrgerhdrg</pre></div>
                     </div>
                 </div>
 

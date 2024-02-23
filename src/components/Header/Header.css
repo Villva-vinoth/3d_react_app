@@ -8,11 +8,6 @@
     font-weight: 560;
     font-size: 15px;
     background: darkgray;
-    /* position: fixed; 
-    top: 0; 
-    left: 0;  */
-    /* width: 100%;  */
-    /* z-index: 1000; */
 
 }
 .header-picture{
@@ -30,24 +25,24 @@
 .Header-logo{
     width: 250px;
     height:100px;
-    /* filter: brightness(0) grayscale(100%); */
+    filter: brightness(0) grayscale(100%);
     
 }
 .header-div{
     /* background-color: red; */
-    color:white;
+    color: #C7C8CC;
     padding: 1%;
     cursor: pointer;
     user-select: none;
 }
 .header-div:hover{
-    color: #a8e6cf ;
+    color: rgb(135, 91, 238) ;
 }
 
 .header-select-div {
     border-bottom: 1.5px solid rgb(231, 124, 241);
     border-radius: 1px;
-    color: #ffe0e0 ;
+    color: black ;
     transform: scale(1.1);
 }
 
