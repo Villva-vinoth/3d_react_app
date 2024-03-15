@@ -1,27 +1,50 @@
 .Bussiness-display{
-    height: 100vh;
+    height: auto;
 }
 .Bussiness-inner{
-    padding: 10px 15px;
+    padding: .5rem 5rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: 1px solid grey;
     border-radius: 20px;
-    box-shadow: 0px 2px 2px 1px grey;
+    color: grey;
 }
 
 .Bussiness-upper{
     display: grid;
     grid-template-columns: 2fr 2fr;
-    gap: 10px;
+    gap: 5px;
 }
 
 .Bussiness-header{
     text-align: left;
     padding: 0px 10px;
     margin: 5%;
-    /* height: 100vh; */
+    color: black !important;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bussiness-head{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: black !important;
+}
+
+.bussiness-para{
+    text-wrap: wrap;
+    text-align: justify;
+}
+
+@media (max-width:768px) {
+    .Bussiness-inner{
+        padding: 0rem 1.5rem;
+    }
+    .bussiness-para{
+        font-size: 15px;
+    }
 }
 
 @media (max-width:767px) {
@@ -30,6 +53,17 @@
     }
     .Bussiness-header{
         text-align: center;
-        /* padding: 0px 10px; */
+    }
+    .Bussiness-inner{
+        align-items: center;
+    }
+    .bussiness-para{
+        font-size: 12px;
+    }
+    .Bussiness-header{
+            font-size: 12px;
+    }
+    .bussiness-head{
+        text-align: center;
     }
 }

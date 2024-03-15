@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Header.css'
 import { RiMenuFill } from "react-icons/ri";
-import { RiMenu5Fill } from "react-icons/ri";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Header = () => {
 
@@ -14,7 +14,7 @@ const Header = () => {
           setHambarger(<RiMenuFill size={30}/>)
         }
         else{
-          setHambarger(<RiMenu5Fill size={30}/>)
+          setHambarger(<IoCloseSharp  size={20}/>)
         }
     }
 
@@ -34,6 +34,8 @@ const Header = () => {
         <div className='hambarger'>
           <div onClick={()=>handleHambarger()} className='hambarger-inner'>{hambarger}</div>
           <div className={zero ? 'header-hamberger' :"header-hamberger-hide"}>
+          <div className='header-x' onClick={()=>handleHambarger()} >{hambarger}</div>
+
             <div onClick={()=>{handleHambarger(); setSelect(0)}}  className={`header-div ${select ===0 ? `header-select-div`:`header-hide-div`}`}>home</div>
             <div onClick={()=>{handleHambarger(); setSelect(1)}} className={`header-div ${select===1 ? `header-select-div`:`header-hide-div`}`}>product</div>
             <div onClick={()=>{handleHambarger(); setSelect(2)}} className={`header-div ${select===2 ? `header-select-div`:`header-hide-div`}`}>Why Torus?</div>

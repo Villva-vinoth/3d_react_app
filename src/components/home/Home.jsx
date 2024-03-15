@@ -7,10 +7,10 @@ import Benefits from './Benefits/Benefits'
 const Home = () => {
   return (
     <div className='Home-display'>
-        {/* <MainDisplay /> */}
+        <MainDisplay />
         <Bussinessinfo />
         <Benefits />
-        {/* <Products /> */}
+        <Products />
     </div>
   )
 }

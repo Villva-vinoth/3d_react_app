@@ -4,31 +4,59 @@
     justify-content: center;
     /* background-image: none; */
     background-image: radial-gradient(circle, white, grey);
-    height: 100vh;
+    height: auto;
 
 }
-
+.main-display-para{
+    text-align: justify;
+    /* padding:  0rem 4.5rem; */
+}
 .mainDisplay-picture {
-    /* flex-basis: 50%; */
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainDisplay-picture img{
+    /* object-fit: contain; */
+    width: 100%;
+    height: 100%;
 }
 
 .mainDisplay-innerContent {
-    /* flex-basis: 50%; */
+    flex-basis: 50%;
     display: flex;
     flex-direction: column;
     /* align-items: center;
     justify-content: center; */
+    padding: 0rem 5rem;
 }
 
 .mainDisplay-topic {
     font-family: "Poppins";
     font-size: 4rem;
     font-weight: bold;
-    color: rgb(194, 38, 241);
+    /* color: rgb(194, 38, 241); */
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5);
-    background-image: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZSUyMGFuZCUyMHB1cnBsZXxlbnwwfHwwfHx8MA%3D%3D');
-    background-clip:text;
-    color: transparent;
+    /* text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5); */
+        /* background-image: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZSUyMGFuZCUyMHB1cnBsZXxlbnwwfHwwfHx8MA%3D%3D');
+        background-clip:text;
+        color: transparent; */
     background-size: cover;
+    background-image: linear-gradient(-270deg,rgb(201, 27, 143),rgb(50, 8, 163),rgb(50, 8, 163));
+    background-clip: text;  
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width:767px) {
+    .mainDisplay-display{
+        flex-direction: column;
+    }
+    .mainDisplay-topic{
+        font-size: 25px;
+        text-align: center;
+    }
+    .break-tag{
+        display: none;
+    }
 }

@@ -73,7 +73,8 @@ const Bussinessinfo = () => {
 
     return (
         <div className='Bussiness-display'>
-            <div className='Bussiness-header'><h4>dsfsa</h4></div>
+            <div className='Bussiness-header'><h2>Advantages by choosing us
+            </h2></div>
             <div className='Bussiness-upper'>
                 <div className='Bussiness-inner'>
                     <CircularProgressbar
@@ -105,8 +106,12 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div>sdgdsf</div>
-                        <div><pre>dsrgerhdrg</pre></div>
+                        <div className='bussiness-head'>More Efficient range
+                        </div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors achieves 15% higher range because of the minimal energy 
+losses incurred during the operation, setting new standards in electric motor 
+technology.
+ </pre></div>
                     </div>
                 </div>
 
@@ -140,8 +145,11 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div>sdgdsf</div>
-                        <div><pre>dsrgerhdrg</pre></div>
+                        <div className='bussiness-head'>Cost efficiency</div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors are cost efficient because of the utilization of unique materials
+                            and manufacturing processes, coupled with a reduction in overall material usage,
+                            resulting in lowered production costs without compromising quality or performance,
+                            thus ensuring affordability and sustainability.</pre></div>
                     </div>
                 </div>
                 <div className='Bussiness-inner'>
@@ -174,8 +182,12 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div>sdgdsf</div>
-                        <div><pre>dsrgerhdrg</pre></div>
+                        <div className='bussiness-head'>Compact and lightweight motors
+</div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors offer a remarkable advantage with their 50% reduction in 
+weight and compact size is attributed to its parallel magnetic flux path design, which 
+optimizes magnetic field distribution, enabling significant weight and size reduction 
+without compromising performance.</pre></div>
                     </div>
                 </div>
                 <div className='Bussiness-inner'>
@@ -208,12 +220,16 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div>sdgdsf</div>
-                        <div><pre>dsrgerhdrg</pre></div>
+                        <div className='bussiness-head'>Quick plug and play
+</div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors boasts up to 95% regenerative capability, allowing it to 
+efficiently recover and convert kinetic energy during braking or deceleration into usable 
+electrical energy, significantly enhancing overall energy efficiency and extending vehicle 
+range.</pre></div>
                     </div>
                 </div>
 
-                
+
 
             </div>
         </div>
