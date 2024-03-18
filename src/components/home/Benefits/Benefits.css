@@ -17,27 +17,20 @@
     /* padding-left: 10px; */
 }
 .Benefits-outer-display{
-    margin-top: 5%;
+    /* margin-top: 5%; */
     flex-basis: 50%;
-    display: flex;
+    background-color: red;
+    padding: 3rem 5rem;
+    /* display: flex;
     align-items: center;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: column; */
+    /* gap: 30px; */
 }
 
-.Benefits-inner-display{
-    padding: 5px 10px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
-    /* border: 1px solid grey;
-    box-shadow: 2px 2px 2px grey; */
-    height: 50vh;
-
+.slick-sidle >{
+    overflow: hidden;
 }
+
 
 .color-white{
     color: white;
@@ -67,39 +60,29 @@
 
 }
 
-.Benefits-pagination{
-    display: flex;
-    /* background-color: red; */
-    width: 100px;
-    height: 2px;
-    gap: 10px;
+.slick-silde{
+    margin: 0;
+    background-color: blue;
+}
+
+.Benefits-carosel-container{
+    /* display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center; */
+    background-color: blue;
+    text-align: center;
 }
 
-.Benefits-pagination button {
-    background-color: rgb(175, 173, 173);
-    box-shadow: 1px 1px 4px grey;
-    border: none;
-    width: 10px;
-    height: 2px;
-    cursor: pointer;
-
-}
-
-.Benefits-pagination button.selected {
-    background-color: black;
-  }
 
   @media (max-width:767px) {
     .Benefits-display{
         flex-direction: column;
     }
     .Benefit-TAFM{
-        letter-spacing: 3rem;
+        letter-spacing: 2rem;
     }
     .Benefit-product-img{
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
   }

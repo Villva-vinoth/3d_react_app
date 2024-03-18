@@ -1,6 +1,6 @@
 import React from "react";
 import './ProductHeader.css'
-import userline from '../Assets/underLine.png'
+import userline from '../../Assets/underLine.png'
 const ProductHeader = () => {
   return (
     <div className="product-header-display">
