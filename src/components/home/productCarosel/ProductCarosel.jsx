@@ -5,10 +5,12 @@ import Slider from "react-slick";
 import './ProductCarosel.css'
 import prev from '../../Assets/prevArrow.png'
 import image from '../../Assets/image.png'
+
 const PrevButton = ( {...props} ) => {
   const { onClick}= props
+
   return (
-   <img  src={prev} {...props} />
+  <img  src={prev} {...props} style={{boxShadow:"0 0 5px rgb(207, 207, 207)",backgroundColor:"white"}}/>
   )
 
 }
@@ -16,7 +18,7 @@ const PrevButton = ( {...props} ) => {
 const NextButton = ( {...props} ) => {
   const { onClick}= props
   return (
-   <img  src={prev} {...props} />
+   <img  src={prev} {...props} style={{boxShadow:"0 0 5px rgb(207, 207, 207)",backgroundColor:"white"}}/>
   )
 
 }

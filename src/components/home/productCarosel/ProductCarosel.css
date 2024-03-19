@@ -1,41 +1,22 @@
 .product-carosel-display{
-    /* height: auto; */
     padding: 3rem 2rem;
-    /* background-color: red;    */
 }
-/* .slick-prev::before,.slick-prev::before{
- border: 1px solid  black;
- border-radius: 10px;
- color: black;
- padding: 1rem 1.5rem;
- background-color: wheat;
- position: absolute;
-} */
+
 .slick-prev {
     padding:0.5rem 1.35rem;
-    box-shadow: 0px 0px 5px rgb(207, 207, 207);
-
-    z-index: 10;
-    background-color: white;
     border-radius: 1.35rem;
+    left: -40px;
+    top: 54%;
 }
-.slick-prev:hover{
 
-    background-color: white;
-
-}
 .slick-next {
     padding:0.5rem 1.35rem;
-    box-shadow: 0px 0px 5px rgb(207, 207, 207);
-
-    z-index: 10;
-    background-color: white;
     border-radius: 1.35rem;
     transform: rotate(180deg);
+    right: -30px;
+    top: 48%;
 }
-.slick-next:hover{
-    background-color: white;
-}
+
 
 .slick-slide > div{
     margin: 0px 15px;
