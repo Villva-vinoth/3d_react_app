@@ -5,8 +5,8 @@
 }
 .contact-header{
     width: 100%;
-    height: 30vh;
-    background-image: url('../Assets/backgreyBg.jpg');
+    height: 40vh;
+    background-image: url('../Assets/contactus.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -67,7 +67,7 @@
     /* background-color: red; */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 10px;
 }
@@ -179,7 +179,7 @@
     /* border: none;  */
    margin-left: 3%;
     border-radius: 10px;
-    width: 30%;
+    width: 50%;
     /* background-color: black; */
     /* background-image: linear-gradient(125deg ,rgb(25, 20, 26),rgb(25, 20, 26),rgb(25, 20, 26),rgb(206, 206, 206)); */
     color: black;
@@ -194,4 +194,67 @@
 .contact-get-in-touch:hover{
     background-image: linear-gradient(125deg ,rgb(25, 20, 26),rgb(25, 20, 26),rgb(25, 20, 26),rgb(206, 206, 206));
     color: white;
+}
+
+@media (max-width:768px) {
+    .contact-form-content h2{
+        font-size: 15px;
+    }
+    .contact-form-content-2{
+        font-size: 12px;
+    }
+    .contact-get-in-touch{
+        width: 50%;
+        padding: 0.5rem 1rem;
+    }
+    .contact-address{
+        padding: 0.5rem;
+        /* justify-content: space-evenly; */
+    }
+    .contact-address div{
+        font-size: 12px;
+        padding: 0rem 0.2rem;
+    }
+    .contact-address picture{
+        padding: 0.75rem 0rem;
+    }
+}
+
+@media (max-width:767px) {
+    .contact-header-address-bar{
+        flex-direction: column;
+        gap: 20px;
+        transform: translate(0%,0%);
+        padding: 0.5rem 0rem;
+        position: relative;
+        z-index: 1;
+    }
+    .contact-address{
+        width: 50%;
+        /* height: 50vh; */
+    }
+    .contact-header{
+        /* height: 100vh; */
+        position: absolute;
+        top: 20%;
+        z-index: 1;
+
+    }
+    .contact-form{
+        flex-direction: column;
+    }
+    .contact-form-content h2{
+        
+    }
+    .contact-form-content .contact-form-content-2{
+        text-align: justify;
+        padding: 0.5rem 0.75rem;
+        color: grey;
+    }
+    .contact-get-in-touch{
+        padding: 0.5rem;
+        width: 60%;
+    }
+
+    
 }

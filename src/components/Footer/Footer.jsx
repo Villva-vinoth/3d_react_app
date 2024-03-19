@@ -15,7 +15,7 @@ const Footer = () => {
             <div className='footer-content'>
                 <div ><label className='footer-po'> Home </label></div>
                 <div> <label className='footer-po'>Products</label></div>
-                <div><label className='footer-po'>Why Torus?</label></div>
+                <div><label className='footer-po'>WhyTorus?</label></div>
                 <div><label className='footer-po'>Gallery</label></div>
                 <div><label className='footer-po'>Blogs</label></div>
                 <div><label className='footer-po'>Testimonials</label></div>
@@ -32,7 +32,6 @@ const Footer = () => {
                     <div> <FontAwesomeIcon icon={faEnvelope} /> &nbsp; Email Address :</div>
                     <div>
                         info@torusrobotics.com
-
                     </div>
                 </div>
                 <div className='footer-inner'>

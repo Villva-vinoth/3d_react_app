@@ -8,10 +8,10 @@ import ProductCarosel from './productCarosel/ProductCarosel'
 const Home = () => {
   return (
     <div className='Home-display'>
-        {/* <MainDisplay /> */}
-        {/* <Bussinessinfo /> */}
-        <Benefits />
-        {/* <ProductCarosel /> */}
+        <MainDisplay />
+        <Bussinessinfo />
+        {/* <Benefits /> */}
+        <ProductCarosel />
     </div>
   )
 }

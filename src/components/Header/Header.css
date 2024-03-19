@@ -61,6 +61,7 @@
         display: block;
         flex-basis: 20%;
         width: 100px;
+        z-index: 5;
     }
     .Header-display{
         justify-content: space-between;
