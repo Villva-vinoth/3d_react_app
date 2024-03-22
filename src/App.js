@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/contact/Contact";
 import Testimonial from "./components/others/testimonials/Testimonial";
+import Careers from "./components/careers/Careers";
+import Blogs from "./components/Blogs/Blog";
 function App() {
   return (
    <div className="app-display">
@@ -17,9 +19,8 @@ function App() {
           <Route path="/product/*" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/testimonials" element={<Testimonial />} />
-
-
-
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/blogs/*" element={<Blogs />} />
         </Routes>
       </Router>
     </div>

@@ -1,0 +1,105 @@
+.blog-header-display {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../Assets/blogs/blogBg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.blog-header-topic {
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    /* background-color: red; */
+
+}
+.blog-header-topic h2{
+    font-size: 3rem;
+    padding: 4rem 0rem 0 0;
+    margin: 0;
+    text-align: center;
+ 
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5);
+    letter-spacing: 2px;
+    font-weight: bold;
+ 
+}
+.blog-header-topic img{
+    width: 100%;
+    /* padding: 0rem 1rem 3rem 4rem; */
+    height: 50px;
+    filter: brightness(10);
+    display: block;
+}
+.blog-header-description{
+    margin: 1%;
+    padding: 0px 15px;
+    font-size: 15px;
+    color: white;
+}
+
+.blog-header-description p{
+    text-align: justify;
+    padding: 0rem 3rem;
+    color: rgb(175, 174, 174);
+}
+
+
+@media (max-width:1023px) {
+    .blog-header-topic {
+        font-size: 2rem;
+    }
+}
+@media (max-width:768px) {
+    .blog-header-topic {
+        font-size: 2rem;
+    }
+    .blog-header-topic h2{
+        /* padding: 4rem 8rem 0 0 ; */
+    }
+}
+@media (max-width:767px) {
+    .blog-header-topic h2{
+        font-size: 1.5rem;
+        /* padding: 4rem 0rem 10rem 0; */
+        width: 100%;
+        text-align: center;
+    }
+    .blog-header-topic img {
+        width: 55%;
+        padding: 0 0 0 5.5rem;
+    }
+    .blog-header-topic{
+        width: 100%;
+    }
+    .blog-header-description p{
+        font-size: 0.7rem;
+        padding: 0 1rem;
+    }
+    
+}
+
+@media (max-width:375px) {
+    .blog-header-topic{ 
+        width: 100%;
+    }
+    .blog-header-topic h2{
+        padding: 3% 0% 0 0;
+        margin: 0;
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    .blog-header-description p{
+        text-align: justify;
+        padding: 0rem 0.5rem;
+        font-size: 0.5rem;
+    }
+    .blog-header-topic img{
+        width: 65%;
+        padding: 0 0 0 3.5rem;
+    }
+    
+}

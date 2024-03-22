@@ -2,23 +2,30 @@ import React from 'react'
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressCard, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { FaSquareWhatsapp, FaLinkedin } from "react-icons/fa6";
-import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
-
+import footerLogo from '../Assets/torus logo/footer.png'
+import wa from '../Assets/footer/image 1.png'
+import li from '../Assets/footer/image 2.png'
+import fb from '../Assets/footer/image 3.png'
+import insta from '../Assets/footer/image 4.png'
+import footerImage from '../Assets/footer/Group 92.png'
 
 const Footer = () => {
     return (
         <div className='footer-display'>
-            <picture className='footer-image'>
-                <img src='https://www.torusrobotics.com/images/logo-white.png' alt='' className='Footer-logo' />
-            </picture>
+
             <div className='footer-content'>
+                <picture className='footer-image'>
+                    <img src={footerLogo} alt='' className='Footer-logo' />
+                    {/* <img src={footerImage} alt='' className='' /> */}
+                </picture>
+                <div className='footer-menu'>
                 <div ><label className='footer-po'> Home </label></div>
                 <div> <label className='footer-po'>Products</label></div>
                 <div><label className='footer-po'>WhyTorus?</label></div>
                 <div><label className='footer-po'>Gallery</label></div>
                 <div><label className='footer-po'>Blogs</label></div>
                 <div><label className='footer-po'>Testimonials</label></div>
+                </div>
             </div>
             <div className='footer-content-2'>
                 <div className='footer-inner'>
@@ -43,14 +50,10 @@ const Footer = () => {
 
                 <div className='footer-social'>
                     <br />
-                    <div className='footer-whatsapp footer-po'><FaSquareWhatsapp size={"30px"} /></div>
-                    <FaInstagramSquare className='footer-insta footer-po' size={"30px"}/>
-                    <FaLinkedin  className='footer-linkedin footer-po'size={"30px"} />
-                    <FaFacebookSquare className='footer-facebook footer-po' size={"30px"}/>
-                    {/* <div><img src='https://static.vecteezy.com/system/resources/thumbnails/018/930/746/small/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png' className='footer-icons' /></div>
-                    <div><img src='https://static.vecteezy.com/system/resources/previews/023/741/223/non_2x/facebook-logo-icon-social-media-icon-free-png.png' className='footer-icons' /></div>
-                    <div><img src='https://static.vecteezy.com/system/resources/previews/018/930/584/original/linkedin-logo-linkedin-icon-transparent-free-png.png' className='footer-icons' /></div>
-                    <div><img src='https://static.vecteezy.com/system/resources/previews/017/743/717/original/instagram-icon-logo-free-png.png' className='footer-icons' /></div> */}
+                    <div><img src={wa} className='footer-icons' /></div>
+                    <div><img src={li} className='footer-icons' /></div>
+                    <div><img src={fb} className='footer-icons' /></div>
+                    <div><img src={insta} className='footer-icons' /></div>
                 </div>
 
 

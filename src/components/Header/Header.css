@@ -22,10 +22,10 @@
     justify-content: space-evenly;
 }
 .Header-logo{
-    width: 250px;
-    height:100px;
+
     filter: brightness(0) grayscale(100%);
-    
+    object-fit: contain;
+    padding: 2rem 0rem 1rem 3rem;
 }
 .header-div{
     /* background-color: red; */
@@ -48,14 +48,20 @@
 .hambarger{
     display: none;
 }
-
+@media (max-width:768px) {
+    .Header-logo{
+        padding: 0;
+    }
+    .Header-inner{
+        font-size: 13px;
+    }
+}
 @media (max-width:767px) {
     .Header-inner{
         display: none;
     }
     .Header-logo{
-        width: 180px;
-        height: 100px;
+       padding: 0 0 0 0 ;
     }
     .hambarger{
         display: block;

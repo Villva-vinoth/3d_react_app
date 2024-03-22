@@ -209,7 +209,6 @@
     }
     .contact-address{
         padding: 0.5rem;
-        /* justify-content: space-evenly; */
     }
     .contact-address div{
         font-size: 12px;
@@ -222,6 +221,7 @@
 
 @media (max-width:767px) {
     .contact-header-address-bar{
+        margin-top:100px ;
         flex-direction: column;
         gap: 20px;
         transform: translate(0%,0%);

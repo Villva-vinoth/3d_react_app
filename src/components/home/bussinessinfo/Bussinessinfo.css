@@ -40,11 +40,15 @@
 
 @media (max-width:768px) {
     .Bussiness-inner{
-        padding: 0rem 1.5rem;
+        padding: 0rem 1rem;
     }
     .bussiness-para{
         font-size: 15px;
     }
+   .Bussiness-header{
+    font-size: 15px;
+    text-align: center;
+   }
 }
 
 @media (max-width:767px) {

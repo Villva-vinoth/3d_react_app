@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Header.css'
 import { RiMenuFill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
-
+import Logo from '../Assets/torus logo/Group 57.png'
 const Header = () => {
 
     const [select,setSelect]=useState(0);
@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <div className='Header-display'>
         <picture className='header-picture'>
-            <img src='https://www.torusrobotics.com/images/logo-white.png' alt='' className='Header-logo' />
+            <img src={Logo} alt='' className='Header-logo' />
         </picture>
         <div className='Header-inner'>
             <div className={`header-div ${select ===0 ? `header-select-div`:`header-hide-div`}`} id='Home' onClick={()=>setSelect(0)}>Home</div>

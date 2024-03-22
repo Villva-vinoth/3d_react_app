@@ -1,0 +1,23 @@
+.career-gallery-display{
+    display: flex;
+    flex-direction: column;
+}
+.career-gallery-container-one{
+    display: flex;
+}
+.career-gallery-container-one-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.career-gallery-container-one-content h2{
+    text-align: left;
+}
+.career-gallery-container-one-content p{
+    text-align: left;
+    /* padding: ; */
+}
+.career-gallery-container-two-content{
+    display: grid;
+    grid-template-columns: repeat(1fr,3);
+}

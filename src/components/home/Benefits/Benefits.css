@@ -1,63 +1,55 @@
 .Benefits-display{
     display: flex;
     flex-direction: row;
-    margin-top: 1%;
-    /* align-items: center; */
-    height: auto;
+    /* height: auto; */
+    /* width: 100%; */
+
+    padding: 5.5rem 5rem;
 }
 
 .Benefit-img{
     flex-basis: 50%;
-    background-image: linear-gradient(to right, grey,grey, white,white,white 100%);
-    margin: 1%;
+    background-image: linear-gradient(to right, rgb(204, 202, 202),rgb(204, 202, 202), white,white,white 100%);
+    position: relative;
+    
 }
 .Benefit-TAFM{
-    letter-spacing: 4rem;
+    letter-spacing: 5rem;
     margin-left: 15%;
-    /* padding-left: 10px; */
 }
 .Benefits-outer-display{
-    /* margin-top: 5%; */
     flex-basis: 50%;
-    background-color: red;
-    padding: 3rem 5rem;
-    /* display: flex;
+    box-sizing: border-box;
+    display: flex;
     align-items: center;
-    flex-direction: column; */
-    /* gap: 30px; */
-}
 
-.slick-sidle >{
-    overflow: hidden;
 }
-
 
 .color-white{
     color: white;
 }
 .color-grey{
-    color: grey ;
+    color: rgb(204, 202, 202) ;
 }
 
 .Benefit-logo{
     position:absolute;
-    /* top: -140px;
-    left: -40px; */
     filter: brightness(1);
-    /* background-color: white; */
     mix-blend-mode:multiply;
     z-index: 10;
-    width: 250px;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    width: 150px;
     height: 150px;
     user-select: none;
 }
 
 .Benefit-product-img{
-    margin-left: 10%;
     width: 500px;
     height: 500px;
+    object-fit: contain;
     mix-blend-mode: multiply;
-
 }
 
 .slick-silde{
@@ -66,23 +58,62 @@
 }
 
 .Benefits-carosel-container{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     background-color: blue;
     text-align: center;
 }
 
+@media (max-width:768px) {
+    .Benefits-display{
+        padding: 3rem;
+    }
+    .Benefit-img{
+        padding: 0;
+        width: 50%;
+    }
+    .Benefit-logo{
+        width: 20%;
+        height: 20%;
+    }
+    .Benefit-product-img{
+        width: 80%;
+        height: 70%;
+    }
+    .Benefits-outer-display{
+        width: 50%;
+    }
+    .Benefit-TAFM{
+        letter-spacing: 3rem;
+    }
+    
+}
 
   @media (max-width:767px) {
     .Benefits-display{
         flex-direction: column;
+        padding: 1rem;
+        align-items: center;
     }
     .Benefit-TAFM{
+        font-size: 1rem;
         letter-spacing: 2rem;
     }
+    .Benefit-img{
+        width: 80%;
+    }
+    .Benefit-logo{
+        width: 20%;
+        height: 20%;
+    }
+    .Benefits-outer-display{
+        width: 100%;
+        /* background-color: red; */
+    }
     .Benefit-product-img{
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 50%;
+    }
+    .Benefit-product-img{
+        /* width: 200px;
+        height: 200px; */
     }
   }

@@ -12,7 +12,7 @@ const Bussinessinfo = () => {
 
 
     useEffect(() => {
-        const targetPercentage = 66;
+        const targetPercentage = 15;
         const interval = setInterval(() => {
             setPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -27,7 +27,7 @@ const Bussinessinfo = () => {
     }, [percentage]);
 
     useEffect(() => {
-        const targetPercentage = 65;
+        const targetPercentage = 80;
         const interval = setInterval(() => {
             setAPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -42,7 +42,7 @@ const Bussinessinfo = () => {
     }, [Apercentage]);
 
     useEffect(() => {
-        const targetPercentage = 77;
+        const targetPercentage = 50;
         const interval = setInterval(() => {
             setBPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -57,7 +57,7 @@ const Bussinessinfo = () => {
     }, [Bpercentage]);
 
     useEffect(() => {
-        const targetPercentage = 84;
+        const targetPercentage = 100;
         const interval = setInterval(() => {
             setCPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -82,12 +82,12 @@ const Bussinessinfo = () => {
                         text={`${percentage}%`}
                         styles={{
                             root: {
-                                width: '150px',
-                                height: '150px',
-                                filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                width: '140px',
+                                height: '140px',
+                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
                             },
                             path: {
-                                stroke: 'blueviolet',
+                                stroke: 'black',
                                 strokeLinecap: 'round',
                                 transition: 'stroke-dashoffset .1s ease ',
                                 transform: 'rotate(0.25turn)',
@@ -121,12 +121,12 @@ technology.
                         text={`${Apercentage}%`}
                         styles={{
                             root: {
-                                width: '150px',
-                                height: '150px',
-                                filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                width: '140px',
+                                height: '140px',
+                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
                             },
                             path: {
-                                stroke: 'blueviolet',
+                                stroke: 'black',
                                 strokeLinecap: 'round',
                                 transition: 'stroke-dashoffset .1s ease ',
                                 transform: 'rotate(0.25turn)',
@@ -158,12 +158,12 @@ technology.
                         text={`${Bpercentage}%`}
                         styles={{
                             root: {
-                                width: '150px',
-                                height: '150px',
-                                filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                width: '140px',
+                                height: '140px',
+                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
                             },
                             path: {
-                                stroke: 'blueviolet',
+                                stroke: 'black',
                                 strokeLinecap: 'round',
                                 transition: 'stroke-dashoffset .1s ease ',
                                 transform: 'rotate(0.25turn)',
@@ -196,12 +196,12 @@ without compromising performance.</pre></div>
                         text={`${Cpercentage}%`}
                         styles={{
                             root: {
-                                width: '150px',
-                                height: '150px',
-                                filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                width: '140px',
+                                height: '140px',
+                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
                             },
                             path: {
-                                stroke: 'blueviolet',
+                                stroke: 'black',
                                 strokeLinecap: 'round',
                                 transition: 'stroke-dashoffset .1s ease ',
                                 transform: 'rotate(0.25turn)',
