@@ -10,12 +10,13 @@
 }
 .carsel-benefit-header{
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
 }
 .carosel-benefit-para{
     text-align: justify;
     font-size: 1rem;
+    color: grey;
 }
 .carosel-benefit-pic{
     width: 90%;
@@ -53,5 +54,8 @@
     }
     .carosel-benefit-pic img{
         width: 40%;
+    }
+    .carosel-benefit-para{
+        font-size: 1rem;
     }
 }

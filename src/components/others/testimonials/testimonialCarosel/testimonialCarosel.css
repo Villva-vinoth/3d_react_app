@@ -11,6 +11,7 @@
 .testimonial-h2{
     text-align: left;
     padding: 1rem 3rem;
+    font-size: 1.5rem;
 }
 
 .carosel-testimonial-container{
@@ -34,24 +35,23 @@
 .carosel-testimonial-para{
     padding: 0rem 4rem;
     color: rgb(177, 173, 173);
+    font-size: 1rem;
 }
-.icon{
-    font-size: 35px;
-}
-.icon-prev{
-    background-image: linear-gradient(to right,black,black,grey);
-    background-clip: text;
-}
-.icon-next{
-    background-image: linear-gradient(to left,black,black,grey);
-    background-clip: text;
+.quote-icons{
+    width: 60px !important;
+    height: 50px !important;
 }
 .carosel-testimonial-container h4{
     color: rgb(167, 164, 164);
+    font-size: 1.5rem;
 }
 @media (max-width:768px) {
     .testimonial-h2{
         text-align: center;
+        font-size: 1rem;
+    }
+    .carosel-testimonial-container h4{
+        font-size: 1rem;
     }
 }
 
@@ -65,7 +65,7 @@
     }
     .carosel-testimonial-para{
         padding: 0.25rem;
-        font-size: 12px;
+        font-size: 1rem;
     }
     .Test-carosel-container{
         padding: 0rem 2rem 4rem 2rem;
@@ -75,7 +75,7 @@
     }
     .testimonial-h2{
         padding: 1rem;
-        font-size: 12px;
+        font-size: 1rem;
         text-align: center;
     }
 

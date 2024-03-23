@@ -6,8 +6,9 @@
     background-color: black;
 }
 .Footer-logo{
-    width: 200px;
-    height:70px;
+    width: 100%;
+    /* height:20%; */
+    object-fit: contain;
 }
 
 .footer-content{
@@ -47,9 +48,6 @@
 .footer-social{
     display: flex;
     gap: 20px;
-    padding: 0px;
-    flex-wrap:wrap;
-    padding: 5px;
 }
 
 .footer-icons{
@@ -58,7 +56,7 @@
 }
 
 .footer-inside-div{
-    padding: 5px 15px 15px 5px  ;
+    padding: 5px 15px 15px 0px  ;
 }
 
 @media (max-width:1023px){
@@ -86,7 +84,6 @@
     }
     .footer-content-2{
         padding: 1rem 4rem;
-        /* align-items: center; */
     }
     .footer-social{
         justify-content: center;
@@ -109,7 +106,6 @@
     .footer-menu{
         font-size: 1rem;
         padding: 0rem 0 0 0;
-        /* flex-wrap: wrap; */
         flex-direction: column;
         align-items: center;
     }

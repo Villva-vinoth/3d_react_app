@@ -4,6 +4,8 @@
 
 .product-carosel-header{
     padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 .slick-prev {
@@ -11,7 +13,6 @@
     border-radius: 1.35rem;
     left: -40px;
     top: 54%;
-    /* background-color: red; */
 }
 
 .slick-next {
@@ -25,23 +26,13 @@
 
 .slick-slide > div{
     margin: 0px 15px;
-   /* height: max-content; */
- 
 }
 
 .product-carosel-container{
-    /* padding: 0.5rem; */
-    /* border: 2px solid rgb(207, 207, 207); */
     box-shadow: 0px 0px 5px rgb(207, 207, 207);
-
-    /* display: flex;
-    flex-direction: column; */
-    /* background-color: blue; */
     border-radius: 20px;
     overflow: hidden;
-    /* height: 100%; */
       height: 620px;
-    /* height: max-content; */
 }
 
 .product-carosel-container-picture{
@@ -51,24 +42,28 @@
     height: 50%;
     justify-content: center;
     background-color: rgb(207, 207, 207);
-    /* width: 95%; */
 }
 
 .product-carosel-container h3{
-    text-align: center;
-    margin: 0;
+    padding: 0rem 2.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
 }
 
 .product-carosel-container ul >li{
-    list-style-type: disclosure-closed;
-    padding: 0.25rem 0rem;
-    
+    list-style-type: none;
+    padding: 0.25rem 0rem !important;
+    display: flex;
+    gap: 10px;   
+    font-size: 1rem;
 }
-.product-carosel-in-details{
-    /* height: 50%; */
+.product-carosel-container ul>li>span{
+    text-align: center;    
 }
-.product-carosel-container h3{
-    padding: 1rem 0;
+#star-icon{
+    color: aliceblue;
+    fill: black;
 }
 
 @media (max-width:768px){
@@ -77,8 +72,7 @@
     }
     .product-carosel-header{
         padding: 1rem;
-        /* margin: 0; */
-        font-size: 18px;
+        font-size: 1rem;
         text-align: center;
     }
     .slick-prev{
@@ -89,7 +83,6 @@
     }
     .slick-slide > div{
         margin: 0px 5px;
-       /* height: max-content; */
     }
     .product-carosel-container-picture{
         height: 50%;
@@ -97,6 +90,9 @@
     .product-carosel-container-picture img{
         height: 100%;
         width: 100%;
+    }
+    .product-carosel-container h3{
+        font-size: 1rem;
     }
     .product-carosel-container{
         height: 40rem;
@@ -111,8 +107,7 @@
     }
     .product-carosel-header{
         padding: 1rem;
-        /* margin: 0; */
-        font-size: 18px;
+        font-size: 1rem;
         text-align: center;
     }
     .slick-prev{
@@ -123,7 +118,6 @@
     }
     .slick-slide > div{
         margin: 0px 5px;
-       /* height: max-content; */
     }
     .product-carosel-container-picture{
         height: 40%;

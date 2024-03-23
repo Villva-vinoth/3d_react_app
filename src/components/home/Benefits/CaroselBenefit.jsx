@@ -15,17 +15,7 @@ const CaroselBenefit = () => {
         (TAFM) present a multitude of advantages, emphasizing efficiency 
         and lightweight design. Notably, our motors boast the highest 
         regenerative braking potential, enabling vehicles to achieve up to 
-        10% greater speed and distance`, logo: carosel },
-        { topic: "Benefits of TAFM", describe: `When integrated into automotive vehicles, Torus Axial Flux Motors 
-        (TAFM) present a multitude of advantages, emphasizing efficiency 
-        and lightweight design. Notably, our motors boast the highest 
-        regenerative braking potential, enabling vehicles to achieve up to 
-        10% greater speed and distance`, logo: carosel },
-        { topic: "Benefits of TAFM", describe: `When integrated into automotive vehicles, Torus Axial Flux Motors 
-        (TAFM) present a multitude of advantages, emphasizing efficiency 
-        and lightweight design. Notably, our motors boast the highest 
-        regenerative braking potential, enabling vehicles to achieve up to 
-        10% greater speed and distance`, logo: carosel}
+        10% greater speed and distance`, logo: carosel }
     ];
 
 

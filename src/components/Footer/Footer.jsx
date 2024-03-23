@@ -29,21 +29,28 @@ const Footer = () => {
             </div>
             <div className='footer-content-2'>
                 <div className='footer-inner'>
-                    <div className='footer-inner-header'><FontAwesomeIcon icon={faAddressCard} /> &nbsp; contact us</div>
+                    <div className='footer-inner-header'>
+                        {/* <FontAwesomeIcon icon={faAddressCard} /> &nbsp;  */}
+                         contact us</div>
                     <div className='footer-inside-div'>
                         New No.28, 2nd Main Rd, Kalaimagal Nagar,
                         Ekkatuthangal, Chennai, Tamil Nadu 600032
                     </div>
                 </div>
                 <div className='footer-inner'>
-                    <div> <FontAwesomeIcon icon={faEnvelope} /> &nbsp; Email Address :</div>
-                    <div>
+                    <div className='footer-inner-header'> 
+                        {/* <FontAwesomeIcon icon={faEnvelope} /> &nbsp;  */}
+                         Email Address :</div>
+                    <div className='footer-inside-div'>
                         info@torusrobotics.com
                     </div>
                 </div>
                 <div className='footer-inner'>
-                    <div> <FontAwesomeIcon icon={faPhone} /> &nbsp; Phone :</div>
-                    <div>
+                    <div className='footer-inner-header'> 
+                        {/* <FontAwesomeIcon icon={faPhone} />
+                         &nbsp;  */}
+                         Phone :</div>
+                    <div className='footer-inside-div'>
                         089395 65425
                     </div>
                 </div>

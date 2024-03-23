@@ -2,7 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Bussinessinfo.css'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 const Bussinessinfo = () => {
+
+    useEffect(()=>{
+        Aos.init({
+            duration: 600,
+            // easing:"ease",
+            delay:100
+          })
+    })
 
     const [percentage, setPercentage] = useState(0);
     const [Apercentage, setAPercentage] = useState(0);
@@ -73,18 +83,20 @@ const Bussinessinfo = () => {
 
     return (
         <div className='Bussiness-display'>
-            <div className='Bussiness-header'><h2>Advantages by choosing us
+            <div className='Bussiness-header' data-aos='fade-in'><h2>Advantages by choosing us
             </h2></div>
-            <div className='Bussiness-upper'>
-                <div className='Bussiness-inner'>
+            <div className='Bussiness-upper' >
+                <div className='Bussiness-inner' data-aos='flip-right'>
                     <CircularProgressbar
-                        value={percentage}
-                        text={`${percentage}%`}
+                        value={Bpercentage}
+                        text={`${Bpercentage}%`}
                         styles={{
                             root: {
-                                width: '140px',
-                                height: '140px',
-                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                maxWidth: '100%',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '130px',
+                                maxHeight: '130px',
                             },
                             path: {
                                 stroke: 'black',
@@ -108,22 +120,24 @@ const Bussinessinfo = () => {
                     <div>
                         <div className='bussiness-head'>More Efficient range
                         </div>
-                        <div><pre className='bussiness-para'>Torus Axial Flux Motors achieves 15% higher range because of the minimal energy 
-losses incurred during the operation, setting new standards in electric motor 
-technology.
- </pre></div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors achieves 15% higher range because of the minimal energy
+                            losses incurred during the operation, setting new standards in electric motor
+                            technology.
+                        </pre></div>
                     </div>
                 </div>
 
-                <div className='Bussiness-inner'>
+                <div className='Bussiness-inner' data-aos='flip-left'>
                     <CircularProgressbar
                         value={Apercentage}
                         text={`${Apercentage}%`}
                         styles={{
                             root: {
-                                width: '140px',
-                                height: '140px',
-                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                maxWidth: '100%',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '130px',
+                                maxHeight: '130px',
                             },
                             path: {
                                 stroke: 'black',
@@ -152,15 +166,17 @@ technology.
                             thus ensuring affordability and sustainability.</pre></div>
                     </div>
                 </div>
-                <div className='Bussiness-inner'>
+                <div className='Bussiness-inner' data-aos='flip-right'>
                     <CircularProgressbar
                         value={Bpercentage}
                         text={`${Bpercentage}%`}
                         styles={{
                             root: {
-                                width: '140px',
-                                height: '140px',
-                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                maxWidth: '100%',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '130px',
+                                maxHeight: '130px',
                             },
                             path: {
                                 stroke: 'black',
@@ -183,22 +199,24 @@ technology.
                     />
                     <div>
                         <div className='bussiness-head'>Compact and lightweight motors
-</div>
-                        <div><pre className='bussiness-para'>Torus Axial Flux Motors offer a remarkable advantage with their 50% reduction in 
-weight and compact size is attributed to its parallel magnetic flux path design, which 
-optimizes magnetic field distribution, enabling significant weight and size reduction 
-without compromising performance.</pre></div>
+                        </div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors offer a remarkable advantage with their 50% reduction in
+                            weight and compact size is attributed to its parallel magnetic flux path design, which
+                            optimizes magnetic field distribution, enabling significant weight and size reduction
+                            without compromising performance.</pre></div>
                     </div>
                 </div>
-                <div className='Bussiness-inner'>
+                <div className='Bussiness-inner' data-aos='flip-left'>
                     <CircularProgressbar
                         value={Cpercentage}
                         text={`${Cpercentage}%`}
                         styles={{
                             root: {
-                                width: '140px',
-                                height: '140px',
-                                // filter: 'drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.3))'
+                                maxWidth: '100%',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '130px',
+                                maxHeight: '130px',
                             },
                             path: {
                                 stroke: 'black',
@@ -221,11 +239,11 @@ without compromising performance.</pre></div>
                     />
                     <div>
                         <div className='bussiness-head'>Quick plug and play
-</div>
-                        <div><pre className='bussiness-para'>Torus Axial Flux Motors boasts up to 95% regenerative capability, allowing it to 
-efficiently recover and convert kinetic energy during braking or deceleration into usable 
-electrical energy, significantly enhancing overall energy efficiency and extending vehicle 
-range.</pre></div>
+                        </div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors boasts up to 95% regenerative capability, allowing it to
+                            efficiently recover and convert kinetic energy during braking or deceleration into usable
+                            electrical energy, significantly enhancing overall energy efficiency and extending vehicle
+                            range.</pre></div>
                     </div>
                 </div>
 

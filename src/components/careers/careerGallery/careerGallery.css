@@ -1,14 +1,40 @@
 .career-gallery-display{
     display: flex;
     flex-direction: column;
+    border: 2px solid grey;
+    /* padding: 1rem; */
+    border-radius: 20px;
+    width: min(96%,85rem);
+    margin-inline: auto;
+    margin-top: 2%;
+    margin-bottom: 2%
 }
 .career-gallery-container-one{
     display: flex;
 }
 .career-gallery-container-one-content{
-    flex: 1;
+    /* flex: 1; */
+    flex-basis: 62.7%;
     display: flex;
     flex-direction: column;
+    padding: 0rem 4rem;
+}
+.career-gallery-container-one-content h2{
+    font-size: 2rem;
+}
+.career-gallery-container-one-content p{
+    font-size: 1rem;
+}
+
+.career-gallery-container-one-img{
+    flex-basis: 37.3%;
+    border-radius: 10px;
+}
+.career-gallery-container-one-img img{
+    width: 100%;
+  height: 100%;
+  object-fit: fill;
+   
 }
 .career-gallery-container-one-content h2{
     text-align: left;
@@ -18,6 +44,19 @@
     /* padding: ; */
 }
 .career-gallery-container-two-content{
-    display: grid;
-    grid-template-columns: repeat(1fr,3);
+    display: flex;
+    grid-template-columns: repeat(3,1.5fr);
+    gap: 0;
+}
+.career-gallery-container-two-content img{
+    width: 33.4%;
+}
+#corner1{
+    border-top-right-radius: 15px;
+}
+#corner2{
+    border-bottom-left-radius: 15px;
+}
+#corner3{
+    border-bottom-right-radius: 15px;
 }

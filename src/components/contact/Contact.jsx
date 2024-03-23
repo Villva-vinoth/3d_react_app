@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './contact.css'
 import Popup from 'reactjs-popup'
 import { toast, ToastContainer } from 'react-toastify'
@@ -8,8 +8,21 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TiLocation } from "react-icons/ti";
 import handshake from '../Assets/handshake.png'
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import email from '../Assets/contact/email.png'
+import phone from '../Assets/contact/phone.png'
+import location from '../Assets/contact/loca.png'
 const Contact = () => {
+    useEffect(
+        () => {
+            Aos.init({
+                duration: 600,
+                easing: "ease",
+                delay: 100
+            })
+        }
+    )
     return (
         <div className='contact-display'>
 
@@ -19,24 +32,28 @@ const Contact = () => {
 
                 </div>
                 <div className='contact-header-address-bar'>
-                    <div className='contact-address'>
-                        <picture><TiLocation size={35} /></picture>
+                    <div className='contact-address' data-aos='flip-in'>
+                        <picture>
+                            <img src={location} alt='' className='contact-icons' />
+                        </picture>
                         <h4>ADDRESS</h4>
                         <div>New No.28, 2nd Main Rd,
                             Kalaimagal Nagar, Ekkatuthangal,
                             Chennai, Tamil Nadu-600032.</div>
                     </div>
-                    <div className='contact-address'>
-                        <picture><MdEmail size={35} /></picture>
+                    <div className='contact-address' data-aos='flip-out'>
+                        <picture>
+                            <img src={email} alt='' className='contact-icons' />
+                        </picture>
                         <h4>EMAIL</h4>
-                        <div>info@torusrobotics.com <br />
-                            info@torusrobotics.com</div>
+                        <div>info@torusrobotics.com</div>
                     </div>
-                    <div className='contact-address'>
-                        <picture><FaPhoneAlt size={35} /></picture>
+                    <div className='contact-address' data-aos='flip-in'>
+                        <picture>
+                        <img src={phone} alt='' className='contact-icons'/>
+                        </picture>
                         <h4>PHONE</h4>
-                        <div>+91 6438293810 <br />
-                            044 22341048</div>
+                        <div>+91 6438293810</div>
                     </div>
                 </div>
             </div>
@@ -52,12 +69,12 @@ const Contact = () => {
                 <div className='contact-form-content'>
                     <h2>Wanna become a partner !</h2>
                     <div className='contact-form-content-2'>
-                    Join us in our mission to revolutionize the way we 
-power our world. Whether you're in the EV space or 
-exploring new markets, Torus Robotics is your trusted 
-partner for pioneering solutions in axial flux motors 
-and controllers. Together, let's shape a brighter, 
-cleaner future for generations to come. 
+                        Join us in our mission to revolutionize the way we
+                        power our world. Whether you're in the EV space or
+                        exploring new markets, Torus Robotics is your trusted
+                        partner for pioneering solutions in axial flux motors
+                        and controllers. Together, let's shape a brighter,
+                        cleaner future for generations to come.
                     </div>
                     <Popup
                         trigger={<div className='contact-get-in-touch'> GET IN TOUCH</div>}
@@ -70,7 +87,7 @@ cleaner future for generations to come.
                                     <div> <h2>get in touch</h2>
                                         <div className="contact-cancel-btn" onClick={close}>X</div></div>
 
-                                    <div className='popup-header-cont'>fill out the form below. we will reach out to you.</div>
+                                    <div className='popup-header-cont color-grey'>fill out the form below. we will reach out to you.</div>
 
                                 </div>
                                 <div className='popup-form'>

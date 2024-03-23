@@ -1,0 +1,86 @@
+.home-contact-us-display-form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 2rem 4rem;
+    background-image: url('../../Assets/home/contact/contactBg.png');
+    background-size: cover;
+}
+.home-contact-container-one{
+    display: flex;
+}
+.home-contact-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 2rem 0;
+}
+.home-contact-content input{
+    width: 90%;
+    height: 2rem;
+    letter-spacing: 1px; 
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 0 2px grey;
+    border-radius: 3px;
+    outline: none;
+    padding: 0.5rem 1rem;
+}
+.home-contact-container-two{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    gap: 10px;
+    width: 100%;
+    font-weight: 600;
+}
+.home-contact-container-two textarea{
+    width: 95%;
+    height: 10rem;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 0 2px grey;
+    padding: 0.5rem 1rem;
+
+}
+.home-contact-container-three{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem 0 0rem;
+}
+
+.home-contact-submit-btn{
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    width: 5%;
+    background-image: linear-gradient(125deg ,rgb(25, 20, 26),rgb(25, 20, 26),rgb(25, 20, 26),rgb(206, 206, 206));
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition:all 0.6s ease;
+    border:1px solid rgb(163, 163, 163);
+    background-color: white;
+    text-align: center;
+}
+.home-contact-submit-btn:hover{
+    background-image: linear-gradient(125deg ,rgb(206, 206, 206),rgb(206, 206, 206),rgb(206, 206, 206),rgb(25, 20, 26));
+    color: black;
+    transition: all 0.3s;
+}
+
+.color-red{
+    color: red;
+}
+.home-contact-container-three-label{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    color: grey;
+}

@@ -4,13 +4,16 @@
     justify-content: center;
     background-image: url('../../Assets/home/mainBg.png');
     background-repeat: no-repeat;
-    padding: 5rem 0;
+    padding: 5rem 0rem;
     background-size: cover;
 
 }
 .main-display-para{
     text-align: justify;
+    font-size: 1rem;
+    padding: 0 2.5rem 0 0;
 }
+
 .mainDisplay-picture {
     flex-basis: 50%;
     display: flex;
@@ -30,7 +33,7 @@
 }
 
 .mainDisplay-topic {
-    font-family: "Poppins";
+    /* font-family: "calibari"; */
     font-size: 4rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -39,16 +42,25 @@
     background-clip: text;  
     -webkit-text-fill-color: transparent;
 }
+.mainDisplay-subtopic{
+    font-size: 1rem;
+}
 
 @media (max-width:768px) {
+    .mainDisplay-display{
+        padding: 0;
+    }
     .mainDisplay-topic{
-        font-size: 1.5rem;
+        font-size: 3rem;
     }
     .main-display-para{
-        font-size: 1rem;
+        font-size: 0.75rem;
+        padding: 0 1rem 0 0;
+
     }
     .mainDisplay-subtopic{
         margin: 0;
+        font-size: 0.75rem;
     }
     .break-tag{
         display: none;
@@ -61,10 +73,11 @@
 @media (max-width:767px) {
     .mainDisplay-display{
         flex-direction: column;
-        /* padding: 0; */
+        padding: 0;
+       
     }
     .mainDisplay-topic{
-        font-size: 1.13rem;
+        font-size: 1.5rem;
         text-align: center;
     }
     .mainDisplay-innerContent{
@@ -73,9 +86,13 @@
     }
     .mainDisplay-subtopic h4{
         text-align: center;
+        font-size: 1rem;
     }
     .main-display-para{
-        font-size: 0.75rem;
+        font-size: 1rem;
+        margin: 0;
+        padding: 0 1rem 0 1rem;
+
     }
     .break-tag{
         display: none;

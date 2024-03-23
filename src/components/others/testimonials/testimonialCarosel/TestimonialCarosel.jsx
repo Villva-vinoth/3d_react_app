@@ -7,6 +7,8 @@ import prev from '../../../Assets/prevArrow.png'
 import testmonialPerson from '../../../Assets/Testimonial/image.png'
 import { LiaQuoteLeftSolid } from "react-icons/lia";
 import { LiaQuoteRightSolid } from "react-icons/lia";
+import quoteRight from '../../../Assets/Testimonial/quoteRight.png'
+import quoteLeft from '../../../Assets/Testimonial/quoteLeft.png'
 
 const PrevButton = ({ ...props }) => {
     const { onClick } = props
@@ -65,9 +67,9 @@ const TestimonialCarosel = () => {
                             return (
                                 <div className='carosel-testimonial-container'>
                                    <picture className='carosel-testimonial-container-pic'>
-                                        <LiaQuoteLeftSolid className='icon icon-prev'/>
+                                    <img src={quoteLeft} alt='' className='quote-icons' />
                                         <img src={item.img} alt='' />
-                                        <LiaQuoteRightSolid className='icon icon-next' />
+                                        <img src={quoteRight} alt='' className='quote-icons'/>
                                     </picture>
                                     <div className='carosel-testimonial-para'>{item.comment}</div>
                                     <h4>{item.name}</h4>

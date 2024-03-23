@@ -1,122 +1,134 @@
-
-.contact-main-header{
+.contact-main-header {
     background-color: rgb(255, 255, 255);
     /* height: 100vh; */
 }
-.contact-header{
+
+.contact-header {
     width: 100%;
     height: 40vh;
-    background-image: url('../Assets/contactus.png');
+    background-image: url('../Assets/contact/contactus.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.contact-header-address-bar{
+.contact-header-address-bar {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    /* background-color: red; */
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 }
-.contact-address{
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; */
+
+.contact-address {
     padding: 1rem 0rem;
     background-color: white;
     width: 20%;
-    min-height: 200px;
+    min-height: 180px;
     box-shadow: 0px 0px 2px rgb(177, 175, 175);
 }
-.contact-address h4{
+
+.contact-address h4 {
     padding: 1rem;
     margin: 0;
-}
-.contact-address div{
-    padding: 0rem 1.5rem;
-    /* text-align: justify; */
+    font-size: 1rem;
 }
 
-.contact-map{
+.contact-address div {
+    padding: 0rem 1.5rem;
+    font-size: 1rem;
+}
+
+.contact-map {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.map-google{
-    /* background-color: red; */
+
+.map-google {
     margin-inline: auto;
 }
-.contact-form{
+
+.contact-form {
     display: flex;
     padding: 1rem 3rem;
+    gap: 20px;
 }
-.contact-form picture{
+
+.contact-form picture {
     flex-basis: 60%;
     width: 100%;
 }
-.contact-form picture>img{
+
+.contact-form picture>img {
     object-fit: cover;
     width: 100%;
     height: 80%;
-    filter:invert(1)
+    /* filter:invert(1) */
 }
-.contact-form-content{
+
+.contact-form-content {
     flex-basis: 40%;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    /* background-color: red; */
     gap: 10px;
 }
-.contact-form-content h2{
-    text-align: center !important;
+
+.contact-form-content h2 {
+    /* text-align: center !important; */
     padding: 0 0;
     margin: 0;
- 
+    font-size: 2.2rem;
+
 }
-.contact-form-content .contact-form-content-2{
+
+.contact-form-content .contact-form-content-2 {
     text-align: justify;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 3rem 0 0;
     color: grey;
+    font-size: 1.25rem;
 }
-.popup{
+
+.popup {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0.5rem 2rem;
-    /* height: 100vh; */
-    /* width: 50%; */
 }
-.popup-content{
-    border-radius:25px ;
+
+.popup-content {
+    border-radius: 25px;
     width: auto !important;
-    
+
 
 }
-.popup-header div>h2{
+
+.popup-header div>h2 {
     padding: 0.5rem 0rem;
     margin: 0%;
     text-transform: uppercase;
     text-align: left;
     width: max-content;
 }
+
 .popup-header div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
-.popup-header-cont{
-    font-size: 15px;
+
+.popup-header-cont {
+    font-size: 1rem;
 }
-.popup-header div> div{
+
+.popup-header div>div {
     cursor: pointer;
 }
 
-.popup-form{
+.popup-form {
     padding: 0.5rem 0rem;
     display: flex;
     flex-direction: column;
@@ -124,16 +136,22 @@
     gap: 5px;
 }
 
-.popup-form label>span>sup{
-    color: red;
+.popup-form label>span>sup {
+    color: grey;
 }
-.popup-form label{
+
+.popup-form label {
     text-transform: capitalize;
 }
-.color-red{
+
+.color-red {
     color: red;
 }
-.popup-form input{
+.color-grey{
+    color: grey;
+}
+
+.popup-form input {
     /* width: 50%; */
     /* height: 2.5rem; */
     text-align: start;
@@ -141,7 +159,8 @@
     border: 2px solid rgb(212, 212, 212);
     outline: none;
 }
-.popup-comments{
+
+.popup-comments {
     height: 5rem !important;
     /* width: 50%; */
     border: 2px solid rgb(212, 212, 212);
@@ -149,112 +168,140 @@
 
     resize: none;
 }
-.actions{
+
+.actions {
     display: flex;
     gap: 30px;
     width: 100%;
-    /* background-color: red; */
 }
 
-.contact-btn{
+.contact-btn {
     padding: 0.75rem 2rem;
-    border: none; 
-   
+    border: none;
     border-radius: 10px;
     width: 100%;
-    /* background-color: black; */
-    background-image: linear-gradient(125deg ,rgb(25, 20, 26),rgb(25, 20, 26),rgb(25, 20, 26),rgb(206, 206, 206));
+    background-image: linear-gradient(125deg, rgb(25, 20, 26), rgb(25, 20, 26), rgb(25, 20, 26), rgb(206, 206, 206));
     color: white;
     text-transform: uppercase;
     font-weight: 600;
-    transition:all 0.6s ease;
+    transition: all 0.6s ease;
 }
-.contact-btn:hover{
-    background-image: linear-gradient(125deg ,rgb(206, 206, 206),rgb(206, 206, 206),rgb(206, 206, 206),rgb(25, 20, 26));
+
+.contact-btn:hover {
+    background-image: linear-gradient(125deg, rgb(206, 206, 206), rgb(206, 206, 206), rgb(206, 206, 206), rgb(25, 20, 26));
     color: black;
-    /* background-color: white; */
 }
+
 .contact-get-in-touch {
-    padding: 0.75rem 2rem;
-    /* border: none;  */
-   margin-left: 3%;
+    padding: 0.75rem 0rem;
+    margin-left: 0%;
     border-radius: 10px;
-    width: 50%;
+    width: 40%;
     /* background-color: black; */
     /* background-image: linear-gradient(125deg ,rgb(25, 20, 26),rgb(25, 20, 26),rgb(25, 20, 26),rgb(206, 206, 206)); */
     color: black;
     text-transform: uppercase;
     font-weight: 600;
-    transition:all 0.6s ease;
-    border:1px solid rgb(163, 163, 163);
+    transition: all 0.6s ease;
+    border: 1px solid rgb(163, 163, 163);
     background-color: white;
     text-align: center;
-    
+
 }
-.contact-get-in-touch:hover{
-    background-image: linear-gradient(125deg ,rgb(25, 20, 26),rgb(25, 20, 26),rgb(25, 20, 26),rgb(206, 206, 206));
+
+.contact-get-in-touch:hover {
+    background-image: linear-gradient(125deg, rgb(25, 20, 26), rgb(25, 20, 26), rgb(25, 20, 26), rgb(206, 206, 206));
     color: white;
 }
 
+#contact-icon{
+    
+}
+.contact-icons{
+    width: 50px;
+    height: 50px;
+}
 @media (max-width:768px) {
-    .contact-form-content h2{
-        font-size: 15px;
+    .contact-form-content h2 {
+        font-size: 1.3rem;
     }
-    .contact-form-content-2{
-        font-size: 12px;
+
+    .contact-form-content .contact-form-content-2 {
+        font-size: 1rem;
+        padding: 0 0.1rem 0 0 ;
+        /* background-color: red; */
     }
-    .contact-get-in-touch{
+
+    .contact-get-in-touch {
         width: 50%;
         padding: 0.5rem 1rem;
     }
-    .contact-address{
+
+    .contact-address {
         padding: 0.5rem;
     }
-    .contact-address div{
-        font-size: 12px;
+
+    .contact-address div {
+        font-size: 0.75rem;
         padding: 0rem 0.2rem;
     }
-    .contact-address picture{
+
+    .contact-address picture {
         padding: 0.75rem 0rem;
+    }
+    .contact-icons{
+        width: 30px;
+        height: 30px;
     }
 }
 
 @media (max-width:767px) {
-    .contact-header-address-bar{
-        margin-top:100px ;
+    .contact-header-address-bar {
+        margin-top: 100px;
         flex-direction: column;
         gap: 20px;
-        transform: translate(0%,0%);
+        transform: translate(0%, 0%);
         padding: 0.5rem 0rem;
         position: relative;
         z-index: 1;
     }
-    .contact-address{
+
+    .contact-address {
         width: 50%;
         /* height: 50vh; */
     }
-    .contact-header{
+
+    .contact-header {
         /* height: 100vh; */
         position: absolute;
         top: 20%;
         z-index: 1;
 
     }
-    .contact-form{
+
+    .contact-form {
         flex-direction: column;
     }
-    .contact-form-content h2{
-        
+    .contact-form-content{
+        align-items: center;
     }
-    .contact-form-content .contact-form-content-2{
+
+    .contact-form-content h2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .contact-form-content .contact-form-content-2 {
         text-align: justify;
         padding: 0.5rem 0.75rem;
         color: grey;
+        /* font-size: 1rem; */
     }
-    .contact-get-in-touch{
+
+    .contact-get-in-touch {
         padding: 0.5rem;
         width: 60%;
     }
 
-    
+
 }
