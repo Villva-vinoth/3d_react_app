@@ -112,9 +112,11 @@
     }
     .slick-prev{
         top: 52%;
+        /* display: none; */
     }
     .slick-next{
         top: 50%;
+        /* display: none; */
     }
     .slick-slide > div{
         margin: 0px 5px;
