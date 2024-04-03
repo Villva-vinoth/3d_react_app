@@ -6,7 +6,7 @@ const BlogHeader = () => {
     <div className="blog-header-display">
             <div className="blog-header-topic">
                 <h2> Blogs  </h2>
-                <img src={userline} alt="loading" />
+                {/* <img src={userline} alt="loading" /> */}
             </div>
             <div className="blog-header-description">
                 <p>

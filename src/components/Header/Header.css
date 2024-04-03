@@ -1,4 +1,4 @@
-.Header-display{
+.Header-display {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,81 +9,165 @@
     background: white;
 
 }
-.header-picture{
+
+.header-picture {
     flex-basis: 40%;
     padding: 10px 10px;
     user-select: none;
 
 }
-.Header-inner{
+
+.Header-inner {
     flex-basis: 60%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.Header-logo{
+
+.Header-logo {
 
     filter: brightness(0) grayscale(100%);
     object-fit: contain;
     padding: 2rem 0rem 1rem 3rem;
 }
-.header-div{
+
+.header-div {
     /* background-color: red; */
     color: #C7C8CC;
     padding: 1%;
     cursor: pointer;
     user-select: none;
+    position: relative;
 }
-.header-div:hover{
-    color: rgb(92, 92, 92) ;
+
+.header-div:hover {
+    color: rgb(92, 92, 92);
 }
 
 .header-select-div {
     /* border-bottom: 1.5px solid rgb(56, 55, 56); */
     border-radius: 1px;
-    color: black ;
+    color: black;
     transform: scale(1.1);
+    position: relative;
 }
-.header-select-div::before{
+
+.drop-down-div {
+    color: #C7C8CC;
+    padding: 1%;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.drop-down-div:hover {
+    color: rgb(92, 92, 92);
+}
+
+.header-select-div::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, black, #a8a8a8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 90%;
+
+
+}
+.drop-select-div::after {
     content: '';
     width: 50%;
     height: 2px;
-    background-color: #3a3838;
+    background-image: linear-gradient(to right, black, #a8a8a8);
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    border-radius: 90%;
+
+
 }
 
-.hambarger{
+.hambarger {
     display: none;
 }
+
+.others-div-header:hover .drop-down {
+    display: block;
+}
+
+.drop-down {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 111;
+    /* top: 50px; */
+    /* transform: translate(-20%,20%); */
+    /* border: 2px solid black; */
+    /* padding: 1rem 2rem; */
+    /* width: 100%; */
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 3px grey;
+    padding: 1rem;
+}
+
+.drop-down div {
+    margin: 0px 10px;
+    padding: 10px;
+    width: max-content;
+
+
+}
+
+.drop-down div a {
+    text-align: center;
+    text-decoration: none;
+    color: #C7C8CC;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
 @media (max-width:768px) {
-    .Header-logo{
+    .Header-logo {
         padding: 0;
     }
-    .Header-inner{
+
+    .Header-inner {
         font-size: 0.75rem;
     }
 }
+
 @media (max-width:767px) {
-    .Header-inner{
+    .Header-inner {
         display: none;
     }
-    .Header-logo{
-       padding: 0 0 0 0 ;
+
+    .Header-logo {
+        padding: 0 0 0 0;
     }
-    .hambarger{
+
+    .hambarger {
         display: block;
         flex-basis: 20%;
         width: 100px;
         z-index: 5;
     }
-    .Header-display{
+
+    .Header-display {
         justify-content: space-between;
     }
-    .hambarger-inner{
+
+    .hambarger-inner {
         display: flex;
         align-items: center;
 
     }
-    .header-hamberger{
+
+    .header-hamberger {
         display: flex;
         flex-direction: column;
         background-color: white;
@@ -91,33 +175,54 @@
         align-items: center;
         /* padding: .5rem 1rem; */
         position: absolute;
-        width: 30%;
+        width: 50%;
         height: 100vh;
         top: 0%;
         right: 0%;
         color: #c2c1c1;
         font-size: 1rem;
     }
-    .header-x{
+
+    .header-x {
         position: absolute;
         top: 10px;
         left: 10px;
         color: black;
     }
 
-    .header-hamberger div:hover{
+    .header-hamberger div:hover {
         color: #3a3838;
     }
-    .header-hamberger-hide{
+
+    .header-hamberger-hide {
         display: none;
     }
-    .header-div{
+
+    .header-div {
         margin: 1%;
         margin-top: 2%;
         padding: 0.3rem 0;
         text-transform: capitalize;
         /* width: 80%; */
         /* text-align: end; */
-      
+
     }
+    /* .header-onfocus:hover  .drop-down{
+        display: block;
+    } */
+    .other-div-ham:hover {
+        /* display: grid; */
+        padding: 1rem;
+        grid-template-rows: 1fr;
+
+    }
+    .other-div-ham{
+        display: grid;
+        grid-template-rows:0fr;
+    }
+    .other-div-ham > div{
+        overflow: hidden;
+        
+    }
+    
 }

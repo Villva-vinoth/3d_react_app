@@ -7,7 +7,7 @@ const CareerHeader = () => {
         <div className="career-header-display">
             <div className="career-header-topic">
                 <h2> Careers  </h2>
-                <img src={userline} alt="loading" />
+                {/* <img src={userline} alt="loading" />     */}
             </div>
             <div className="career-header-description">
                 <p>

@@ -4,13 +4,18 @@
     /* height: auto; */
     /* width: 100%; */
 
-    padding: 5.5rem 5rem;
+    padding: 5.5rem 3rem;
+    /* background-color: yellow; */
+    position: relative;
+    overflow: hidden;
 }
 
 .Benefit-img{
     flex-basis: 50%;
-    background-image: linear-gradient(to right, rgb(204, 202, 202),rgb(204, 202, 202), white,white,white 100%);
+    /* background-image: linear-gradient(to right, rgb(204, 202, 202),rgb(204, 202, 202), white,white,white 100%); */
     position: relative;
+    /* background: red; */
+    /* background-image: url('../../Assets/home/Benefit/image.png'); */
     
 }
 .Benefit-TAFM{
@@ -39,15 +44,24 @@
     z-index: 10;
     top: 0;
     left: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-30%,-30%);
     width: 150px;
     height: 150px;
     user-select: none;
+    animation: rotate 10s infinite;
+}
+@keyframes rotate{
+    from{
+        transform:translate(-30%,-30%) rotate(0deg);
+    }
+    to{
+        transform:translate(-30%,-30%) rotate(360deg);
+    }
 }
 
 .Benefit-product-img{
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     mix-blend-mode: multiply;
 }
@@ -62,21 +76,35 @@
     text-align: center;
 }
 
+.benefit-bg-pic{
+    width: 50%;
+    object-fit: contain;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%,90%);
+    bottom: 0;
+    opacity: 0.1;
+}
+
 @media (max-width:768px) {
     .Benefits-display{
         padding: 3rem;
     }
     .Benefit-img{
-        padding: 0;
-        width: 50%;
+        padding: 0 0;
+        /* width: 50%; */
+
     }
     .Benefit-logo{
-        width: 20%;
-        height: 20%;
+        width: 100px;
+        height: 100px;
+        /* aspect-ratio: 1/1; */
     }
     .Benefit-product-img{
-        width: 80%;
-        height: 70%;
+        width: 100%;
+        height: 100%;
     }
     .Benefits-outer-display{
         width: 50%;
@@ -90,7 +118,7 @@
   @media (max-width:767px) {
     .Benefits-display{
         flex-direction: column;
-        padding: 1rem;
+        padding: 1rem 0;
         align-items: center;
     }
     .Benefit-TAFM{
@@ -98,11 +126,11 @@
         letter-spacing: 2rem;
     }
     .Benefit-img{
-        width: 80%;
+        width: 85%;
     }
     .Benefit-logo{
-        width: 20%;
-        height: 20%;
+        width: 100px;
+        height: 100px;
     }
     .Benefits-outer-display{
         width: 100%;
@@ -111,7 +139,7 @@
     }
     .Benefit-product-img{
         width: 100%;
-        height: 50%;
+        height: 100%;
     }
     .Benefit-product-img{
         /* width: 200px;

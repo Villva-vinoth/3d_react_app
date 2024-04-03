@@ -2,6 +2,8 @@ import React from 'react'
 import CareerHeader from './careerHeader/CareerHeader'
 import CareerGallery from './careerGallery/CareerGallery'
 import WhyTorus from './Why torus/WhyTorus'
+import CareerOppourtunity from './CareerOppourtunity/CareerOppourtunity'
+import ResumeApply from './resumeApply/ResumeApply'
 
 const Careers = () => {
   return (
@@ -9,6 +11,8 @@ const Careers = () => {
         <CareerHeader />
         <CareerGallery />
         <WhyTorus />
+        <CareerOppourtunity />
+        <ResumeApply />
     </div>
   )
 }

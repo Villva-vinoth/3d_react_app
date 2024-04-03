@@ -6,7 +6,7 @@ const TestimonialHeader = () => {
     <div className="Testimonial-header-display">
     <div className="Testimonial-header-topic">
      <h2> Testimonials  </h2>
-      <img src= {userline} alt="loading"/>
+      {/* <img src= {userline} alt="loading"/> */}
     </div>
     <div className="Testimonial-header-description">
       <p>

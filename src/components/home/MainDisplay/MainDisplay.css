@@ -94,6 +94,14 @@
         padding: 0 1rem 0 1rem;
 
     }
+    .mainDisplay-picture{
+        width: 80%;
+        margin-inline: auto;
+    }
+    .mainDisplay-picture img{
+        width: 100%;
+        
+    }
     .break-tag{
         display: none;
     }

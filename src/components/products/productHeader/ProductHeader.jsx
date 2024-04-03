@@ -1,12 +1,10 @@
 import React from "react";
 import './ProductHeader.css'
-import userline from '../../Assets/underLine.png'
 const ProductHeader = () => {
   return (
     <div className="product-header-display">
       <div className="product-header-topic">
        <h2> Products</h2>
-        <img src= {userline} alt="loading"/>
       </div>
       <div className="product-header-description">
         <p>

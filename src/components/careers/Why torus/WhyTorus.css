@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Imported;
+    src: url('../../Assets/fonts/conthrax-sb.otf');
+}
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
 .WhyTorus-container{
     display: flex;
@@ -24,28 +28,51 @@
     border-radius: 10px;
     padding: 2rem 4rem;
     margin: 2%;
-    text-align: justify;
+    text-align: center;
+    /* gap: 10px; */
 }
 .why-torus-content h2{
-    font-size: 1.25rem;
-    padding: 1rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    text-transform: uppercase;    
 }
 .why-torus-content-abs{
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(110%,-50%);
-    font-size: 4.5rem;
-    color:grey;
-    text-shadow: -10px 4px 5px rgb(3, 3, 3);
-    font-family: 'Bungee outline';
+    font-size: 5rem;
+    color:white;
+    text-shadow: -25px 10px 5px rgb(196, 190, 190);
+    font-family: Imported;
+    font-style: oblique;
+    -webkit-text-stroke: 3px black;
+    /* font-family: "bungee outline"; */
+    /* background-color: blue; */
     
+}
+.why-torus-para{
+    font-size: 1rem;
+}
+
+@media (max-width:768px) {
+    .why-torus-content{
+        padding: 1rem;
+    }
+    .WhyTorus-container h2{
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width:767px) {
     .why-torus-content-container{
         grid-template-columns: 1fr;
-        margin: 2% 10%;
+        /* margin: 2% 10%; */
+        gap: 30px;
+    }
+    .WhyTorus-container h2 {
+        text-align: center;
+        font-size: 1.25rem;
     }
     
 }

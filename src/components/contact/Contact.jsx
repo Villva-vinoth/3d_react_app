@@ -4,10 +4,7 @@ import Popup from 'reactjs-popup'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import 'reactjs-popup/dist/index.css';
-import { MdEmail } from "react-icons/md";
-import { FaPhoneAlt } from "react-icons/fa";
-import { TiLocation } from "react-icons/ti";
-import handshake from '../Assets/handshake.png'
+import handshake from '../Assets/contact/handshake.png'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import email from '../Assets/contact/email.png'
@@ -60,7 +57,7 @@ const Contact = () => {
 
             <div className='contact-map'>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7774.4517982934385!2d80.19843628655018!3d13.021281652198951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e03c7c8de8d%3A0x56035da5d9283262!2sTorus%20Robotics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1710766417621!5m2!1sen!2sin" width={'80%'} height={"400px"} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className='map-google'></iframe>            </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7774.4517982934385!2d80.19843628655018!3d13.021281652198951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e03c7c8de8d%3A0x56035da5d9283262!2sTorus%20Robotics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1710766417621!5m2!1sen!2sin" width={'80%'} height={"400px"} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='map-google'></iframe>            </div>
 
             <div className='contact-form'>
                 <picture>

@@ -3,7 +3,10 @@
     display: flex;
     gap: 5px;
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
+    background-image: url('../Assets/home/footerBg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .Footer-logo{
     width: 100%;

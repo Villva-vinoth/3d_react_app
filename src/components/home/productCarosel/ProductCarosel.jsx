@@ -14,26 +14,34 @@ const PrevButton = ({ ...props }) => {
   )
 }
 
-const NextButton = ({ ...props }) => {
+const NextButton = ({ currentSlide, slideCount, ...props }) => {
   return (
-    <img src={prev} {...props} style={{ boxShadow: "0 0 5px rgb(207, 207, 207)", backgroundColor: "white" }} />
+    <img src={prev} {...props} style={{ boxShadow: "0 0 5px rgb(207, 207, 207)", backgroundColor: "white" }} className={
+      "slick-next slick-arrow" +
+      (currentSlide === slideCount - 1 ? " slick-disabled" : "")
+    } aria-hidden="true"
+      aria-disabled={currentSlide === slideCount - 1 ? true : false} />
   )
 }
 const ProductCarosel = () => {
 
-  useEffect(()=>{
+  useEffect(() => {
     Aos.init({
       duration: 600,
       easing: "ease",
       delay: 100
-  })
+    })
   })
 
   const data = [
-    { img: image, name: "Robotics", describe: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque accusamus pariatur provident libero voluptates quaerat vitae maxime? Aspernatur eum itaque voluptatem soluta iste cum explicabo perspiciatis rerum tenetur, nemo quam.", ul: ['Energy Efficient', 'High Torque Low Speed', 'Scalability and Adaptability', 'Reduced Heat Generation', 'Compact Size', 'Highly Efficient'] },
-    { img: image, name: "Electrical Cars", describe: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque accusamus pariatur provident libero voluptates quaerat vitae maxime? Aspernatur eum itaque voluptatem soluta iste cum explicabo perspiciatis rerum tenetur, nemo quam.", ul: ['Energy Efficient', 'High Torque Low Speed', 'Reduced Heat Generation', 'Compact Size', 'Highly Efficient'] },
-    { img: image, name: "Robotics", describe: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque accusamus pariatur provident libero voluptates quaerat vitae maxime? Aspernatur eum itaque voluptatem soluta iste cum explicabo perspiciatis rerum tenetur, nemo quam.", ul: ['Energy Efficient', 'High Torque Low Speed', 'Scalability and Adaptability', 'Reduced Heat Generation', 'Compact Size', 'Highly Efficient'] },
-    { img: image, name: "Electrical Cars", describe: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque accusamus pariatur provident libero voluptates quaerat vitae maxime? Aspernatur eum itaque voluptatem soluta iste cum explicabo perspiciatis rerum tenetur, nemo quam.", ul: ['Energy Efficient', 'High Torque Low Speed', 'Scalability and Adaptability', 'Reduced Heat Generation', 'Compact Size', 'Highly Efficient'] },
+    { img: image, name: "Robotics" ,
+     ul: ['Tailored for AMR and AGV applications', 'Compact form factor enhances mobility', 'Bundled components include EM Brake, Encoder, Gearbox, and wheel', 'Ensures a comprehensive solution for enhanced maneuverability'] },
+    { img: image, name: "Power Generator" , 
+    ul: ['Exceptional operational efficiency exceeding 94% ', 'Outperforms conventional models in power generation', 'Significantly reduced size and weight, up to 50% less', 'Facilitates effortless installation atop wind turbines', 'Ensures reliable and stable power production '] },
+    { img: image, name: "Industrial" , 
+    ul: ['Industry shift towards higher efficiency motors like IE2 standards for power conservation', 'Torus Axial Flux Motors offer 90% efficiency in S1 duty cycles', 'Significantly reduces power consumption, ideal for energy-conscious applications',] },
+    { img: image, name: "Water Pumps" ,
+     ul: ['Pumps in rural areas face voltage fluctuations and mobility challenges', `Torus Axial Flux Motor's lightweight design facilitates easy portability`, 'Achieved one-third reduction in overall system weight', 'Ideal for mobile use in rural areas', 'In urban settings, high-efficiency motors like Torus Axial Flux ensure power savings during operation',] },
   ];
   var settings = {
     dots: true,
@@ -58,7 +66,7 @@ const ProductCarosel = () => {
         }
       }
     ]
-  
+
   };
 
 
@@ -72,18 +80,18 @@ const ProductCarosel = () => {
             return (
               <div className='product-carosel-container' key={index}>
                 <div className='product-carosel-container-picture' data-aos='zoom-in-left'>
-           
+
                   <img src={item.img} alt='' />
-              
+
                 </div>
                 <h3 data-aos='zoom-in-down'>{item.name}</h3>
                 <div className='product-carosel-in-details'>
-                  <ul>
+                  <ul data-aos='zoom-in-up'>
 
                     {
-                      item.ul.map((items) => {
+                      item.ul.map((items, indexes) => {
                         return (
-                          <li data-aos='zoom-in-up'><span ><PiStarFourFill color='black'  id="star-icon"/></span>{items}</li>
+                          <li  key={indexes}><span ><PiStarFourFill color='black' id="star-icon" /></span>{items}</li>
                         )
                       })
                     }

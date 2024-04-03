@@ -8,23 +8,31 @@ import ParallaxContainer from './parallaxContainer/ParallaxContainer'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import Contact from './contactHome/contact'
-const Home = () => {
+import { ParallaxProvider } from 'react-scroll-parallax'
+const Home = ({set}) => {
   useEffect(() => {
     Aos.init({
       duration: 600,
-      easing:"ease",
+      easing: "ease",
       delay: 100
     })
   })
+  useEffect(()=>{
+    set(false)
+  },[])
   return (
-    <div className='Home-display'>
+    <ParallaxProvider>  
+        <div className='Home-display'>
       <div ><MainDisplay /></div>
       <div data-aos='fade-in'><ParallaxContainer /></div>
       <div ><Bussinessinfo /></div>
       <div ><Benefits /></div>
       <div ><ProductCarosel /></div>
       <div > <Contact /></div>
-    </div>
+    </div> 
+    </ParallaxProvider>
+
+
   )
 }
 

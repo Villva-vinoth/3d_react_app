@@ -1,5 +1,5 @@
 import React from 'react'
-import Mimagenew from '../../Assets/handshake.png'
+// import Mimagenew from '../../Assets/handshake.png'
 import BlogDetail from './Blogdetail/BlogDetail'
 import { useNavigate } from 'react-router-dom'
 

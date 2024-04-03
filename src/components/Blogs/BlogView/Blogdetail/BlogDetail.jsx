@@ -1,5 +1,5 @@
 import React from 'react'
-import Mimagenew from '../../../Assets/handshake.png'
+import Mimagenew from '../../../Assets/blogs/blogsid.png'
 import './BlogDetail.css'
 
 const BlogDetail = () => {

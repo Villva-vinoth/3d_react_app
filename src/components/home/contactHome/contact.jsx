@@ -23,12 +23,12 @@ const Contact = () => {
                 </div>
             </div>
             <div>
-            <div className='home-contact-container-two' data-aos='fade-down' data-aos-duration='3000'>
+            <div className='home-contact-container-two' data-aos='fade-down' data-aos-duration='300'>
                     <label>Message</label>
                     <textarea  placeholder='Enter your message'/>
                 </div>
             </div>
-            <div className='home-contact-container-three' data-aos='fade-up' data-aos-duration='3000'>
+            <div className='home-contact-container-three' data-aos='fade-up' data-aos-duration='300'>
                 <label className='home-contact-container-three-label' >All fields are required <sup className='color-red'>*</sup></label>
                 <div className='home-contact-submit-btn'>submit</div>
             </div>

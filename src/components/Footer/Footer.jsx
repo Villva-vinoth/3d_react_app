@@ -54,9 +54,8 @@ const Footer = () => {
                         089395 65425
                     </div>
                 </div>
-
                 <div className='footer-social'>
-                    <br />
+               
                     <div><img src={wa} className='footer-icons' /></div>
                     <div><img src={li} className='footer-icons' /></div>
                     <div><img src={fb} className='footer-icons' /></div>

@@ -26,6 +26,8 @@ const CaroselBenefit = () => {
         onRequestChange={setActiveSlideIndex}
         itemsToShow={1}
         itemsToScroll={1}
+        autoplay={true}
+        autoplayDelay={2000}
         forwardBtnProps={{
           style: {
             alignSelf: 'center',
@@ -69,7 +71,8 @@ const CaroselBenefit = () => {
                 // borderRadius: "50%",
                 border: 0,
                marginTop:"10px",
-               margin:"5px"
+               margin:"5px",
+               cursor:"pointer"
               }
             },
             activeItemBtnProps: {

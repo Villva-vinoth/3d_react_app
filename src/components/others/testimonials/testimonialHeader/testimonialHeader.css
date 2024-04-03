@@ -1,21 +1,24 @@
 .Testimonial-header-display {
     display: flex;
     flex-direction: column;
-    background-image: url('../../../Assets/Testimonial/testimonaislbg.png');
+    background-image: url('../../../Assets//Testimonial/testimonaislbg.png');
     background-size:cover;
     background-repeat: no-repeat;
+    gap: 30px;
 }
 
 .Testimonial-header-topic {
-    margin: 2%;
+
     display: flex;
-    flex-direction: column;
+   justify-content: center;
     width: max-content;
+    
+    padding: 4rem 0rem 0 4rem;
 
 }
 .Testimonial-header-topic h2{
     font-size: 2rem;
-    padding: 4rem 1rem 0 0;
+   
     margin: 0;
     text-align: center;
     color: white;
@@ -23,10 +26,24 @@
     text-shadow: 2px 2px 4px rgba(243, 208, 208, 0.5);
     letter-spacing: 2px;
     font-weight: bold;
+    position: relative;
+ 
+}
+.Testimonial-header-topic h2::after{
+    content: "";
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-image:url('../../../Assets/underLine.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
 }
 .Testimonial-header-topic img{
-    width: 90%;
-    padding: 0rem 1rem;
+    width: 100%;
     height: 50px;
     filter: brightness(10);
     display: block;
@@ -50,38 +67,51 @@
         font-size: 2rem;
     }
 }
-
-@media (max-width:767px) {
-    .Testimonial-header-topic h2{
+@media (max-width:768px) {
+    .Testimonial-header-topic {
         font-size: 2rem;
-        width: 100%;
-   
+    }
+}
+@media (max-width:767px) {
+    .Testimonial-header-topic {
+        padding: 1rem 0 0 0;
+    }
+    .Testimonial-header-topic h2{
+        font-size: 1.5rem;
+    }
+
+    .Testimonial-header-topic img {
+        width: 55%;
+        padding: 0 0 0 5.5rem;
     }
     .Testimonial-header-topic{
         width: 100%;
     }
     .Testimonial-header-description p{
-        font-size: 0.7rem;
+        font-size: 0.7rem ;
+        padding: 0 0;
     }
+    
 }
 
-@media (max-width:375px) {
-    .Testimonial-header-topic{ 
+/* @media (max-width:375px) {
+    .career-header-topic{ 
         width: 100%;
     }
-    .Testimonial-header-topic h2{
-        padding: 1% 0%;
+    .career-header-topic h2{
+        padding: 3% 0% 0 0;
         margin: 0;
         font-size: 1.5rem;
         width: 100%;
     }
-    .Testimonial-header-description p{
+    .career-header-description p{
         text-align: justify;
         padding: 0rem 1rem;
         font-size: 0.5rem;
     }
-    .Testimonial-header-topic img{
-        width: 90%;
+    .career-header-topic img{
+        width: 65%;
+        padding: 0 0 0 3.5rem;
     }
     
-}
+} */
