@@ -14,7 +14,7 @@
 
     font-size: 20px;    
     margin-bottom: 15px;
-    padding: 1rem; box-sizing: border-box;
+    padding: 0.5rem 1rem; box-sizing: border-box;
     display: flex;
     gap: 10px;
     align-items:center;

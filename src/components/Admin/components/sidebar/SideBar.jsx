@@ -9,7 +9,7 @@ const SideBar = () => {
     <div className='sideBar-main'>
       
       <div className='list' onClick={()=>{nav("/admin")}}> <span><FaChartBar/></span> Dashboard</div>
-      <div className='list'onClick={()=>{nav("/admin/add-products")}}> <span><MdFormatListBulletedAdd/></span> Add Products</div>
+      <div className='list'onClick={()=>{nav("/admin/products")}}> <span><MdFormatListBulletedAdd/></span> Add Products</div>
     </div>
   )
 }

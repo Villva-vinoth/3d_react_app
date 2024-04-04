@@ -4,7 +4,9 @@ import Dashboard from '../components/Dashboard/Dashboard'
 import SideBar from '../components/sidebar/SideBar'
 import './admin.css'
 import AdminHeader from '../components/Header/AdminHeader'
+import Products from '../components/AddProducts/Products'
 import AddProducts from '../components/AddProducts/AddProducts'
+
 const Admin = ({set}) => {
     useEffect(()=>{
         set(true)
@@ -17,7 +19,8 @@ const Admin = ({set}) => {
        <div className='admin-display'>
        <Routes>
             <Route path='/' element={<Dashboard />} />
-            <Route path='/add-products' element={<AddProducts/>} />
+            <Route path='/products' element={<Products/>} />
+            <Route path='/add-products' element={<AddProducts />} />
         </Routes>
        </div>
         </div>
