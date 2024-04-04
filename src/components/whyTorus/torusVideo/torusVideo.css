@@ -1,0 +1,9 @@
+.torus-video{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0rem;
+}
+.torus-video video{
+    width: 90%;
+    height: 50%;
+}

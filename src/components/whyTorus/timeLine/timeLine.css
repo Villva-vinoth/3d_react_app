@@ -1,0 +1,56 @@
+.Time-line-opacity{
+    color: grey;
+    font-size: 6rem;
+    opacity: 0.6;
+}
+.TimeLine-header{
+    width: min(100%,90%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Timeline-pic{
+    width: 20%;
+   
+}
+.TimeLine-pic img{
+    width: 100%;
+    height: 100%;
+   
+}
+.TimeLine-para{
+    text-align: justify;
+    padding: 1rem 2rem;
+    position: relative;
+}
+.TimeLine-span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0%,70%);
+    font-family: 'Imported';
+    font-size: 2rem;
+    color: white;
+    font-style: oblique;
+    -webkit-text-stroke: 3px black;
+}
+.TimeLine{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.TimeLine-container-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media (max-width:767px) {
+    .Time-line-opacity{
+        font-size: 2rem;
+    }
+    .TimeLine-para{
+        padding: 1rem 0.5rem;
+    }
+}

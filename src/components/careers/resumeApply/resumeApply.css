@@ -1,0 +1,91 @@
+.resume-apply-container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    gap: 40px;
+    padding: 1rem 3rem;
+}
+.resume-apply-cont-header{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+.resume-apply-cont-header h3{
+    font-size: 1.5rem;
+}
+.resume-apply-cont-card{
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    /* padding: 4rem; */
+    align-items: center;
+    background-image: url('../../Assets/careers/apply.png');
+    background-size:cover;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    padding: 2rem 0 1rem 0;
+    border-radius: 20px;
+    min-height: 320px;
+    color: white;
+}
+.resume-apply-first{
+    font-size: 2.5rem;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+}
+.resume-apply-btn{
+    padding:1rem 1rem;
+    margin: 3% 0;
+    width: 30%;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+}
+.resume-aply-s{
+    /* padding: 2rem 3rem; */
+    /* background-color: red; */
+    font-size: 2rem;
+    text-align: center;
+    /* margin: 0; */
+    /* padding: 0; */
+
+}
+
+@media (max-width:768px) {
+    .resume-apply-cont-card{
+        min-height: 200px;
+    }
+    .resume-apply-btn{
+        width: 45%;
+    }
+}
+@media (max-width:767px) {
+    .resume-apply-container{
+        padding: 1rem;
+        align-items: center;
+    }
+    .resume-apply-cont-header{
+        align-items: center;
+    }
+    .resume-apply-cont-header div{
+        text-align: center;
+    }
+    .resume-apply-cont-card{
+        padding: 1rem 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    .resume-apply-first{
+        font-size: 2rem;
+    }
+    .resume-aply-s{
+        font-size: 1rem;
+    }
+    .resume-apply-btn{
+        font-size: 0.75rem;
+        width: 60%;
+    }
+}

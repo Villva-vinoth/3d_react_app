@@ -1,0 +1,9 @@
+.Admin-header-container{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 2px grey;
+    font-size: 1.5rem;
+    padding: 1rem;
+    /* align-items: center; */
+}

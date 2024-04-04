@@ -1,0 +1,20 @@
+.Torus-Header{
+    /* background-color: red; */
+    background-image: url('../../Assets/Why Torus/whyTorusBg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.whytorus-header-pic{
+    object-fit: contain;
+    width: 50%;
+    padding: 5rem;
+}
+
+@media (max-width:767px) {
+    .whytorus-header-pic{
+        padding: 2rem;
+    }
+}

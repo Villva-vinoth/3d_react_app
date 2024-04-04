@@ -1,0 +1,15 @@
+.Dashboard-display{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Dashboard-components{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 2rem;
+    /* background-color: yellow; */
+    gap: 20px;
+   
+}
