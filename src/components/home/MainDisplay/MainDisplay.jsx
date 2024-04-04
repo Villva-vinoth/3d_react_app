@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './MainDisplay.css'
-import motor1 from '../../Assets/mainpageMotor.png'
+import motor1 from '../../Assets/home/motor.png'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { Parallax, ParallaxProvider, useParallax } from 'react-scroll-parallax';
