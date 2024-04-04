@@ -5,7 +5,7 @@ import DashboardComponent from './DashboardComponent/DashboardComponent'
 const Dashboard = () => {
   return (
     <div className='Dashboard-display'>
-      <AdminHeader title='Dashboard' />
+     hi
       <div className='Dashboard-components'>
         <DashboardComponent />
         <DashboardComponent />
