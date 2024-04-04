@@ -67,7 +67,7 @@ const Bussinessinfo = () => {
     }, [Bpercentage]);
 
     useEffect(() => {
-        const targetPercentage = 100;
+        const targetPercentage = 95;
         const interval = setInterval(() => {
             setCPercentage((prevPercentage) => {
                 const diff = targetPercentage - prevPercentage;
@@ -88,8 +88,8 @@ const Bussinessinfo = () => {
             <div className='Bussiness-upper' >
                 <div className='Bussiness-inner' data-aos='flip-right'>
                     <CircularProgressbar
-                        value={Bpercentage}
-                        text={`${Bpercentage}%`}
+                        value={percentage}
+                        text={`${percentage}%`}
                         styles={{
                             root: {
                                 maxWidth: '100%',
@@ -238,7 +238,7 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div className='bussiness-head'>Quick plug and play
+                        <div className='bussiness-head'>Higher Regenerative Braking
                         </div>
                         <div><pre className='bussiness-para'>Torus Axial Flux Motors boasts up to 95% regenerative capability, allowing it to
                             efficiently recover and convert kinetic energy during braking or deceleration into usable

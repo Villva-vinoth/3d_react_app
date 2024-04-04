@@ -1,0 +1,16 @@
+.admin-main-console{
+    height: 100vh;
+    overflow: hidden;
+}
+.admin-console{
+    width: 100%;
+    height: 100%;
+    display: flex;
+  
+}
+.admin-display{
+    width: 80%;
+    height: 100%;
+    background-color: #d5d5d5;
+  
+}

@@ -3,17 +3,25 @@ import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../components/Dashboard/Dashboard'
 import SideBar from '../components/sidebar/SideBar'
 import './admin.css'
+import AdminHeader from '../components/Header/AdminHeader'
+import AddProducts from '../components/AddProducts/AddProducts'
 const Admin = ({set}) => {
     useEffect(()=>{
         set(true)
     },[])
   return (
-    <div>
-        <SideBar />
-        <Routes>
+    <div className='admin-main-console'>
+        <AdminHeader  title='torus'/>
+        <div className='admin-console'>
+        <SideBar/>
+       <div className='admin-display'>
+       <Routes>
             <Route path='/' element={<Dashboard />} />
-            <Route path='/add-product' element={<Dashboard />} />
+            <Route path='/add-products' element={<AddProducts/>} />
         </Routes>
+       </div>
+        </div>
+    
     </div>
   )
 }

@@ -1,9 +1,14 @@
 .Admin-header-container{
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
+    
     box-shadow: 0 0 2px grey;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    
+    box-sizing: border-box;
     /* align-items: center; */
+}
+.Admin-header-container img{
+    width: 100px;
+    height: 40px;
 }
