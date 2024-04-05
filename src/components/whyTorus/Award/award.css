@@ -8,14 +8,19 @@
     padding: 1rem 5rem;
 }
 .award-pic{
-    width: 100% !important;
+    width: 150px !important;
+    height: 100% !important;
+    /* background-color: red */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* background-color: yellow; */
 }
 .award-pic img{
     width: 100% !important;
-    height: 150px !important;
-    object-fit: contain;
-    mix-blend-mode:color-burn;
+    height: 50% !important;
+    /* object-fit: fill;
+    mix-blend-mode:color-burn; */
 }
 .Awards-content{
     padding: 1rem 2rem;
