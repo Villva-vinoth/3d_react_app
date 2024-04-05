@@ -42,18 +42,20 @@
 .product-form textarea{
     resize: none;
 }
-.product-form-fileds{
+.product-form-field{
     display: flex;
+    gap: 20px;
  
 }
-
-.product-row
-{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
+.product-form-field > *{
+    flex: 1;
+   display: flex;
+ 
+   align-items: center;
+   justify-content: space-between;
 }
-.product-row label{
-    font-size: 18px;
+.product-rows label{
+    font-size: 20px;
 }
+
+
