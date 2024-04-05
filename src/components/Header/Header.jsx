@@ -27,19 +27,20 @@ const Header = () => {
   return (
     <div className='Header-display'>
       <picture className='header-picture'>
-        <img src={Logo} alt='' className='Header-logo' onDoubleClick={()=>handleImage()} />
+      {/* onDoubleClick={()=>handleImage()} */}
+        <img src={Logo} alt='' className='Header-logo'  />
       </picture>
       <div className='Header-inner'>
   
         <div className={`header-div ${ window.location.pathname === '/' ? `header-select-div` : `header-hide-div`}`} id='Home' onClick={() => {nav('/')}}>Home</div>
         <div className={`header-div ${ window.location.pathname === '/product' ? `header-select-div` : `header-hide-div`}`} id='Product' onClick={() => {nav('/product')}}>Product</div>
         <div className={`header-div ${window.location.pathname === '/why-torus' ? `header-select-div` : `header-hide-div`}`} id='Why Torus' onClick={() => {nav('/why-torus')}}>Why Torus?</div>
-        <div className={`header-div ${ window.location.pathname === '/careers' ? `header-select-div` : `header-hide-div`}`} id='Careers' onClick={() => ''}>Careers</div>
+        <div className={`header-div ${ window.location.pathname === '/careers' ? `header-select-div` : `header-hide-div`}`} id='Careers' onClick={() => {nav('/careers')}}>Careers</div>
         <div className={`header-div others-div-header `} id='Other' >Others
           <div className={`drop-down`}>
-            <div className={`drop-down-div ${window.location.pathname === '/gallery' ? `drop-select-div` : `header-hide-div`}`} id='gallery' onClick={() =>''}> Gallery</div>
-            <div className={`drop-down-div ${window.location.pathname === '/blog' ? `drop-select-div` : `header-hide-div`}`} id='Blog' onClick={() => ''}>Blog</div>
-            <div className={`drop-down-div ${window.location.pathname === '/testimonial' ? `drop-select-div` : `header-hide-div`}`} id='Testimonial' onClick={() => ''}>Testimonial</div>
+            <div className={`drop-down-div ${window.location.pathname === '/gallery' ? `drop-select-div` : `header-hide-div`}`} id='gallery' onClick={() =>{nav('/gallery')}}> Gallery</div>
+            <div className={`drop-down-div ${window.location.pathname === '/blog' ? `drop-select-div` : `header-hide-div`}`} id='Blog' onClick={() => {nav('/blog')}}>Blog</div>
+            <div className={`drop-down-div ${window.location.pathname === '/testimonial' ? `drop-select-div` : `header-hide-div`}`} id='Testimonial' onClick={() => {nav('/testimonial')}}>Testimonial</div>
           </div>
         </div>
         <div className={`header-div ${window.location.pathname === '/contact' ? `header-select-div` : `header-hide-div`}`} id='Contact' onClick={() => {nav('/contact')}}>Contact</div>
@@ -55,9 +56,9 @@ const Header = () => {
           <div onClick={() => { handleHambarger();nav('/careers') }} className={`header-div ${window.location.pathname === 'careers' ? `header-select-div` : `header-hide-div`}`}>Careers</div>
           {/* <div className='header-div other-div-ham'>Others */}
             {/* <div className={`ham-drop-down`}> */}
-              <div className={`header-div ${ window.location.pathname === '/gallery' ? `header-select-div` : `header-hide-div`}`} id='gallery' onClick={() => {  handleHambarger();nav('/') }}> Gallery</div>
-              <div className={`header-div ${ window.location.pathname === '/blog' ? `header-select-div` : `header-hide-div`}`} id='Blog' onClick={() => {  handleHambarger();nav('/') }}>Blog</div>
-              <div className={`header-div ${ window.location.pathname === '/testimonial' ? `header-select-div` : `header-hide-div`}`} id='Testimonial' onClick={() => {  handleHambarger();nav('/') }}>Testimonial</div>
+              <div className={`header-div ${ window.location.pathname === '/gallery' ? `header-select-div` : `header-hide-div`}`} id='gallery' onClick={() => {  handleHambarger();nav('/gallery') }}> Gallery</div>
+              <div className={`header-div ${ window.location.pathname === '/blog' ? `header-select-div` : `header-hide-div`}`} id='Blog' onClick={() => {  handleHambarger();nav('/blog') }}>Blog</div>
+              <div className={`header-div ${ window.location.pathname === '/testimonial' ? `header-select-div` : `header-hide-div`}`} id='Testimonial' onClick={() => {  handleHambarger();nav('/testimonial') }}>Testimonial</div>
             {/* </div> */}
           {/* </div> */}
 
