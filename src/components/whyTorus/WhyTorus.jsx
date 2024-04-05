@@ -17,7 +17,8 @@ const WhyTorus = () => {
         <TorusVideo />
         <TorusContent />
         {/* <Journey /> */}
-        <TimeLine />
+        {/* <TimeLine /> */}
+        
         <TorusAward />
     </div>
   )

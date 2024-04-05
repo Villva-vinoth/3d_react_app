@@ -119,7 +119,7 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
                   <input type='text' placeholder='Enter Your Email' />
                   <label>comment ( If Any )<span><sup>*</sup></span></label>
                   <textarea type='text' placeholder='Write Your Comments' className='popup-comments' />
-                  <span className='color-red'> All fields are required*</span>
+                  {/* <span className='color-red'> All fields are required*</span> */}
 
                 </div>
                 <div className='popup-actions'>

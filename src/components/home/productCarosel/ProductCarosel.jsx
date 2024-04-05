@@ -91,7 +91,7 @@ const ProductCarosel = () => {
                     {
                       item.ul.map((items, indexes) => {
                         return (
-                          <li  key={indexes}><span ><PiStarFourFill color='black' id="star-icon" /></span>{items}</li>
+                          <li  key={indexes}><span ><PiStarFourFill color='black' id="star-icon" size={12}/></span>{items}</li>
                         )
                       })
                     }

@@ -14,7 +14,7 @@ const Blogs = () => {
         {   
             id:1,
             img: image1,
-            month: "jan",
+            month: "JAN",
             day: "08",
             topic: "Lorem Ipsum is simply dummy text of the printing.",
             describe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook a galley of type dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook...."
@@ -23,7 +23,7 @@ const Blogs = () => {
         {
             id:2,
             img: image2,
-            month: "jan",
+            month: "JAN",
             day: "08",
             topic: "Lorem Ipsum is simply dummy text of the printing.",
             describe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook a galley of type dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook...."
@@ -31,7 +31,7 @@ const Blogs = () => {
         {
             id:3,
             img: image3,
-            month: "jan",
+            month: "JAN",
             day: "08",
             topic: "Lorem Ipsum is simply dummy text of the printing.",
             describe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook a galley of type dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook...."

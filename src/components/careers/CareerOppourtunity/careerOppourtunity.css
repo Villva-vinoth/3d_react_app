@@ -13,6 +13,7 @@
 }
 .career-opportunity-header h3{
     font-size: 1.5rem;
+    text-transform: uppercase;
 }
 .career-discussion-content{
     display: grid;

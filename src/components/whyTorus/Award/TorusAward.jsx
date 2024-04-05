@@ -87,7 +87,7 @@ const TorusAward = () => {
   };
   return (
     <div className='Award-display'>
-      <h2 >Awards & RECOGNITION </h2>
+      <h2 >AWARDS & RECOGNITION </h2>
       <div className='Awards-content'>
         <Slider {...settings}>
           {
