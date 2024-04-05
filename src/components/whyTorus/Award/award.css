@@ -9,7 +9,7 @@
 }
 .award-pic{
     width: 150px !important;
-    height: 100% !important;
+    height: 150px !important;
     /* background-color: red */
     display: flex;
     align-items: center;
@@ -18,9 +18,9 @@
 }
 .award-pic img{
     width: 100% !important;
-    height: 50% !important;
-    /* object-fit: fill;
-    mix-blend-mode:color-burn; */
+    height: 100% !important;
+    object-fit: contain;
+    mix-blend-mode:color-burn;
 }
 .Awards-content{
     padding: 1rem 2rem;

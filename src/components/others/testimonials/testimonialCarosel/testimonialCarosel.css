@@ -12,6 +12,7 @@
     text-align: left;
     padding: 1rem 3rem;
     font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 .carosel-testimonial-container{
@@ -35,7 +36,7 @@
 .carosel-testimonial-para{
     padding: 0rem 4rem;
     color: rgb(177, 173, 173);
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 .quote-icons{
     width: 60px !important;
@@ -44,6 +45,7 @@
 .carosel-testimonial-container h4{
     color: rgb(167, 164, 164);
     font-size: 1.5rem;
+    text-transform: uppercase;
 }
 @media (max-width:768px) {
     .testimonial-h2{
