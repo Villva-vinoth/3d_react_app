@@ -19,10 +19,10 @@ const TimeLine = () => {
                         return (
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
-                                contentStyle={{ background: 'grey', color: 'black' }}
-                                contentArrowStyle={{ borderRight: '7px solid  grey' }}
+                                contentStyle={{ background: 'rgb(230, 230, 230)', color: 'black',  boxShadow: "10px 10px 10px grey" }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(230, 230, 230)' }}
                                 date={item.date}
-                                iconStyle={{ background: 'grey', color: '#fff' }}
+                                iconStyle={{ background: 'rgb(230, 230, 230)', color: 'black' }}
                                 icon={<FaStar />}
                             >
                                 <div className='TimeLine-container-cont'>
@@ -31,7 +31,9 @@ const TimeLine = () => {
                                     </div>
                                     <div className='TimeLine-para'>
                                        {item.describe}
-                                        <span className='TimeLine-span'>{item.date}</span>
+                                    </div>
+                                    <div className='TimeLine-Date'>
+                                    <span className='TimeLine-span'>{item.date}</span>
                                     </div>
                                 </div>
                             </VerticalTimelineElement>

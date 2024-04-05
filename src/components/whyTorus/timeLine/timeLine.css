@@ -9,13 +9,16 @@
     align-items: center;
     justify-content: space-between;
 }
-.Timeline-pic{
-    width: 20%;
+.TimeLine-pic{
+    width: 100%;
+    height:250px;
+    background-color: red;
    
 }
 .TimeLine-pic img{
     width: 100%;
     height: 100%;
+    object-fit: fill;
    
 }
 .TimeLine-para{
@@ -24,26 +27,29 @@
     position: relative;
 }
 .TimeLine-span{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translate(0%,70%);
-    font-family: 'Imported';
+ 
+    font-family: 'calibri';
     font-size: 2rem;
-    color: white;
+    color: transparent;
     font-style: oblique;
-    -webkit-text-stroke: 3px black;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    
+}
+.TimeLine-Date{
+    padding: 0rem 2rem;
 }
 .TimeLine{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 .TimeLine-container-cont{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-evenly;
+  
 }
 
 @media (max-width:767px) {

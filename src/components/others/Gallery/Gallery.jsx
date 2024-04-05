@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSwiper } from 'swiper/react';
 import "./gallery.css"
@@ -11,6 +11,10 @@ import { gallery ,celebration } from './galleryData';
 import Scroll from './Celebration';
 
 const Gallery = () => {
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+      }, [])
     // const swiper = useSwiper();
     const [contentToRender,setContentToRender]=useState(<Scroll title='celebration' data={celebration}/>)
     const SlideRef = useRef()
