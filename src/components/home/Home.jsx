@@ -20,6 +20,11 @@ const Home = ({set}) => {
   useEffect(()=>{
     set(false)
   },[])
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, [])
   return (
     <ParallaxProvider>  
         <div className='Home-display'>

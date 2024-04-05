@@ -28,7 +28,8 @@
 }
 @media (max-width:768px) {
     .carosel-benefit-container{
-        min-width:300px;
+        width:100%;
+        margin-inline: auto;
     
     }
     .carsel-benefit-header{
@@ -45,7 +46,8 @@
 
 @media (max-width:767px) {
     .carosel-benefit-container{
-        min-width: 250px;
+         min-width: 300px;
+         margin-inline: auto;
         /* background-color: yellow; */
         /* background-color: aqua; */
     }

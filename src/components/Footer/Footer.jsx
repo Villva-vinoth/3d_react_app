@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressCard, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
@@ -8,8 +8,11 @@ import li from '../Assets/footer/image 2.png'
 import fb from '../Assets/footer/image 3.png'
 import insta from '../Assets/footer/image 4.png'
 import footerImage from '../Assets/footer/Group 92.png'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+    const nav =useNavigate()
+  
     return (
         <div className='footer-display'>
 
@@ -19,12 +22,12 @@ const Footer = () => {
                     {/* <img src={footerImage} alt='' className='' /> */}
                 </picture>
                 <div className='footer-menu'>
-                <div ><label className='footer-po'> Home </label></div>
-                <div> <label className='footer-po'>Products</label></div>
-                <div><label className='footer-po'>WhyTorus?</label></div>
-                <div><label className='footer-po'>Gallery</label></div>
-                <div><label className='footer-po'>Blogs</label></div>
-                <div><label className='footer-po'>Testimonials</label></div>
+                <div ><label className='footer-po' onClick={()=>nav('/')}> Home </label></div>
+                <div> <label className='footer-po' onClick={()=>nav('/product')}>Products</label></div>
+                <div><label className='footer-po' onClick={()=>nav('/why-torus')}>WhyTorus?</label></div>
+                <div><label className='footer-po'onClick={()=>nav('/gallery')}>Gallery</label></div>
+                <div><label className='footer-po' onClick={()=>nav('/blogs')}>Blogs</label></div>
+                <div><label className='footer-po' onClick={()=>nav('/testimonials')}>Testimonials</label></div>
                 </div>
             </div>
             <div className='footer-content-2'>

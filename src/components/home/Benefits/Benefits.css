@@ -27,6 +27,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -144,5 +145,9 @@
     .Benefit-product-img{
         /* width: 200px;
         height: 200px; */
+    }
+    .benefit-bg-pic{
+        /* display: none; */
+        
     }
   }

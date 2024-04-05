@@ -2,6 +2,8 @@ import image1 from '../../Assets/Why Torus/timeLine/2012-jan.jpeg'
 import image2 from '../../Assets/Why Torus/timeLine/2019-jan.png'
 import image3 from '../../Assets/Why Torus/timeLine/2020-jan.png'
 import image4 from '../../Assets/Why Torus/timeLine/2024-jan.jpeg'
+import image5 from '../../Assets/Why Torus/timeLine/2020-2.jpeg'
+
 const TimeLineData =[
     {
         img:image4,

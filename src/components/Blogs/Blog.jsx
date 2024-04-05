@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Blog.css'
 import BlogView from "./BlogView/BlogView";
 import BlogHeader from "./BlogHeader/BlogHeader";
@@ -8,6 +8,7 @@ import image3 from '../Assets/blogs/Rectangle 38 (2).png'
 import { Route, Routes } from "react-router-dom";
 import BlogDetail from "./BlogView/Blogdetail/BlogDetail";
 const Blogs = () => {
+
 
     const data = [
         {   
@@ -36,6 +37,11 @@ const Blogs = () => {
             describe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook a galley of type dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ook...."
         }
     ]
+
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+      }, [])
 
     return (
         <div className="blogs-content-parent">
