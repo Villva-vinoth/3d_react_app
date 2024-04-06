@@ -33,7 +33,7 @@ const Home = ({set}) => {
       <div ><Bussinessinfo /></div>
       <div ><Benefits /></div>
       <div ><ProductCarosel /></div>
-      <div > <Contact /></div>
+      <div > <Contact  data-aos="fade-up" data-aos-anchor-placement="top-bottom" /></div>
     </div> 
     </ParallaxProvider>
 

@@ -3,7 +3,7 @@ import './WhyTorus.css'
 const WhyTorus = () => {
     return (
         <div className='WhyTorus-container'>
-            <h2>why choose Torus?</h2>
+            <h2 className='heading'>why choose Torus?</h2>
             <div className='why-torus-content-container'>
                 <div className='why-torus-content'>
                     <h2>Innovation at the Core</h2>

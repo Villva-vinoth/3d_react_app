@@ -78,15 +78,15 @@ const ProductCarosel = () => {
         {
           data.map((item, index) => {
             return (
-              <div className='product-carosel-container' key={index}>
-                <div className='product-carosel-container-picture' data-aos='zoom-in-left'>
+              <div className='product-carosel-container' key={index}  data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div className='product-carosel-container-picture' >
 
                   <img src={item.img} alt='' />
 
                 </div>
-                <h3 data-aos='zoom-in-down'>{item.name}</h3>
+                <h3  >{item.name}</h3>
                 <div className='product-carosel-in-details'>
-                  <ul data-aos='zoom-in-up'>
+                  <ul >
 
                     {
                       item.ul.map((items, indexes) => {
