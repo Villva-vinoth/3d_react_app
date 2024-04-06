@@ -6,6 +6,7 @@ import TorusContent from './torusContents/TorusContent'
 import TorusAward from './Award/TorusAward'
 import Journey from './journey/Journey'
 import TimeLine from './timeLine/TimeLine'
+import TimeSheet from './TimeSheet/TimeSheet'
 const WhyTorus = () => {
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -18,7 +19,7 @@ const WhyTorus = () => {
         <TorusContent />
         {/* <Journey /> */}
         {/* <TimeLine /> */}
-        
+        <TimeSheet />
         <TorusAward />
     </div>
   )

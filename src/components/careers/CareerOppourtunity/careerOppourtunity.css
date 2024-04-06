@@ -13,7 +13,7 @@
 }
 .career-opportunity-header h3{
     font-size: 1.5rem;
-    text-transform: uppercase;
+   
 }
 .career-discussion-content{
     display: grid;
@@ -34,6 +34,9 @@
 }
 .career-opt-card-header{
     font-size: 1rem;
+}
+.career-opt-card-header h3{
+    text-transform: uppercase;
 }
 .career-opt-card-para{
     text-align: center;

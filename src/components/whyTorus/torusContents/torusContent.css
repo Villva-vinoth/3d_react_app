@@ -9,6 +9,8 @@
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
 }
 .torus-content-con h2{
     /* margin: ; */
@@ -18,16 +20,18 @@
 .torus-content-con p{
     text-align: justify;
     padding: 1rem 0.5rem 0 0;
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: grey;
 }
 
 .torus-content-pic{
     flex-basis: 50%;
+    
 }
 .torus-content-pic img{
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: fill;
 }
 
 @media (max-width:768px) {

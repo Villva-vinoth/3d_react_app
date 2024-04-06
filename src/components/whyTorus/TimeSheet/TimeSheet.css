@@ -1,0 +1,136 @@
+.TimeSheet-cont{
+    display: flex;
+    width: min(100%,90%);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+}
+.TimeSheet-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Timesheet-op{
+    opacity: 0.6;
+    color: grey;
+    font-size: 6rem;
+}
+.Timesheet-display{
+    display: flex;
+}
+.TimeSheet-time-Cont{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 20%;
+    align-items: center;
+}
+
+.time-cont{
+    font-size: 1.5rem;
+    color: grey;
+    cursor: pointer;
+    padding: 0.5rem 0;
+
+}
+
+.Time_active{
+    font-size: 2rem;
+    color: black;
+}
+
+.TimeSheet-cont-2{
+    padding: 0 2rem 2rem 2rem;
+    box-sizing: border-box;
+}
+
+.timeSheet-timeLine-cont{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    align-items: center;
+    padding: 1rem;
+}
+.timeSheet-timeLine-cont-rev{
+    display: flex;
+    flex-direction: row-reverse;
+    gap:30px;
+    align-items: center;
+    padding: 1rem;
+}
+
+.timeSheet-img{
+    margin: auto;
+    width: 50%;
+    height: 100%;
+
+ 
+}
+.timeSheet-img img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: ; */
+    border-radius: 20px;
+
+}
+.timesheet-content-2{
+    width: 50%;
+}
+.timesheet-date{
+    font-size: 2rem;
+    color: white;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+.timeSheet-para{
+    /* padding: 0;
+    margin: 0; */
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    .Timesheet-op{
+        font-size: 4rem;
+    }
+    .timeSheet-timeLine-cont{
+        flex-direction: column;
+    }
+    .timeSheet-img{
+        width: 100%;
+    }
+    .timesheet-content-2{
+        width: 100%;
+    }
+    .timeSheet-timeLine-cont-rev{
+        flex-direction: column;
+    }
+
+}
+@media (max-width:767px){
+    .Timesheet-op{
+        font-size: 3rem;
+    }
+    /* .TimeSheet-time-Cont{
+        flex-direction: row;
+    } */
+    .timeSheet-timeLine-cont{
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+    .timeSheet-img{
+        width: 100%;
+    }
+    .timesheet-content-2{
+        width: 100%;
+    }
+    .timeSheet-timeLine-cont-rev{
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+    .timeSheet-para{
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+    }
+    .TimeSheet-cont-2{
+        padding: 0 0.5rem 0 0.5rem;
+    }
+}
