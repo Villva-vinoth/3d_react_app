@@ -33,7 +33,7 @@ const MainDisplay = () => {
             <div className='mainDisplay-innerContent'>
                 <div><label className='mainDisplay-topic' data-aos='fade-up'>AXIAL FLUX <br className='break-tag' /> MOTOR </label></div>
                 <div className='mainDisplay-subtopic' data-aos='zoom-in'><h4>WHERE SPEED, RANGE AND AFFORDABILITY MEETS</h4></div>
-                <div><p className='main-display-para' data-aos='zoom-out'>The world is moving towards sustainability. Efficient and Intelligent motors
+                <div><p className='main-display-para' data-aos='zoom-out'>The world is moving towards sustainability, efficient and intelligent motors
                     will be at the heart of this transition powering everything from our vehicles
                     to industries and appliances.</p></div>
             </div>
