@@ -50,6 +50,7 @@
 @media (max-width:768px) {
     .mainDisplay-display{
         padding: 0;
+        height: auto;
     }
     .mainDisplay-topic{
         font-size: 3rem;

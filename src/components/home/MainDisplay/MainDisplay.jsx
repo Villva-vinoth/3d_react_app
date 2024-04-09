@@ -14,10 +14,11 @@ const MainDisplay = () => {
             delay: 100
         })
     })
-
     const parallax = useParallax({
-        scale: [0.7,1.2,"easeInQuad"],
+        scale: [0.7,1,"easeInQuad"],
       });
+
+
 
   
     return (
