@@ -4,9 +4,10 @@
     justify-content: center;
     background-image: url('../../Assets/home/mainBg.png');
     background-repeat: no-repeat;
+   
     padding: 5rem 0rem;
     background-size: cover;
-    height: 100vh;
+    height: auto;
 
 }
 .main-display-para{
@@ -44,7 +45,7 @@
     -webkit-text-fill-color: transparent;
 }
 .mainDisplay-subtopic{
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 @media (max-width:768px) {

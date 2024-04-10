@@ -6,9 +6,6 @@
 
 .Product-content-picture{
     flex-basis: 50%;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 .Product-content-picture img{
     width: 90%;

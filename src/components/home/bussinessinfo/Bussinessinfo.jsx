@@ -6,15 +6,15 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 const Bussinessinfo = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         Aos.init({
             duration: 600,
             // easing:"ease",
-            delay:100
-          })
+            delay: 100
+        })
     })
 
-    const bussinessRef =useRef(null)
+    const bussinessRef = useRef(null)
 
     const [percentage, setPercentage] = useState(0);
     const [Apercentage, setAPercentage] = useState(0);
@@ -122,11 +122,14 @@ const Bussinessinfo = () => {
     }, [Cpercentage]);
 
     return (
-        <div className='Bussiness-display'  ref={bussinessRef}>
+        <div className='Bussiness-display' ref={bussinessRef}>
             <div className='Bussiness-header' data-aos='fade-in'><h2>Advantages by choosing us
             </h2></div>
             <div className='Bussiness-upper' >
-                <div className='Bussiness-inner' data-aos='flip-right'>
+                <div className='Bussiness-inner' data-aos="fade-down"
+                    // data-aos-easing="linear"
+                    // data-aos-duration="1500"
+                    >
                     <CircularProgressbar
                         value={percentage}
                         text={`${percentage}%`}
@@ -167,7 +170,9 @@ const Bussinessinfo = () => {
                     </div>
                 </div>
 
-                <div className='Bussiness-inner' data-aos='flip-left' >
+                <div className='Bussiness-inner' data-aos="fade-up"
+                    // data-aos-anchor-placement="center-center"
+                    >
                     <CircularProgressbar
                         value={Apercentage}
                         text={`${Apercentage}%`}
@@ -206,7 +211,10 @@ const Bussinessinfo = () => {
                             thus ensuring affordability and sustainability.</pre></div>
                     </div>
                 </div>
-                <div className='Bussiness-inner' data-aos='flip-up' >
+                <div className='Bussiness-inner' data-aos="fade-down"
+                    // data-aos-easing="linear"
+                    // data-aos-duration="1500"
+                    >
                     <CircularProgressbar
                         value={Bpercentage}
                         text={`${Bpercentage}%`}
@@ -246,7 +254,10 @@ const Bussinessinfo = () => {
                             without compromising performance.</pre></div>
                     </div>
                 </div>
-                <div className='Bussiness-inner' data-aos='flip-down' >
+                <div className='Bussiness-inner' data-aos="fade-up"
+                //   data-aos-easing="linear"
+                //   data-aos-duration="1500"
+                  >
                     <CircularProgressbar
                         value={Cpercentage}
                         text={`${Cpercentage}%`}

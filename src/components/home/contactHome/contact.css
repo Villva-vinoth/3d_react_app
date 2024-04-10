@@ -89,7 +89,7 @@
         width: 80%;
     }
     .home-contact-container-two textarea{
-        width: 90%;
+        width: 95%;
     }
     .home-contact-submit-btn{
         width: 10%;
@@ -100,7 +100,7 @@
         padding: 0 0;
     }
     .home-contact-content input{
-        width: 100%;
+        width: 85%;
         font-size: 1rem;
     }
     .home-contact-container-two textarea{
@@ -113,6 +113,7 @@
     }
     .home-contact-us-display-form{
         gap: 10px;
+        padding: 1rem 2rem;
     }
     .home-contact-container-three{
         width: 100%;

@@ -4,6 +4,7 @@
     margin-inline: auto;
     display: flex;
     flex-direction: column;
+    
 }
 .TimeSheet-header{
     display: flex;
@@ -21,9 +22,9 @@
 .TimeSheet-time-Cont{
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
-    width: 20%;
+    width: 10%;
     align-items: center;
+    /* background-color: yellow; */
 }
 
 .time-cont{
@@ -31,6 +32,7 @@
     color: grey;
     cursor: pointer;
     padding: 0.5rem 0;
+    /* background-color: red; */
 
 }
 
@@ -40,8 +42,10 @@
 }
 
 .TimeSheet-cont-2{
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 1rem 2rem 1rem;
     box-sizing: border-box;
+    width: 100%;
+    /* background-color: red; */
 }
 
 .timeSheet-timeLine-cont{
@@ -62,14 +66,15 @@
 .timeSheet-img{
     margin: auto;
     width: 50%;
-    height: 100%;
-
+    height: 50%;
+    /* background-color: red; */
  
 }
 .timeSheet-img img{
     width: 100%;
     height: 100%;
-    /* object-fit: ; */
+    aspect-ratio:2/1.4;
+    /* object-fit: cover; */
     border-radius: 20px;
 
 }
@@ -82,8 +87,8 @@
     -webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .timeSheet-para{
-    /* padding: 0;
-    margin: 0; */
+    padding: 0.5rem 0;
+    margin: 0;
 }
 
 @media (min-width:768px) and (max-width:1024px) {
@@ -105,6 +110,15 @@
 
 }
 @media (max-width:767px){
+    .TimeSheet-time-Cont{
+        width: 25%;
+    }
+
+    .TimeSheet-cont-2{
+        width: 80%;
+        /* background-color: red; */
+    }
+
     .Timesheet-op{
         font-size: 3rem;
     }
@@ -114,6 +128,7 @@
     .timeSheet-timeLine-cont{
         flex-direction: column;
         padding: 0.5rem 0;
+       
     }
     .timeSheet-img{
         width: 100%;
