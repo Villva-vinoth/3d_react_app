@@ -54,10 +54,10 @@ const TimeSheet = () => {
               datas.ul && datas.ul.map((itm) => {
                 return (
                   <div className={itm.even == 0 ? 'timeSheet-timeLine-cont animation-timesheet' : 'timeSheet-timeLine-cont-rev'}
-                    data-aos="fade-right"
-                    data-aos-offset="300"
-                    data-aos-duration="2000"
-                    data-aos-easing="ease-in-sine"
+                    // data-aos="fade-right"
+                    // data-aos-offset="300"
+                    // data-aos-duration="2000"
+                    // data-aos-easing="ease-in-sine"
                   >
                     <div className='timeSheet-img'>
                       <img src={itm.img} alt='' />
