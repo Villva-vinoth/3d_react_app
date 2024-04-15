@@ -56,6 +56,8 @@
     display: flex;
     padding: 1rem 3rem;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-form picture {
@@ -74,8 +76,8 @@
     flex-basis: 40%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+ 
+
     /* background-color: red; */
     gap: 10px;
 }
