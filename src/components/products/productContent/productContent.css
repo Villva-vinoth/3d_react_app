@@ -17,6 +17,9 @@
     flex-basis: 50%;
     /* height: 100%; */
     padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .product-content-container h1{
     margin: 0rem;
@@ -37,14 +40,14 @@
     /* font-size: 1rem; */
     padding: 0.2rem ;
     margin: 0rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 .product-content-container-one h5{
     padding: 0.2rem;
     margin: 0.5rem 0;
     color: grey;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .product-content-btn-div{

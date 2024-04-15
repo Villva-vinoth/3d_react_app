@@ -24,7 +24,7 @@ const Footer = () => {
                 <div className='footer-menu'>
                 <div ><label className='footer-po' onClick={()=>nav('/')}> Home </label></div>
                 <div> <label className='footer-po' onClick={()=>nav('/product')}>Products</label></div>
-                <div><label className='footer-po' onClick={()=>nav('/why-torus')}>WhyTorus?</label></div>
+                <div><label className='footer-po' onClick={()=>nav('/why-torus')}>Why Torus?</label></div>
                 <div><label className='footer-po'onClick={()=>nav('/gallery')}>Gallery</label></div>
                 <div><label className='footer-po' onClick={()=>nav('/blogs')}>Blogs</label></div>
                 <div><label className='footer-po' onClick={()=>nav('/testimonials')}>Testimonials</label></div>

@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Arrow from "../../Assets/arrow.png"
 import { Navigation, Pagination } from 'swiper/modules';
-import { gallery ,celebration } from './galleryData';
+import { gallery ,celebration,Teams ,motor } from './galleryData';
 import Scroll from './Celebration';
 
 const Gallery = () => {
@@ -35,17 +35,17 @@ const Gallery = () => {
         if(change=="MOTORS")
         {
             
-            setContentToRender(<Scroll title='motors' data={celebration}/>)
+            setContentToRender(<Scroll title='motors' data={motor}/>)
         }
         if(change=="TEAMS")
         {
             
-            setContentToRender(<Scroll title='TEAMS' data={[]}/>)
+            setContentToRender(<Scroll title='TEAMS' data={Teams}/>)
         }
         if(change=="EVENTS")
         {
             
-            setContentToRender(<Scroll title='EVENTS' data={celebration}/>)
+            setContentToRender(<Scroll title='EVENTS' data={[]}/>)
         }
 
     }

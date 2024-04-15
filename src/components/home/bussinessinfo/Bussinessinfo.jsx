@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Bussinessinfo.css'
@@ -6,19 +6,48 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 const Bussinessinfo = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         Aos.init({
             duration: 600,
             // easing:"ease",
-            delay:100
-          })
+            delay: 100
+        })
     })
+
+    const bussinessRef = useRef(null)
 
     const [percentage, setPercentage] = useState(0);
     const [Apercentage, setAPercentage] = useState(0);
 
     const [Bpercentage, setBPercentage] = useState(0);
     const [Cpercentage, setCPercentage] = useState(0);
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setPercentage(0);
+                    setAPercentage(0);
+                    setBPercentage(0);
+                    setCPercentage(0);
+                }
+            },
+            {
+                threshold: 0.5
+            }
+        );
+
+        if (bussinessRef.current) {
+            observer.observe(bussinessRef.current);
+        }
+
+        return () => {
+            if (bussinessRef.current) {
+                observer.unobserve(bussinessRef.current);
+            }
+        };
+    }, []);
 
 
     useEffect(() => {
@@ -66,6 +95,17 @@ const Bussinessinfo = () => {
         return () => clearInterval(interval);
     }, [Bpercentage]);
 
+
+    // useEffect(() => {
+    //     let interval;
+    //     if (Cpercentage < 95) {
+    //         interval = setInterval(() => {
+    //             setCPercentage(prevPercentage => prevPercentage + 1);
+    //         }, 20);
+    //     }
+    //     return () => clearInterval(interval);
+    // }, [Cpercentage]);
+
     useEffect(() => {
         const targetPercentage = 95;
         const interval = setInterval(() => {
@@ -82,17 +122,20 @@ const Bussinessinfo = () => {
     }, [Cpercentage]);
 
     return (
-        <div className='Bussiness-display'>
+        <div className='Bussiness-display' ref={bussinessRef}>
             <div className='Bussiness-header' data-aos='fade-in'><h2>Advantages by choosing us
             </h2></div>
             <div className='Bussiness-upper' >
-                <div className='Bussiness-inner' data-aos='flip-right'>
+                <div className='Bussiness-inner' data-aos="fade-down"
+                    // data-aos-easing="linear"
+                    // data-aos-duration="1500"
+                    >
                     <CircularProgressbar
                         value={percentage}
                         text={`${percentage}%`}
                         styles={{
                             root: {
-                                maxWidth: '100%',
+                                // maxWidth: '100%',
                                 width: '100%',
                                 height: 'auto',
                                 maxWidth: '130px',
@@ -118,7 +161,7 @@ const Bussinessinfo = () => {
                         }}
                     />
                     <div>
-                        <div className='bussiness-head'>More Efficient range
+                        <div className='bussiness-head' >More Efficient range
                         </div>
                         <div><pre className='bussiness-para'>Torus Axial Flux Motors achieves 15% higher range because of the minimal energy
                             losses incurred during the operation, setting new standards in electric motor
@@ -127,13 +170,15 @@ const Bussinessinfo = () => {
                     </div>
                 </div>
 
-                <div className='Bussiness-inner' data-aos='flip-left'>
+                <div className='Bussiness-inner' data-aos="fade-up"
+                    // data-aos-anchor-placement="center-center"
+                    >
                     <CircularProgressbar
                         value={Apercentage}
                         text={`${Apercentage}%`}
                         styles={{
                             root: {
-                                maxWidth: '100%',
+                                // maxWidth: '100%',
                                 width: '100%',
                                 height: 'auto',
                                 maxWidth: '130px',
@@ -166,13 +211,16 @@ const Bussinessinfo = () => {
                             thus ensuring affordability and sustainability.</pre></div>
                     </div>
                 </div>
-                <div className='Bussiness-inner' data-aos='flip-right'>
+                <div className='Bussiness-inner' data-aos="fade-down"
+                    // data-aos-easing="linear"
+                    // data-aos-duration="1500"
+                    >
                     <CircularProgressbar
                         value={Bpercentage}
                         text={`${Bpercentage}%`}
                         styles={{
                             root: {
-                                maxWidth: '100%',
+                                // maxWidth: '100%',
                                 width: '100%',
                                 height: 'auto',
                                 maxWidth: '130px',
@@ -206,13 +254,16 @@ const Bussinessinfo = () => {
                             without compromising performance.</pre></div>
                     </div>
                 </div>
-                <div className='Bussiness-inner' data-aos='flip-left'>
+                <div className='Bussiness-inner' data-aos="fade-up"
+                //   data-aos-easing="linear"
+                //   data-aos-duration="1500"
+                  >
                     <CircularProgressbar
                         value={Cpercentage}
                         text={`${Cpercentage}%`}
                         styles={{
                             root: {
-                                maxWidth: '100%',
+                                // maxWidth: '100%',
                                 width: '100%',
                                 height: 'auto',
                                 maxWidth: '130px',
@@ -255,3 +306,10 @@ const Bussinessinfo = () => {
 }
 
 export default Bussinessinfo
+
+
+
+
+
+
+

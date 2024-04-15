@@ -31,5 +31,6 @@ const gallery = [
 ]
 
 const celebration = [celebration1,celebration2,celebration3,celebration4,celebration5,celebration6,celebration7]
-
-export { gallery,celebration }
+const Teams = [image2]
+const motor =[image3]
+export { gallery,celebration,Teams,motor }
