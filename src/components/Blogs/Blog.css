@@ -7,6 +7,7 @@
     background-color: rgb(255, 255, 255);
     display: flex;
     padding: 1rem 2.5rem;
+    gap: 20px;
     /* background-color: red; */
     /* height: 50vh; */
 }
@@ -39,34 +40,42 @@
 .blogs-content-container h1 {
     margin: 0rem;
     padding: 0rem;
-    color: gray;
+    color:#aaaaaa;
+    font-weight: 400;
 }
 
 .color-grey {
-    color: gray;
+    color: #aaaaaa;
 }
 
 .color-black {
     color: #000000 !important;
+    font-size: 3.25rem;
 }
 
 .blogs-content-container h3 {
     margin: 0rem;
     padding: 0rem;
     margin-top: 30px;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: rgb(19, 19, 19);
 }
 
 .blogs-content-container p {
     text-align: justify;
+
 }
 .blog-btn{
     margin-top: 1%;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid rgb(158, 155, 155);
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
     border-radius: 5px;
-    box-shadow: 0 0 2px grey;
+    box-shadow: 0 0 2px rgb(128, 128, 128);
     width: max-content;
-    font-size: 0.75rem;
+    font-size: 1rem;
+    color: #555555;
+    cursor: pointer;
 }
 
 @media (max-width:768px) {

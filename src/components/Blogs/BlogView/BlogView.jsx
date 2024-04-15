@@ -19,7 +19,7 @@ const BlogView = ({id,img,month,day,topic,describe}) => {
                 <h1 className="color-black blogs-content-container-h1">{day}</h1>
                 <h3>{topic}</h3>
 
-                <p>{describe}</p>
+                <p className='color-grey'>{describe}</p>
                 <div className='blog-btn' onClick={()=>handleClick(id)}>Read More</div>
             </div>
         </div>

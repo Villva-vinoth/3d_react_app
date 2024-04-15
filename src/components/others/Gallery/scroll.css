@@ -6,12 +6,12 @@
 }
 .scroll-title{
     font-size: 8rem;
-    letter-spacing: 10px;
+    letter-spacing:30px;
     /* background-color: aliceblue; */
     margin: 0 0;
     padding: 0 0;
     text-align: center;
-    color: grey;
+    color: #eaeaea;
     text-transform: uppercase;
 }
 .scroll-pic{
@@ -25,6 +25,7 @@
     }
     .scroll-title{
         font-size: 6rem;
+        letter-spacing: 10px;
     }
     /* .scroll-thumb{
         background-color: red;
