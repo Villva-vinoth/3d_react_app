@@ -5,6 +5,7 @@
     /* background-image: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab); */
     background-image: url("../../Assets/loginBg.jpg");
    
+
     animation: animateColor 12s ease-in-out infinite;
 }
 @keyframes animateColor{

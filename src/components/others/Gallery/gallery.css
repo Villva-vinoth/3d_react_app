@@ -3,7 +3,7 @@
     box-sizing: border-box;
  }
  .gallery-wrapper{
-     width: min(95%,75.5rem);
+     width: min(95%,80.5rem);
      margin-inline: auto;
      position: relative;
  }

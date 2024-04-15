@@ -9,6 +9,7 @@
     /* align-items: center; */
 }
 .Admin-header-container img{
-    width: 100px;
+    width: 200px;
     height: 40px;
+    object-fit: contain;
 }

@@ -6,6 +6,8 @@ import './admin.css'
 import AdminHeader from '../components/Header/AdminHeader'
 import Products from '../components/AddProducts/Products'
 import AddProducts from '../components/AddProducts/AddProducts'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Admin = ({set}) => {
     useEffect(()=>{
@@ -13,6 +15,9 @@ const Admin = ({set}) => {
     },[])
   return (
     <div className='admin-main-console'>
+      <ToastContainer
+      
+      />
         <AdminHeader  title='torus'/>
         <div className='admin-console'>
         <SideBar/>
@@ -24,7 +29,7 @@ const Admin = ({set}) => {
         </Routes>
        </div>
         </div>
-    
+      
     </div>
   )
 }

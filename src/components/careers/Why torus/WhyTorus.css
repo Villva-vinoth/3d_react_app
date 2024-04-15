@@ -6,7 +6,7 @@
 .WhyTorus-container{
     display: flex;
     flex-direction: column;
-    width: min(96%,80.5rem);
+    width: min(96%,85.5rem);
     margin-inline:auto ;
 }
 .heading{

@@ -1,6 +1,6 @@
 .admin-main-console{
     height: 100vh;
-
+ overflow: hidden;
 
 }
 .admin-console{
@@ -11,8 +11,8 @@
 }
 .admin-display{
     width: 80%;
-   height: 100%;
-     background-color: #d5d5d5;
+    height: 100%;
+    background-color: #d5d5d5;
     overflow-y: auto;
    
 }

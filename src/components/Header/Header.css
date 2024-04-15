@@ -78,13 +78,9 @@
 }
 
 .drop-select-div {
-
-
     border-radius: 1px;
     color: black;
     transform: scale(1.1);
-
-
 }
 
 .drop-select-div::after {

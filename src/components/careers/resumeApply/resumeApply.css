@@ -3,7 +3,9 @@
     flex-direction: column;
     /* background-color: red; */
     gap: 40px;
-    padding: 1rem 3rem;
+    padding: 2rem 0px;
+    width: min(96%,85.5rem);
+    margin-inline:auto ;
 }
 .resume-apply-cont-header{
     display: flex;

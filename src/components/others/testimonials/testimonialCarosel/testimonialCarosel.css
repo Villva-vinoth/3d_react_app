@@ -2,6 +2,7 @@
 .Test-carosel-main{
     display: flex;
     flex-direction: column;
+    padding: 3rem 0px;
 }
 .Test-carosel-container{
     padding: 2rem 0rem;
@@ -33,10 +34,12 @@
     width: 30%;
     height: 80%;
 }
+
 .carosel-testimonial-para{
     padding: 0rem 4rem;
-    color: rgb(177, 173, 173);
+    color: rgb(125, 125, 125);
     font-size: 1.2rem;
+    text-align: center;
 }
 .quote-icons{
     width: 60px !important;
