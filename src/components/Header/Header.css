@@ -76,6 +76,17 @@
 
 
 }
+
+.drop-select-div {
+
+
+    border-radius: 1px;
+    color: black;
+    transform: scale(1.1);
+
+
+}
+
 .drop-select-div::after {
     content: '';
     width: 50%;
@@ -207,6 +218,7 @@
         /* text-align: end; */
 
     }
+
     /* .header-onfocus:hover  .drop-down{
         display: block;
     } */
@@ -216,13 +228,15 @@
         grid-template-rows: 1fr;
 
     }
-    .other-div-ham{
+
+    .other-div-ham {
         display: grid;
-        grid-template-rows:0fr;
+        grid-template-rows: 0fr;
     }
-    .other-div-ham > div{
+
+    .other-div-ham>div {
         overflow: hidden;
-        
+
     }
-    
+
 }
