@@ -45,7 +45,6 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
         toast.warn("comments needs Aleast 10 characters !")
       }
       else {
-        toast.success("submitted")
         // setDownloadBrochure(true)
         // setContactDetails({
         //   name: "",
@@ -54,6 +53,7 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
         //   comments: ""
         // })
         // clickDownloadRef.current.click()
+        toast.success("submitted")
         contactRef.current.close();
 
       }
