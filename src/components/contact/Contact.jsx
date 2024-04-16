@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './contact.css'
 import Popup from 'reactjs-popup'
 import { toast, ToastContainer } from 'react-toastify'
@@ -11,6 +11,21 @@ import email from '../Assets/contact/email.png'
 import phone from '../Assets/contact/phone.png'
 import location from '../Assets/contact/loca.png'
 const Contact = () => {
+
+    const [contactDetails, setContactDetails] = useState({
+        name: "",
+        companyName:"",
+        BussinessEmail:"",
+        comments:""
+
+    })
+
+    const handleSubmit =()=>{
+        console.log("datas", contactDetails)
+        console.log("submitted")
+        toast.success("submitted")
+    }
+
     useEffect(
         () => {
             Aos.init({
@@ -23,7 +38,7 @@ const Contact = () => {
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
         window.scrollTo(0, 0);
-      }, [])
+    }, [])
     return (
         <div className='contact-display'>
 
@@ -51,7 +66,7 @@ const Contact = () => {
                     </div>
                     <div className='contact-address' data-aos='flip-in'>
                         <picture>
-                        <img src={phone} alt='' className='contact-icons'/>
+                            <img src={phone} alt='' className='contact-icons' />
                         </picture>
                         <h4>PHONE</h4>
                         <div>+91 6438293810</div>
@@ -60,9 +75,8 @@ const Contact = () => {
             </div>
 
             <div className='contact-map'>
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7774.4517982934385!2d80.19843628655018!3d13.021281652198951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e03c7c8de8d%3A0x56035da5d9283262!2sTorus%20Robotics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1710766417621!5m2!1sen!2sin" width={'80%'} height={"400px"} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='map-google'></iframe>            </div>
-
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7774.4517982934385!2d80.19843628655018!3d13.021281652198951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e03c7c8de8d%3A0x56035da5d9283262!2sTorus%20Robotics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1710766417621!5m2!1sen!2sin" width={'80%'} height={"400px"} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='map-google'></iframe>
+            </div>
             <div className='contact-form'>
                 <picture>
                     <img src={handshake} alt="" />
@@ -93,37 +107,47 @@ const Contact = () => {
                                 </div>
                                 <div className='popup-form'>
                                     <label>Name <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Your Name' />
+                                    <input type='text' name='name' placeholder='Enter Your Name' onChange={(e)=>setContactDetails({
+                                        ...contactDetails,[e.target.name]:e.target.value
+                                    })} />
                                     <label>Company Name <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Your Company Name' />
-                                    <label>Email <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Your Email' />
+                                    <input type='text' placeholder='Enter Company Name' name='companyName' onChange={(e)=>setContactDetails({
+                                        ...contactDetails,[e.target.name]:e.target.value
+                                    })} />
+                                    <label>Bussiness Email <span><sup>*</sup></span></label>
+                                    <input type='text' placeholder='Enter Your Bussiness Email' name='BussinessEmail' onChange={(e)=>setContactDetails({
+                                        ...contactDetails,[e.target.name]:e.target.value
+                                    })}/>
                                     <label>comment ( If Any )<span><sup>*</sup></span></label>
-                                    <textarea type='text' placeholder='Write Your Comments' className='popup-comments' />
+                                    <textarea type='text' placeholder='Write Your message' className='popup-comments' name='comments' onChange={(e)=>setContactDetails({
+                                        ...contactDetails,[e.target.name]:e.target.value
+                                    })} />
                                     {/* <span className='color-red'> All fields are required*</span> */}
 
                                 </div>
                                 <div className="actions">
-                                    <button className="contact-btn" onClick={() => { close() }}>Submit</button>
+                                    <button className="contact-btn" onClick={() => { handleSubmit() }}>Submit</button>
                                 </div>
                             </div>
                         )}
+                        
                     </Popup>
                 </div>
-            </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={1000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
+                <ToastContainer
+                            position="top-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="dark"
 
-            />
+                        />
+            </div>
+
         </div>
     )
 }
