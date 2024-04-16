@@ -182,7 +182,7 @@ const AddProducts = () => {
             ref={fileInput}
             onChange={(e) => handleUploadImage(e)} />
 
-          <textarea rows={5}
+          <textarea className='text-area' rows={5}
             name='product_description'
             placeholder='Product description'
             value={product.product_description}

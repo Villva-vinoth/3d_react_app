@@ -43,7 +43,8 @@
     object-fit: fill;
     border: 1px solid black;
 }
-.product-form input,textarea{
+.product-form input,.text-area{
+
     padding: 0.75rem ;
     box-sizing: border-box;
     font-size: 17px;
@@ -187,7 +188,12 @@
 }
 .edit-form{
     display: flex;
+
     gap: 10px;
+}
+.edit-tit{
+    color: grey;
+    font-size: 15px;
 }
 .edit-form >*{
     flex: 1; 
@@ -198,14 +204,14 @@
     gap: 20px;
    
 }
-.main-field-container input ,textarea{
+.main-field-container input ,.edit-textarea{
     width: 90%;
     padding: 0.75rem;
     box-sizing: border-box;
     resize: none;
     font-size: 18px;
     border: none;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(231, 231, 231) !important;
 
 }
 .input-field{
@@ -222,6 +228,7 @@
 .edit-input-field-row input{
      padding: 0.75rem;
      font-size: 16px;
+     width: 100%;
      box-sizing: border-box;
      background-color:rgb(231, 231, 231) ;
      border: none;
