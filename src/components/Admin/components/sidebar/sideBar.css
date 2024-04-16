@@ -1,11 +1,9 @@
 .sideBar-main{
     /* background-color: red; */
     width: 20%;
-
     height: 100%;
     display: flex;
     flex-direction: column;
- 
     padding: 2rem 2rem;
     box-sizing: border-box;
 }
@@ -14,15 +12,32 @@
 
     font-size: 20px;    
     margin-bottom: 15px;
-    padding: 0.5rem 1rem; box-sizing: border-box;
+    padding: 0.75rem 1rem; 
+    box-sizing: border-box;
     display: flex;
-    gap: 10px;
-    align-items:center;
+    gap: 15px;
+ align-items: center;
+
     transition: 0.6s;
   
 }
+.list span{
+    padding: 0 ;margin: 0;
+}
+.list h4{
+    padding: 0;margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+
+   
+}
 
 .list:hover{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.list-active{
     background-color: black;
     color: white;
     border-radius: 10px;

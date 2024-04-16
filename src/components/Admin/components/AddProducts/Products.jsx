@@ -7,13 +7,19 @@ import ProductCard from './ProductCard'
 const Products = () => {
   const [productItems,setProductItems]=useState([]);
   const [deleteFlag,setDeleteFlag] =useState(false)
+  const [refreshFlag,setRefreshFlag] =useState(false)
   useEffect(() => {
     const getAllProducts = async () => {
-      await axios.get(GET_ALL_PRODUCTS).then((res) => { console.log(res.data.data)
+      await axios.get(GET_ALL_PRODUCTS).then((res) => { console.log("=============",res.data.data)
          setProductItems(res.data.data) }).catch((err) => { console.log(err) });
+      
+
     }
+    console.log("refresh",refreshFlag)
     getAllProducts()
-  }, [deleteFlag])
+  }, [deleteFlag,refreshFlag])
+
+  // console.log("refresh",refreshFlag)
 
   const nav = useNavigate()
   return (
@@ -26,6 +32,7 @@ const Products = () => {
         <div className='Admin-product-container'>
           {
             productItems && productItems.map(product =>{
+              console.log("mapped times ")
               return(<ProductCard key={product.product_id} 
                  productTitle={product.product_title} 
                  productImage={product.product_image}
@@ -48,7 +55,8 @@ const Products = () => {
                  continousCurrent={product.continous_current}
                  support={product.support}
                  operatingMode={product.operating_mode}
-                 setDeleteFlag={setDeleteFlag} />)
+                 setDeleteFlag={setDeleteFlag} 
+                 setRefreshFlag={setRefreshFlag}/>)
             })
           }
            
