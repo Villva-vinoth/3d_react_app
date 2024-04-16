@@ -1,10 +1,68 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './productContent.css'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css';
 import { MdDownload } from "react-icons/md";
 import pdf from '../../Assets/Brochure/torus Brochure.pdf'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, maxRpm, peakTorque, overloadTorque, dutyCycle, weight, img, nominalVoltage, maxCurrent, phaseCurrent, batteryCurrent, voltage, Support, OperatingMode, PeakCurrent, ContinousCurrent, AbsoluteMaxVoltage, RatedVoltage, }) => {
+
+  const [contactDetails, setContactDetails] = useState({
+    name: "",
+    contactNumber: "",
+    Email: "",
+    comments: ""
+
+  })
+
+  const [downloadBrochure,setDownloadBrochure] =useState(false)
+
+  const contactRef = useRef(null)
+
+  const clickDownloadRef = useRef(null)
+
+
+  const handleSubmit = () => {
+    console.log("datas", contactDetails)
+    if (contactDetails.name != "" && contactDetails.contactNumber != "" && contactDetails.Email != "" &&
+      contactDetails.comments != ""
+    ) {
+      const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
+      const phoneRegex = /^\d{10,}$/
+      console.log(phoneRegex.test(contactDetails.contactNumber))
+      if (contactDetails.name.length < 4) {
+        toast.warn("Please enter valid Name !")
+      }
+      else if (phoneRegex.test(contactDetails.contactNumber)==false) {
+        toast.warn("Please enter valid Contact Number !")
+      }
+      else if (EmailRegex.test(contactDetails.Email) == false) {
+        toast.warn("Please enter valid Email !")
+      }
+      else if (contactDetails.comments.length < 10) {
+        toast.warn("comments needs Aleast 10 characters !")
+      }
+      else {
+        toast.success("submitted")
+        // setDownloadBrochure(true)
+        // setContactDetails({
+        //   name: "",
+        //   contactNumber: "",
+        //   Email: "",
+        //   comments: ""
+        // })
+        // clickDownloadRef.current.click()
+        contactRef.current.close();
+
+      }
+    }
+    else {
+      toast.error("All Fields are Required !")
+    }
+
+  }
   return (
     <div className='product-content' >
 
@@ -100,6 +158,7 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
             trigger={<button className='prouct-content-btn'>get</button>}
             modal
             closeOnDocumentClick={false}
+            ref={contactRef}
           >
             {close => (
               <div className="popup">
@@ -112,22 +171,30 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
                 </div>
                 <div className='popup-form'>
                   <label>Name <span><sup>*</sup></span></label>
-                  <input type='text' placeholder='Enter Your Name' />
+                  <input type='text' placeholder='Enter Your Name' name='name' onChange={(e)=>setContactDetails({
+                    ...contactDetails,[e.target.name]:e.target.value
+                  })} />
                   <label>Contact Number <span><sup>*</sup></span></label>
-                  <input type='text' placeholder='Enter Your Contact Number' />
+                  <input type='text' placeholder='Enter Contact Number' name='contactNumber' onChange={(e)=>setContactDetails({
+                    ...contactDetails,[e.target.name]:e.target.value
+                  })} />
                   <label>Email <span><sup>*</sup></span></label>
-                  <input type='text' placeholder='Enter Your Email' />
+                  <input type='text' placeholder='Enter Email Address' name='Email' onChange={(e)=>setContactDetails({
+                    ...contactDetails,[e.target.name]:e.target.value
+                  })} />
                   <label>comment ( If Any )<span><sup>*</sup></span></label>
-                  <textarea type='text' placeholder='Write Your Comments' className='popup-comments' />
+                  <textarea type='text' placeholder='Write Your Message...' className='popup-comments' name='comments' onChange={(e)=>setContactDetails({
+                    ...contactDetails,[e.target.name]:e.target.value
+                  })} />
                   {/* <span className='color-red'> All fields are required*</span> */}
 
                 </div>
                 <div className='popup-actions'>
                   <div className="actions">
-                    <button className="contact-btn" onClick={() => { close() }}>Submit</button>
+                    <button className="contact-btn" onClick={() => { handleSubmit() }}>Submit</button>
                   </div>
-                  <div className="actions">
-                    <a href={pdf} download style={{ textDecoration: "none" }} className="download-btn">
+                  <div className="actions" ref={clickDownloadRef}>
+                    <a href={downloadBrochure ? pdf : undefined} download style={{ textDecoration: "none" }} className="download-btn" >
                       <span style={{ padding: "0 0.5rem 0 0.5rem", textAlign: "center" }}>
                         <MdDownload /></span>Download Brochure</a>
                   </div>
@@ -137,7 +204,20 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
             )}
           </Popup>
         </div>
+        
       </div>
+      <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
     </div>
 
   )

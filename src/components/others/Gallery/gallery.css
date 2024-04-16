@@ -44,7 +44,7 @@
    }
   
    .shorts-overlay{
-     background-image: linear-gradient(rgba(161, 161, 161, 0.188),black);
+     background-image: linear-gradient(rgba(161, 161, 161, 0.192),rgba(0, 0, 0, 0.514));
      width: 100%;
      color: white;
      height: 100%;

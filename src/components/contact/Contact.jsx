@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './contact.css'
 import Popup from 'reactjs-popup'
 import { toast, ToastContainer } from 'react-toastify'
@@ -14,16 +14,49 @@ const Contact = () => {
 
     const [contactDetails, setContactDetails] = useState({
         name: "",
-        companyName:"",
-        BussinessEmail:"",
-        comments:""
+        companyName: "",
+        BussinessEmail: "",
+        comments: ""
 
     })
 
-    const handleSubmit =()=>{
+    const contactRef = useRef(null)
+
+    const handleSubmit = () => {
         console.log("datas", contactDetails)
         console.log("submitted")
-        toast.success("submitted")
+        if (contactDetails.name != "" && contactDetails.companyName != "" && contactDetails.BussinessEmail != "" &&
+            contactDetails.comments != ""
+        ) {
+            const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
+
+            if (contactDetails.name.length < 4) {
+                toast.warn("Please enter valid Name !")
+            }
+            else if (contactDetails.companyName.length < 4) {
+                toast.warn("Please enter valid Company Name !")
+            }
+            else if (EmailRegex.test(contactDetails.BussinessEmail) == false) {
+                toast.warn("Please enter valid Email !")
+            }
+            else if (contactDetails.comments.length < 10) {
+                toast.warn("Comments needs Aleast 10 characters !")
+            }
+            else {
+                toast.success("submitted")
+                setContactDetails({
+                    name: "",
+                    companyName: "",
+                    BussinessEmail: "",
+                    comments: ""
+                })
+                contactRef.current.close();
+            }
+        }
+        else {
+            toast.error("All Fields are Required !")
+        }
+
     }
 
     useEffect(
@@ -95,6 +128,7 @@ const Contact = () => {
                         trigger={<div className='contact-get-in-touch'> GET IN TOUCH</div>}
                         modal
                         closeOnDocumentClick={false}
+                        ref={contactRef}
                     >
                         {close => (
                             <div className="popup">
@@ -107,20 +141,20 @@ const Contact = () => {
                                 </div>
                                 <div className='popup-form'>
                                     <label>Name <span><sup>*</sup></span></label>
-                                    <input type='text' name='name' placeholder='Enter Your Name' onChange={(e)=>setContactDetails({
-                                        ...contactDetails,[e.target.name]:e.target.value
+                                    <input type='text' name='name' placeholder='Enter Your Name' onChange={(e) => setContactDetails({
+                                        ...contactDetails, [e.target.name]: e.target.value
                                     })} />
                                     <label>Company Name <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Company Name' name='companyName' onChange={(e)=>setContactDetails({
-                                        ...contactDetails,[e.target.name]:e.target.value
+                                    <input type='text' placeholder='Enter Company Name' name='companyName' onChange={(e) => setContactDetails({
+                                        ...contactDetails, [e.target.name]: e.target.value
                                     })} />
                                     <label>Bussiness Email <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Your Bussiness Email' name='BussinessEmail' onChange={(e)=>setContactDetails({
-                                        ...contactDetails,[e.target.name]:e.target.value
-                                    })}/>
+                                    <input type='text' placeholder='Enter Your Bussiness Email' name='BussinessEmail' onChange={(e) => setContactDetails({
+                                        ...contactDetails, [e.target.name]: e.target.value
+                                    })} />
                                     <label>comment ( If Any )<span><sup>*</sup></span></label>
-                                    <textarea type='text' placeholder='Write Your message' className='popup-comments' name='comments' onChange={(e)=>setContactDetails({
-                                        ...contactDetails,[e.target.name]:e.target.value
+                                    <textarea type='text' placeholder='Write Your message' className='popup-comments' name='comments' onChange={(e) => setContactDetails({
+                                        ...contactDetails, [e.target.name]: e.target.value
                                     })} />
                                     {/* <span className='color-red'> All fields are required*</span> */}
 
@@ -130,24 +164,24 @@ const Contact = () => {
                                 </div>
                             </div>
                         )}
-                        
+
                     </Popup>
                 </div>
-                <ToastContainer
-                            position="top-right"
-                            autoClose={1000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="dark"
 
-                        />
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
 
+            />
         </div>
     )
 }

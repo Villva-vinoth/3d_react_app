@@ -23,8 +23,6 @@ const TimeSheet = () => {
   })
 
   const handleClick = (id) => {
-
-
     setSelect(id)
   }
   return (
