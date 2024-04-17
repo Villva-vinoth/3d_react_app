@@ -73,7 +73,7 @@
     margin-top: 1%;
     gap: 20px;
 }
-.download-btn{
+.download-btn {
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 10px;
@@ -92,6 +92,9 @@
 .download-btn:hover{
     background-image: linear-gradient(125deg ,grey,grey,black,black);
 }
+
+
+
 @media (max-width:768px) {
     .product-content-container h1{
         font-size: 1rem;
