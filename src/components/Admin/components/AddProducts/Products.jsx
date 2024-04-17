@@ -10,7 +10,7 @@ const Products = () => {
   const [refreshFlag,setRefreshFlag] =useState(false)
   useEffect(() => {
     const getAllProducts = async () => {
-      await axios.get(GET_ALL_PRODUCTS).then((res) => { console.log("=============",res.data.data)
+      await axios.get(GET_ALL_PRODUCTS).then((res) => { console.log(res.data.data)
          setProductItems(res.data.data) }).catch((err) => { console.log(err) });
       
 
