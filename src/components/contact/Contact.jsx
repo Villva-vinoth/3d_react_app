@@ -10,47 +10,60 @@ import 'aos/dist/aos.css'
 import email from '../Assets/contact/email.png'
 import phone from '../Assets/contact/phone.png'
 import location from '../Assets/contact/loca.png'
+import axios from 'axios';
+import { CREATE_CONTACT_FORM } from '../../apiServices'
 const Contact = () => {
 
     const [contactDetails, setContactDetails] = useState({
         name: "",
-        companyName: "",
-        BussinessEmail: "",
+        company_name: "",
+        bussiness_email: "",
         comments: ""
 
     })
 
     const contactRef = useRef(null)
 
-    const handleSubmit = () => {
-        console.log("datas", contactDetails)
-        console.log("submitted")
-        if (contactDetails.name != "" && contactDetails.companyName != "" && contactDetails.BussinessEmail != "" &&
+
+    const handleSubmit =  async () => {
+        // console.log("datas", contactDetails)
+        // console.log("submitted")
+        if (contactDetails.name != "" && contactDetails.company_name != "" && contactDetails.bussiness_email != "" &&
             contactDetails.comments != ""
         ) {
             const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
 
             if (contactDetails.name.length < 4) {
-                toast.warn("Please enter valid Name !")
+                toast.warn("name atleast have 5 characters !")
             }
-            else if (contactDetails.companyName.length < 4) {
+            else if (contactDetails.company_name.length < 4) {
                 toast.warn("Please enter valid Company Name !")
             }
-            else if (EmailRegex.test(contactDetails.BussinessEmail) == false) {
+            else if (EmailRegex.test(contactDetails.bussiness_email) == false) {
                 toast.warn("Please enter valid Email !")
             }
             else if (contactDetails.comments.length < 10) {
-                toast.warn("Comments needs Aleast 10 characters !")
+                toast.warn("comments atleast have 10 characters !")
             }
             else {
-                toast.success("submitted")
-                setContactDetails({
-                    name: "",
-                    companyName: "",
-                    BussinessEmail: "",
-                    comments: ""
+
+                const send = await axios.post(CREATE_CONTACT_FORM, contactDetails ).then((res) => {
+                    setContactDetails({
+                        name: "",
+                        company_name: "",
+                        bussiness_email: "",
+                        comments: ""
+                    })
+                    toast.success("submitted")
+
+                    contactRef.current.close();
+
+                }).catch((err)=>{
+                    toast.error(err.response.data.message)
                 })
-                contactRef.current.close();
+
+
+
             }
         }
         else {
@@ -145,11 +158,11 @@ const Contact = () => {
                                         ...contactDetails, [e.target.name]: e.target.value
                                     })} />
                                     <label>Company Name <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Company Name' name='companyName' onChange={(e) => setContactDetails({
+                                    <input type='text' placeholder='Enter Company Name' name='company_name' onChange={(e) => setContactDetails({
                                         ...contactDetails, [e.target.name]: e.target.value
                                     })} />
                                     <label>Bussiness Email <span><sup>*</sup></span></label>
-                                    <input type='text' placeholder='Enter Your Bussiness Email' name='BussinessEmail' onChange={(e) => setContactDetails({
+                                    <input type='text' placeholder='Enter Your Bussiness Email' name='bussiness_email' onChange={(e) => setContactDetails({
                                         ...contactDetails, [e.target.name]: e.target.value
                                     })} />
                                     <label>comment ( If Any )<span><sup>*</sup></span></label>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import './productContent.css'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css';
@@ -6,65 +6,72 @@ import { MdDownload } from "react-icons/md";
 import pdf from '../../Assets/Brochure/torus Brochure.pdf'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { CREATE_PRODUCT_FORM } from '../../../apiServices';
 
-const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, maxRpm, peakTorque, overloadTorque, dutyCycle, weight, img, nominalVoltage, maxCurrent, phaseCurrent, batteryCurrent, voltage, Support, OperatingMode, PeakCurrent, ContinousCurrent, AbsoluteMaxVoltage, RatedVoltage, }) => {
+const ProductContent = ({ id,type, describe, voltageRange, ratedPower, peakPower, maxRpm, peakTorque, overloadTorque, dutyCycle, weight, img, nominalVoltage, maxCurrent, phaseCurrent, batteryCurrent, voltage, Support, OperatingMode, PeakCurrent, ContinousCurrent, AbsoluteMaxVoltage, RatedVoltage, }) => {
 
-  const [contactDetails, setContactDetails] = useState({
+  const [productDetails, setProductDetails] = useState({
     name: "",
-    contactNumber: "",
-    Email: "",
+    contact_number: "",
+    email: "",
     comments: ""
-
   })
 
-  const [downloadBrochure,setDownloadBrochure] =useState(false)
 
   const contactRef = useRef(null)
 
   const clickDownloadRef = useRef(null)
+  
+  const downloadRef =useRef(null)
+  const downloadCloseRef =useRef(null)
 
 
-  const handleSubmit = () => {
-    console.log("datas", contactDetails)
-    if (contactDetails.name != "" && contactDetails.contactNumber != "" && contactDetails.Email != "" &&
-      contactDetails.comments != ""
-    ) {
-      const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
-      const phoneRegex = /^\d{10,}$/
-      console.log(phoneRegex.test(contactDetails.contactNumber))
-      if (contactDetails.name.length < 4) {
-        toast.warn("Please enter valid Name !")
-      }
-      else if (phoneRegex.test(contactDetails.contactNumber)==false) {
-        toast.warn("Please enter valid Contact Number !")
-      }
-      else if (EmailRegex.test(contactDetails.Email) == false) {
-        toast.warn("Please enter valid Email !")
-      }
-      else if (contactDetails.comments.length < 10) {
-        toast.warn("comments needs Aleast 10 characters !")
-      }
-      else {
-        // setDownloadBrochure(true)
-        // setContactDetails({
-        //   name: "",
-        //   contactNumber: "",
-        //   Email: "",
-        //   comments: ""
-        // })
-        // clickDownloadRef.current.click()
-        toast.success("submitted")
-        contactRef.current.close();
 
-      }
+  const handleSubmit = async (id) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
+    const phoneRegex = /^\d{10}$/
+
+    if (productDetails.name !== "" && productDetails.email !== "" && productDetails.contact_number !== "" && productDetails.comments !== "") {
+        if (productDetails.name.length < 4) {
+            toast.warn("name at least have 5 characters !");
+        } else if (!phoneRegex.test(productDetails.contact_number)) {
+            toast.warn("Please enter valid Phone number !");
+        } else if (!emailRegex.test(productDetails.email)) {
+            toast.warn("Please enter valid Email !");
+        } else if (productDetails.comments.length < 10) {
+            toast.warn("comments at least have 10 characters !");
+        } else {
+          const product ={...productDetails,product_id:id}
+            await axios.post(CREATE_PRODUCT_FORM, product).then((res) => {
+              setProductDetails({
+                    name: "",
+                    email: "",
+                    contact_number: "",
+                    comments: ""
+                });
+                contactRef.current.click();
+                clickDownloadRef.current.click();
+                // console.log("1",clickDownloadRef.current)
+
+                setTimeout(()=>{
+                  //  console.log("2",clickDownloadRef.current)
+                  toast.success("submitted !")
+                  // clickDownloadRef.current.click();
+                },100)
+             
+              
+            }).catch((err) => {
+                toast.error(err.response.data.message);
+            });
+        }
+    } else {
+        toast.error("All Fields Are Required !");
     }
-    else {
-      toast.error("All Fields are Required !")
-    }
+};
 
-  }
   return (
-    <div className='product-content' >
+    <div className='product-content'>
 
       <picture className='Product-content-picture'>
         <img src={img} alt='' />
@@ -153,48 +160,47 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
 
         </div>
         <div className='product-content-btn-div'>
-
           <Popup
             trigger={<button className='prouct-content-btn'>get</button>}
             modal
+            
             closeOnDocumentClick={false}
-            ref={contactRef}
           >
             {close => (
               <div className="popup">
                 <div className='popup-header'>
                   <div> <h2>get this product</h2>
-                    <div className="contact-cancel-btn" onClick={close}>X</div></div>
+                    <div className="contact-cancel-btn" onClick={close} ref={contactRef}>X</div></div>
 
                   <div className='popup-header-cont color-grey'>fill out the form below. we will reach out to you.</div>
 
                 </div>
                 <div className='popup-form'>
                   <label>Name <span><sup>*</sup></span></label>
-                  <input type='text' placeholder='Enter Your Name' name='name' onChange={(e)=>setContactDetails({
-                    ...contactDetails,[e.target.name]:e.target.value
+                  <input type='text' placeholder='Enter Your Name' name='name' value={productDetails.name} onChange={(e) => setProductDetails({
+                    ...productDetails, [e.target.name]: e.target.value
                   })} />
                   <label>Contact Number <span><sup>*</sup></span></label>
-                  <input type='text' placeholder='Enter Contact Number' name='contactNumber' onChange={(e)=>setContactDetails({
-                    ...contactDetails,[e.target.name]:e.target.value
+                  <input type='text' placeholder='Enter Contact Number' name='contact_number' value={productDetails.contact_number} onChange={(e) => setProductDetails({
+                    ...productDetails, [e.target.name]: e.target.value
                   })} />
                   <label>Email <span><sup>*</sup></span></label>
-                  <input type='text' placeholder='Enter Email Address' name='Email' onChange={(e)=>setContactDetails({
-                    ...contactDetails,[e.target.name]:e.target.value
+                  <input type='text' placeholder='Enter Email Address' name='email' value={productDetails.email} onChange={(e) => setProductDetails({
+                    ...productDetails, [e.target.name]: e.target.value
                   })} />
                   <label>comment ( If Any )<span><sup>*</sup></span></label>
-                  <textarea type='text' placeholder='Write Your Message...' className='popup-comments' name='comments' onChange={(e)=>setContactDetails({
-                    ...contactDetails,[e.target.name]:e.target.value
+                  <textarea type='text' placeholder='Write Your Message...' className='popup-comments' name='comments' value={productDetails.comments} onChange={(e) => setProductDetails({
+                    ...productDetails, [e.target.name]: e.target.value
                   })} />
                   {/* <span className='color-red'> All fields are required*</span> */}
 
                 </div>
                 <div className='popup-actions'>
                   <div className="actions">
-                    <button className="contact-btn" onClick={() => { handleSubmit() }}>Submit</button>
+                    <button className="contact-btn" onClick={() => { handleSubmit(id) }}>Submit</button>
                   </div>
-                  <div className="actions" ref={clickDownloadRef}>
-                    <a href={downloadBrochure ? pdf : undefined} download style={{ textDecoration: "none" }} className="download-btn" >
+                  <div className="actions" style={{ display: "none" }}>
+                    <a href={pdf} ref={clickDownloadRef} download style={{ textDecoration: "none" }} className="download-btn" >
                       <span style={{ padding: "0 0.5rem 0 0.5rem", textAlign: "center" }}>
                         <MdDownload /></span>Download Brochure</a>
                   </div>
@@ -203,21 +209,29 @@ const ProductContent = ({ type, describe, voltageRange, ratedPower, peakPower, m
               </div>
             )}
           </Popup>
+
         </div>
-        
+
+        <Popup
+            trigger={<button className='prouct-content-btn' ref={downloadRef} style={{display:"none"}}>promt</button>}
+            modal
+            ref={downloadCloseRef}
+            // closeOnDocumentClick={false}
+          >
+            {close => (
+                  <div>
+                    Downloading Brochure please wait
+                  </div>
+            )}
+          </Popup>
+
       </div>
       <ToastContainer
-          position="top-right"
-          autoClose={1000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        position="top-right"
+        autoClose={1000}
+        theme="dark"
+
+      />
     </div>
 
   )

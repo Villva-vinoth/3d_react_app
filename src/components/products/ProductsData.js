@@ -6,6 +6,7 @@ import image5 from '../Assets/product/trc.png'
 
 const productList =[
     {
+        id:1,
         img:image1,
         type:"1KW MOTOR",
         describe:"Discover our cutting-edge 1kW axial flux motor, engineered for efficiency and performance. Ideal for EV & Robotics, this compact and powerful motor delivers reliable operation and optimal energy utilization.",
@@ -19,6 +20,7 @@ const productList =[
         weight:"7 kgs"
     },
     {
+        id:2,
         img:image2,
         type:"V1",
         describe:"Unleash power and efficiency with our 4kW axial flux motors. Compact and high torque, they're perfect for Electric vehicles and industrial machinery. Engineered for optimal performance and energy efficiency, they're the future of propulsion. Experience superior technology and reliability with our innovative motor solutions.",
@@ -32,6 +34,7 @@ const productList =[
         weight:"7kgs"
     },
     {
+        id:3,
         img:image2,
         type:"V2",
         describe:"Unleash power and efficiency with our 4kW axial flux motors. Compact and high torque, they're perfect for Electric vehicles and industrial machinery. Engineered for optimal performance and energy efficiency, they're the future of propulsion. Experience superior technology and reliability with our innovative motor solutions.",
@@ -67,6 +70,7 @@ const productList =[
        
     // },
     {
+        id:4,
         img:image3,
         type:"TESC 300",
         describe:"Unleash power and efficiency with our 4kW axial flux motors. Compact and high torque, they're perfect for Electric vehicles and industrial machinery. Engineered for optimal performance and energy efficiency, they're the future of propulsion. Experience superior technology and reliability with our innovative motor solutions.",
@@ -75,6 +79,7 @@ const productList =[
        
     },
     {
+        id:5,
         img:image4,
         type:"TESC 600",
         describe:"Unleash power and efficiency with our 4kW axial flux motors. Compact and high torque, they're perfect for Electric vehicles and industrial machinery. Engineered for optimal performance and energy efficiency, they're the future of propulsion. Experience superior technology and reliability with our innovative motor solutions.",
@@ -83,6 +88,7 @@ const productList =[
        
     },
     {
+        id:6,
         img:image5,
         type:"TRC",
         describe:"Empower your robotic systems with our Three-Phase Inverter tailored for PMSM motors. Our intelligent FOC controller offers precise motion control, enhancing the agility and efficiency of your robots. Elevate your robotics performance with our innovative motor control solution.",

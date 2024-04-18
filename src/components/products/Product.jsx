@@ -38,7 +38,9 @@ const Product = () => {
       {
         records.map((item, index) => {
           return (
-            <ProductContent img={item.img} type={item.type} describe={item.describe}
+            <ProductContent
+            id={item.id}
+             img={item.img} type={item.type} describe={item.describe}
               voltageRange={item.voltageRange}
               ratedPower={item.ratedPower}
               peakPower={item.peakPower}
