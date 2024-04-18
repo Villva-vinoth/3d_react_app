@@ -97,10 +97,7 @@ const AddBlog = () => {
                 }
             }).then((res) => {
                 if (res) {
-                    console.log(res.data.image)
                     blog.blog_image = res.data.image
-
-                    console.log(blog)
                     axios.post(CREATE_BLOG,blog, {
                         headers: {
                             Authorization: `Bearer ${accessToken}`
