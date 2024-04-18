@@ -12,6 +12,8 @@ import Blogs from '../components/Blog/Blogs'
 import AddBlog from '../components/Blog/AddBlog'
 import Report from '../components/Reports/Report'
 import SiteSettings from '../components/SiteSetting/SiteSettings'
+import Testimonials from '../components/Testimonials/Testimonials'
+import AddTestimonials from '../components/Testimonials/AddTestimonials'
 
 const Admin = ({set}) => {
     useEffect(()=>{
@@ -34,6 +36,9 @@ const Admin = ({set}) => {
             <Route path='/add-blog' element={<AddBlog/>} />
             <Route path='/reports' element={<Report/>} />
             <Route path='/site-settings' element={<SiteSettings/>} />
+            <Route path='/testimonials' element={<Testimonials/>} />
+            <Route path='/add-testimonials' element={<AddTestimonials/>} />
+
         </Routes>
        </div>
         </div>
