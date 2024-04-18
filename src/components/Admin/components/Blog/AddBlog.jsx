@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react'
 import "./blog.css"
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-import { toast } from 'react-toastify';
-
+import { ToastContainer,toast } from 'react-toastify';
+import axios from 'axios';
+import { CREATE_BLOG, IMAGE_UPLOAD } from '../../../../apiServices';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddBlog = () => {
@@ -19,10 +21,11 @@ const AddBlog = () => {
         blog_title3: "",
         blog_description3: "",
     });
-    console.log(blog)
 
     const [Image, setImage] = useState("")
     const imageRef = useRef()
+
+
 
     const handlechangeImageUpload = () => {
         imageRef.current.click()
@@ -32,31 +35,31 @@ const AddBlog = () => {
         const file = e.target.files[0];
         if (file) {
             setImage(URL.createObjectURL(file));
-            setBlog({ ...blog, [e.target.name]:file });
-            e.target.value =""
+            setBlog({ ...blog, [e.target.name]: file });
+            e.target.value = ""
         }
-       
+
     }
     const handleImageClose = (e) => {
         // Stop event propagation
-         e.stopPropagation();
+        e.stopPropagation();
         setImage("")
-        blog.blog_image=""
-      
-     
+        blog.blog_image = ""
+
+
     }
 
-    const handleValidation=()=>{
-        const {blog_image,blog_title,blog_description} = blog
-        if(blog_image==""){
-                toast.error("please upload Image")
-                 return false;
-        }
-        if(blog_title==""){
-                 toast.error("please Enter Title")
+    const handleValidation = () => {
+        const { blog_image, blog_title, blog_description } = blog
+        if (blog_image == "") {
+            toast.error("please upload Image")
             return false;
         }
-        if(blog_description==""){
+        if (blog_title == "") {
+            toast.error("please Enter Title")
+            return false;
+        }
+        if (blog_description == "") {
 
             toast.error("Please Enter Description")
             return false;
@@ -64,12 +67,60 @@ const AddBlog = () => {
         return true;
     }
 
-    const addPost = () => {
+    const resetPost = () => {
+        setBlog({
+            blog_image: "",
+            blog_title: "",
+            blog_description: "",
+            blog_title1: "",
+            blog_description1: "",
+            blog_title2: "",
+            blog_description2: "",
+            blog_title3: "",
+            blog_description3: "",
+        })
+        console.log(blog)
+        setImage("")
+        if (imageRef) {
+            imageRef.current.value = null
+        }
+    }
 
-       if(handleValidation())
-       {
-        
-       }
+    const addPost = async () => {
+        const accessToken = localStorage.getItem('Token');
+        const formData = new FormData();
+        formData.append('image', blog.blog_image);
+        if (handleValidation()) {
+            await axios.post(IMAGE_UPLOAD, formData, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            }).then((res) => {
+                if (res) {
+                    console.log(res.data.image)
+                    blog.blog_image = res.data.image
+
+                    console.log(blog)
+                    axios.post(CREATE_BLOG,blog, {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`
+                        }
+                    }).then((res) => {
+                        if (res) {
+                            console.log(res.data)
+                            console.log("submitted !", blog)
+                            toast.success(' Added Succefully  !');
+                            resetPost()
+                        }
+                    }).catch((err) => {
+                        toast.error(err.response.data.message)
+                    })
+                }
+            }).catch((err) => {
+                toast.error(err.response.data.message)
+            })
+          
+        }
     }
     return (
         <div className='blog-cont'>
@@ -88,12 +139,14 @@ const AddBlog = () => {
                         <input
                             name='blog_title'
                             placeholder='Blog Title'
+                            value={blog.blog_title}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
 
                         <textarea
                             rows="8"
                             placeholder='Blog Description'
                             name='blog_description'
+                            value={blog.blog_description}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
                     </div>
 
@@ -103,12 +156,14 @@ const AddBlog = () => {
                         <input
                             placeholder='Title -1'
                             name='blog-title1'
+                            value={blog.blog_title1}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
 
                         <textarea
                             rows={10}
                             placeholder=' Description'
                             name='blog_description1'
+                            value={blog.blog_description1}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
                     </div>
 
@@ -138,12 +193,24 @@ const AddBlog = () => {
 
                     <div className='blog-btn-cont'>
                         <button onClick={addPost}>Add Post</button>
-                        <button>Cancel</button>
+                        <button onClick={resetPost}>Cancel</button>
                     </div>
 
                 </div>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
 
+            />
         </div>
     )
 }

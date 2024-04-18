@@ -1,4 +1,5 @@
-const BASE_URL ="http://192.168.29.82:3001/api"
+// const BASE_URL ="http://192.168.29.82:3001/api"
+const BASE_URL ="http://localhost:3001/api"
 
 
 export const LOGIN_ADMIN =BASE_URL +"/users/login";
@@ -16,3 +17,7 @@ export const GET_PRODUCT_FORM =BASE_URL +'/productForm/getAllProductFormData'
 
 export const GET_ALL_TOGGLE = BASE_URL +'/showCase/getAllShowCase'
 export const UPDATE_SHOW_CASE = BASE_URL +'/showCase/updateShowCaseById'
+
+export const IMAGE_UPLOAD = BASE_URL+'/upload/uploadImage'
+
+export const CREATE_BLOG = BASE_URL +'/blog/createBlog'
