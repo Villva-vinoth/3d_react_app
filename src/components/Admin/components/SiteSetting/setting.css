@@ -1,0 +1,32 @@
+
+.settings-cont{
+    background-color: white ;
+    padding: 2rem  1rem;
+    box-sizing: border-box;
+}
+.setting-operations{
+    display: flex;
+}
+
+.toggle-btn{
+    background-color: grey;
+    width: 50px;
+    height: 30px;
+    position: relative;
+    border-radius: 50px;
+}
+.toggle-btn::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 50%;
+    margin: 2px;
+    border-radius: 50%;
+    height: 26px;
+}
+.setting-operations input:checked + .toggle-btn{
+    background-color:black;
+}
+.setting-operations input:checked + .toggle-btn::before{
+ transform: translate(100%);
+}

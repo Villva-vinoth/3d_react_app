@@ -1,0 +1,101 @@
+.blog-cont{
+    padding: 2rem 0px;
+    box-sizing: border-box;
+}
+.blog-form{
+   
+    background-color: white;
+    padding: 0px  2rem;
+    box-sizing: border-box;
+}
+.blog-form h2{
+    padding: 2rem 0px;
+    box-sizing: border-box;
+}
+.blog-input-container{
+    padding: 2rem 0px;
+    gap: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.blog-input-container input,textarea{
+ padding: 0.75rem;
+ box-sizing: border-box;
+ resize: none;
+ border: 2px solid grey;
+ font-size: 18px;
+ border-radius: 5px;
+}
+.upload-image{
+    width: 100%;
+    height: 250px;
+    cursor: pointer;
+
+}
+.image-container-blog{
+    width: 250px;
+    height: 100%;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-container-blog span{
+    position: absolute;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1011;
+    border-radius: 50%;
+
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    background-color:rgba(0, 0, 0, 0.597);
+    color: crimson;
+}
+
+.image-container-blog img{
+    width: 100%;
+    height: 100%;
+  object-fit: scale-down;
+}
+.upload-image-icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 2px dashed rgb(154, 154, 154);
+}
+.upload-image-icon span{
+    font-size: 30px;
+    color: rgb(185, 185, 185);
+}
+.blog-btn-cont{
+    padding: 1rem 0px;
+    display: flex;
+    gap: 10px;
+}
+.blog-btn-cont button{
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.blog-btn-cont button:first-child{
+    background-color: rgb(0, 119, 255);
+}
+
+.blog-btn-cont button:last-child{
+    background-color:crimson;
+}

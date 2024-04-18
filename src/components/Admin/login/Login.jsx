@@ -57,6 +57,8 @@ const Login = ({set}) => {
             await axios.post(LOGIN_ADMIN,loginData).then((response) => {
                 if(response.data.success)
                 {
+                    console.log(response.data)
+                    localStorage.setItem('Token',response.data.token);
                     nav("/admin")
                 }
             }).catch((error) => {

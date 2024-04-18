@@ -10,3 +10,9 @@ export const DELETE_PRODUCT =BASE_URL +'/products/deleteAdminProductDetailById';
 export const CREATE_CONTACT_FORM = BASE_URL + '/contactForm/createContactForm'
 export const CREATE_HOME_FORM =BASE_URL + '/homeForm/createHomeForm'
 export const CREATE_PRODUCT_FORM = BASE_URL +'/productForm/createProductForm'
+export const GET_HOME_FORM =BASE_URL +'/homeForm/getAllHomeFormData'
+export const GET_CONTACT_FORM =BASE_URL +'/contactForm/getAllContactFormData'
+export const GET_PRODUCT_FORM =BASE_URL +'/productForm/getAllProductFormData'
+
+export const GET_ALL_TOGGLE = BASE_URL +'/showCase/getAllShowCase'
+export const UPDATE_SHOW_CASE = BASE_URL +'/showCase/updateShowCaseById'

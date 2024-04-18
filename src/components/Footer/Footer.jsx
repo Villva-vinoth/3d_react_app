@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressCard, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import footerLogo from '../Assets/torus logo/footer.png'
 import wa from '../Assets/footer/image 1.png'
 import li from '../Assets/footer/image 2.png'
