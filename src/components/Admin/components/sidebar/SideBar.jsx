@@ -30,7 +30,7 @@ const SideBar = () => {
         <span><TbReportSearch/></span> <h4>Reports</h4>
       </div>
 
-      <div className='list'><span><IoSettings/></span><h4>Site settings</h4></div>
+      <div className={window.location.pathname  === "/admin/site-settings" ? "list list-active" : "list"} onClick={() => {setPath('/admin/site-settings') }}><span><IoSettings/></span><h4>Site settings</h4></div>
       
       <div className={window.location.pathname  === "/admin/logout" ? "list list-active" : "list"} onClick={() => {setPath('') }}>
         <span><RiLogoutCircleLine /></span> <h4>Logout</h4>

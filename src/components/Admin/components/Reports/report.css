@@ -1,0 +1,17 @@
+.report-table-container{
+    padding: 2rem 0px;
+    box-sizing: border-box;
+}
+.form-drop-down{
+
+    padding: 0.75rem 2rem;
+    box-sizing: border-box;
+    border: 2px solid rgb(218, 218, 218);
+    outline: none;
+    border-radius: 5px;
+    appearance: none;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+

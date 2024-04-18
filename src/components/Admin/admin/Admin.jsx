@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Blogs from '../components/Blog/Blogs'
 import AddBlog from '../components/Blog/AddBlog'
 import Report from '../components/Reports/Report'
+import SiteSettings from '../components/SiteSetting/SiteSettings'
 
 const Admin = ({set}) => {
     useEffect(()=>{
@@ -32,6 +33,7 @@ const Admin = ({set}) => {
             <Route path='/blogs' element={<Blogs/>} />
             <Route path='/add-blog' element={<AddBlog/>} />
             <Route path='/reports' element={<Report/>} />
+            <Route path='/site-settings' element={<SiteSettings/>} />
         </Routes>
        </div>
         </div>
