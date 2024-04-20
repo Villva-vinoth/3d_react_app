@@ -64,6 +64,7 @@
     font-size: 30px;
     color: rgb(185, 185, 185);
 }
+
 @media (max-width:767px) {
     .testimonials-container{
         flex-direction: column;

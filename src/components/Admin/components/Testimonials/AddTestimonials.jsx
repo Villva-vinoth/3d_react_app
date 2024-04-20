@@ -4,7 +4,7 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { IMAGE_UPLOAD } from '../../../../apiServices';
+import { CREATE_TESTIMONIALS, IMAGE_UPLOAD } from '../../../../apiServices';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -80,34 +80,34 @@ const AddTestimonials = () => {
     const addTestimonials = async () => {
         console.log("tesimonials",testimonials)
         const accessToken = localStorage.getItem('Token');
-        // const formData = new FormData();
-        // formData.append('image', testimonials.testimonials_image);
+        const formData = new FormData();
+        formData.append('image', testimonials.testimonials_image);
         if (handleValidation()) {
-            // await axios.post(IMAGE_UPLOAD, formData, {
-            //     headers: {
-            //         Authorization: `Bearer ${accessToken}`
-            //     }
-            // }).then((res) => {
-            //     if (res) {
-            //         testimonials.testimonials_image = res.data.image
-            //         // axios.post(CREATE_BLOG,blog, {
-            //         //     headers: {
-            //         //         Authorization: `Bearer ${accessToken}`
-            //         //     }
-            //         // }).then((res) => {
-            //         //     if (res) {
-            //         //         console.log(res.data)
-            //         //         console.log("submitted !", blog)
-            //         //         toast.success(' Added Succefully  !');
-            //         //         resetPost()
-            //         //     }
-            //         // }).catch((err) => {
-            //         //     toast.error(err.response.data.message)
-            //         // })
-            //     }
-            // }).catch((err) => {
-            //     toast.error(err.response.data.message)
-            // })
+            await axios.post(IMAGE_UPLOAD, formData, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            }).then((res) => {
+                if (res) {
+                    testimonials.testimonials_image = res.data.image
+                    axios.post(CREATE_TESTIMONIALS,testimonials, {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`
+                        }
+                    }).then((res) => {
+                        if (res) {
+                            console.log(res.data)
+                            console.log("submitted !", testimonials)
+                            toast.success(' Added Succefully  !');
+                            resetTestimonials()
+                        }
+                    }).catch((err) => {
+                        toast.error(err.response.data.message)
+                    })
+                }
+            }).catch((err) => {
+                toast.error(err.response.data.message)
+            })
 
         }
     }

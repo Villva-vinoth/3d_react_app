@@ -21,3 +21,8 @@ export const UPDATE_SHOW_CASE = BASE_URL +'/showCase/updateShowCaseById'
 export const IMAGE_UPLOAD = BASE_URL+'/upload/uploadImage'
 
 export const CREATE_BLOG = BASE_URL +'/blog/createBlog'
+
+export const CREATE_TESTIMONIALS = BASE_URL +'/testimonials/createTestimonialData'
+export const GET_ALL_TESTIMONIALS = BASE_URL +'/testimonials/getAllTestimonialsDataDetails'
+export const UPDATE_TESTIMONIALS = BASE_URL +'/testimonials/updateTestimonialsDetailById'
+export const DELETE_TESTIMONAILS = BASE_URL +'/testimonials/deleteTestimonialsDetailById'
