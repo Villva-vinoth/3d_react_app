@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../components/Dashboard/Dashboard'
 import SideBar from '../components/sidebar/SideBar'
@@ -19,14 +19,18 @@ const Admin = ({set}) => {
     useEffect(()=>{
         set(true)
     },[])
+    const sidebarRef=useRef();
+    const handelSideClose =() =>{
+          sidebarRef.current.classList.add("sidebar-close")
+    }
   return (
     <div className='admin-main-console'>
       <ToastContainer
       
       />
-        <AdminHeader  title='torus'/>
+        <AdminHeader  title='torus' handelSideClose={handelSideClose}/>
         <div className='admin-console'>
-        <SideBar/>
+        <SideBar sidebarRef={sidebarRef}/>
        <div className='admin-display'>
        <Routes>
             <Route path='/' element={<Dashboard />} />

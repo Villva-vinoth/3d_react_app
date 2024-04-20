@@ -152,7 +152,7 @@ const AddBlog = () => {
                     <div className='blog-input-container'>
                         <input
                             placeholder='Title -1'
-                            name='blog-title1'
+                            name='blog_title1'
                             value={blog.blog_title1}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
 

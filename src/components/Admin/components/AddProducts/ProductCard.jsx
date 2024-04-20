@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './addProducts.css'
 import { HiDotsVertical } from "react-icons/hi";
 import axios from 'axios';
-import { DELETE_PRODUCT } from '../../../../apiServices';
+import { DELETE_PRODUCT, IMAGE_UPLOAD, UPDATE_PRODUCT, UPDATE_PRODUCT_URL2 } from '../../../../apiServices';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -21,6 +21,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
   const [updateProduct, setUpdateProduct] = useState(
     {
       user_id: 1,
+      product_id: productId,
       product_title: productTitle,
       product_image: productImage,
       product_description: productDesc,
@@ -58,17 +59,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
       (res) => {
         if (res) {
           setDeleteFlag(true);
-          toast.success(' Deleted Succefully  !', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-
-          });
+          toast.success(' Deleted Succefully  !');
         }
       }
     )
@@ -82,6 +73,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
     setUpdateProduct(
       {
         user_id: 1,
+        product_id: productId,
         product_title: productTitle,
         product_image: productImage,
         product_description: productDesc,
@@ -120,16 +112,19 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
   const closeImage = () => {
     setImageIsOpen(true); //
     setImageIsSet("")
+    updateProduct.product_image = "";
   }
-
+  console.log(updateProduct)
   const handleUploadImage = (e) => {
     const file = e.target.files[0];
     if (file) {
       setImageIsSet(URL.createObjectURL(file))
       setImageIsOpen(false)
+      setUpdateProduct({ ...updateProduct, [e.target.name]: file })
 
     }
   }
+
 
   const customStyles = {
     content: {
@@ -150,6 +145,67 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
     },
   };
 
+  const handleValidation = () => {
+    if (updateProduct.product_image == "") {
+      toast.error("please upload Image!")
+      return false;
+    }
+    return true;
+  }
+
+  const saveChanges = async () => {
+    const accessToken = localStorage.getItem('Token');
+    if (handleValidation()) {
+      if (imageIsSet != "") {
+        console.log("url 1")
+        const formData = new FormData();
+        formData.append('image', updateProduct.product_image);
+        await axios.post(IMAGE_UPLOAD, formData, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        }).then((res) => {
+          if (res) {
+            console.log("url 1")
+            updateProduct.product_image = res.data.image
+            axios.patch(UPDATE_PRODUCT, updateProduct, {
+              headers: {
+                Authorization: `Bearer ${accessToken}`
+              }
+            }).then((res) => {
+              if (res) {
+                console.log("update without image", res.data)
+                toast.success(' Updated  Succefully  !')
+                setRefreshFlag(true)
+                closeModel()
+              }
+            }).catch((err) => {
+              toast.error(err.response.data.message)
+            })
+          }
+        }).catch((err) => {
+          toast.error(err.response.data.message)
+        })
+      }
+      else {
+        console.log("url 2")
+        axios.patch(UPDATE_PRODUCT, updateProduct, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        }).then((res) => {
+          if (res) {
+            console.log("update with image", res.data)
+            toast.success(' Updated  Succefully  !')
+            setRefreshFlag(true)
+            closeModel()
+          }
+        }).catch((err) => {
+          toast.error(err.response.data.message)
+        })
+      }
+    }
+  }
   return (
     <div className='prod-card'>
       <div className='prod-image-cont'>
@@ -159,12 +215,13 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
         <h3>{productTitle}</h3>
         <h3>{getDate()}</h3>
       </div>
-      <div className='admin-options'><span className='edit-dots'>{<HiDotsVertical />}
-        <div className='admin-drop-menu'>
-          <span onClick={editProduct}>Edit</span>
-          <span onClick={deleteProduct}>Delete</span>
-        </div>
-      </span>
+      <div className='admin-options'>
+        <span className='edit-dots'>{<HiDotsVertical />}
+          <div className='admin-drop-menu'>
+            <span onClick={editProduct}>Edit</span>
+            <span onClick={deleteProduct}>Delete</span>
+          </div>
+        </span>
 
       </div>
       <Modal
@@ -203,6 +260,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
             </div>
 
             {imageIsOpen ? <input type="file"
+              name='product_image'
               accept='image/*'
               onChange={(e) => { handleUploadImage(e) }} /> :
               <div className='edit-image-cont'>
@@ -400,9 +458,21 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
           </div>
         </div>
         <div className='edit-btn-cont'>
-          <button>Save Changes</button>
+          <button onClick={saveChanges}>Save Changes</button>
           <button onClick={closeModel}> Cancel</button>
         </div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
 
       </Modal>
     </div>

@@ -43,9 +43,7 @@ const Testimonials = () => {
                  testimonialDesc={item.testimonials_description}
                  setDeleteFlag={setDeleteFlag} 
                  setRefreshFlag={setRefreshFlag}
-                 />
-              
-                )
+                 />)
             })
           }
            

@@ -57,13 +57,16 @@
 .product-form-field{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    
  
 }
 .product-form-field > *{
     flex: 1;
-   display: flex;
-   align-items: center;
+    display: flex;
+    align-items: center;
    justify-content: space-between;
+  
 }
 .product-rows label{
     font-size: 18px;
@@ -191,7 +194,6 @@
 }
 .edit-form{
     display: flex;
-
     gap: 10px;
 }
 .edit-tit{
@@ -286,5 +288,19 @@
     .Admin-product-container>*{
         width: 100%;
     }
-    
+    .product-rows label{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .edit-form {
+        flex-direction: column;
+    }
+    .main-field-container input ,.edit-textarea
+    {
+        width: 100%;
+    }
+    .admin-drop-menu{
+      
+        left: -200%;
+    }
 }

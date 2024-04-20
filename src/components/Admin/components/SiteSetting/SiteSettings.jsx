@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Switch } from 'antd'
+import { Switch,Divider } from 'antd'
 import "./setting.css"
 import axios from 'axios'
 import { GET_ALL_TOGGLE, UPDATE_SHOW_CASE } from '../../../../apiServices'
@@ -55,14 +55,15 @@ const SiteSettings = () => {
         <div className='admin-products'>
             <div className='wrapper-container'>
                 <div className='settings-cont'>
-                    <h2>Settings</h2>
+                    <h2> Site Settings</h2>
+                    <Divider style={{borderColor:"rgb(207, 207, 207)",borderWidth:"3px",borderRadius:"3px"}}/>
 
                     <div className='setting-operations'>
 
                         {
                             getAllStatus.map(itm => {
                                 return (
-                                    <div>
+                                    <div className='setting_container'>
                                         <label>{itm.showcase_name}</label>
                                         <Switch
                                             onClick={() => { changeStatus(itm.showcase_id, itm.showcase_value) }}

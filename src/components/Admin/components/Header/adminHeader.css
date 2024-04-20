@@ -4,6 +4,9 @@
     box-shadow: 0 0 2px grey;
     font-size: 1.5rem;
     padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
     box-sizing: border-box;
     /* align-items: center; */
@@ -12,4 +15,15 @@
     width: 200px;
     height: 40px;
     object-fit: contain;
+}
+.NavBar-admin
+{
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .NavBar-admin{
+    display: block;
+    }
+    
 }
