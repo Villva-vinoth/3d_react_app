@@ -7,9 +7,9 @@ import image2 from '../Assets/blogs/Rectangle 38 (1).png'
 import image3 from '../Assets/blogs/Rectangle 38 (2).png'
 import { Route, Routes } from "react-router-dom";
 import BlogDetail from "./BlogView/Blogdetail/BlogDetail";
-const Blogs = () => {
+const Blogs = ({btshow}) => {
 
-
+console.log("bt",btshow)
     const data = [
         {   
             id:1,
@@ -44,7 +44,8 @@ const Blogs = () => {
       }, [])
 
     return (
-        <div className="blogs-content-parent">
+    //  { btshow[0].showcase_value==1 ? 
+         <div className="blogs-content-parent">
 
             <Routes>
                 <Route path="/" element={
@@ -64,6 +65,7 @@ const Blogs = () => {
             </Routes>
 
         </div>
+        //  :('')}
     );
 }
 export default Blogs;

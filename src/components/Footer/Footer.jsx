@@ -9,7 +9,7 @@ import insta from '../Assets/footer/image 4.png'
 import footerImage from '../Assets/footer/Group 92.png'
 import { useNavigate } from 'react-router-dom'
 
-const Footer = () => {
+const Footer = ({blog,testimonial}) => {
     const nav =useNavigate()
   
     return (
@@ -25,8 +25,9 @@ const Footer = () => {
                 <div> <label className='footer-po' onClick={()=>nav('/product')}>Products</label></div>
                 <div><label className='footer-po' onClick={()=>nav('/why-torus')}>Why Torus?</label></div>
                 <div><label className='footer-po'onClick={()=>nav('/gallery')}>Gallery</label></div>
-                <div><label className='footer-po' onClick={()=>nav('/blogs')}>Blogs</label></div>
-                <div><label className='footer-po' onClick={()=>nav('/testimonials')}>Testimonials</label></div>
+                {/* {blog[0].showcase_Value ==1?<div><label className='footer-po' onClick={()=>nav('/blogs')}>Blogs</label></div> :('')}
+
+                {testimonial[0].showcase_Value==1?<div><label className='footer-po' onClick={()=>nav('/testimonials')}>Testimonials</label></div>:("")} */}
                 </div>
             </div>
             <div className='footer-content-2'>
