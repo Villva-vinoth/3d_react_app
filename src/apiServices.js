@@ -1,5 +1,5 @@
-const BASE_URL = "http://192.168.29.82:3001/api"
-// const BASE_URL ="http://localhost:3001/api"
+// const BASE_URL = "http://192.168.29.82:3001/api"
+const BASE_URL ="http://localhost:3001/api"
 
 
 export const LOGIN_ADMIN = BASE_URL + "/users/login";
@@ -25,3 +25,6 @@ export const CREATE_TESTIMONIALS = BASE_URL + '/testimonials/createTestimonialDa
 export const GET_ALL_TESTIMONIALS = BASE_URL + '/testimonials/getAllTestimonialsDataDetails'
 export const UPDATE_TESTIMONIALS = BASE_URL + '/testimonials/updateTestimonialsDetailById'
 export const DELETE_TESTIMONAILS = BASE_URL + '/testimonials/deleteTestimonialsDetailById'
+
+export const GET_ALL_BLOG = BASE_URL +'/blog/getAllBlog'
+export const DELETE_BLOG = BASE_URL +'/blog/deleteAdminProductDetailById'

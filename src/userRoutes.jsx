@@ -58,7 +58,6 @@ const UserRoutes = () => {
             {blogs[0]?.showcase_value ==1 ?<Route path="/blogs/*" element={<Blogs set={setLoginRoute}  />} />:('')}
             <Route path="/gallery" element={<Gallery  set={setLoginRoute}/>} />
             <Route path="/why-torus" element={<WhyTorus set={setLoginRoute}/>} />
-         
         </Routes>
         <Footer blog={blogs} testimonial={testimonials}/>
     </div>
