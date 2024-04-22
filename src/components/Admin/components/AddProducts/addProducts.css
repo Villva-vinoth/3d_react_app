@@ -230,7 +230,7 @@
 .edit-input-field-row >* {
     flex: 1;
 }
-.edit-input-field-row input{
+.edit-input-field-row input,.edit-textarea-blog{
      padding: 0.75rem;
      font-size: 16px;
      width: 100%;
@@ -238,6 +238,8 @@
      background-color:rgb(231, 231, 231) ;
      border: none;
 }
+
+
 
 .edit-image-cont {
 
@@ -283,6 +285,30 @@
 .edit-btn-cont button:last-child{
     background-color:crimson;
     
+}
+
+.pagination-container-admin{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    font-size:1.2rem
+    
+}
+.pagination-container-admin .page-num{
+    cursor:pointer;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 400;
+}
+.page-num:hover{
+    background-color: black;
+    color: white;
+}
+.pagination-container-admin .active{
+    background-color:black;
+    color:white;
 }
 @media (max-width: 768px) {
     .Admin-product-container>*{

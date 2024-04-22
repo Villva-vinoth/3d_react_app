@@ -8,8 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import Modal from 'react-modal';
 const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
-    blogDesc,blogTitle1,blogTitle2,blogTitle3,blogDescription1,blogDescription2,
-    blogDescription3,setRefreshFlag }) => {
+  blogDesc, blogTitle1, blogTitle2, blogTitle3, blogDescription1, blogDescription2,
+  blogDescription3, setRefreshFlag }) => {
 
   // console.log()
 
@@ -30,7 +30,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
       blog_description2: blogDescription2,
       blog_title3: blogTitle3,
       blog_description3: blogDescription3,
-     
+
     }
   )
 
@@ -211,7 +211,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
         style={customStyles}
       >
 
-        <h2>Edit Product</h2>
+        <h2>Edit Blog Post</h2>
         <div className='edit-form'>
 
           <div className='main-field-container'>
@@ -251,54 +251,66 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
           </div>
 
           <div className='input-field container'>
-          <div>
-              <span className='edit-tit'>Blog Title 1:</span>
-
-              <input
-                type='text'
-                value={updateProduct.blog_title1}
-                name='blog_title1'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
-                placeholder='blog title1' />
+            <div className='edit-input-field-row'>
+              <div>
+                <span className='edit-tit'>Blog Title 1</span>
+                <input
+                  type='text'
+                  value={updateProduct.blog_title1}
+                  name='blog_title1'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
+                  placeholder='blog title1' />
+              </div>
             </div>
 
-            <div>
-              <span className='edit-tit'> Blog Description 1:</span>
+            <div className='edit-input-field-row'>
+              <div>
+                <span className='edit-tit'> Blog Description 1</span>
 
-              <textarea
-                className='edit-textarea'
-                rows={8}
-                type='text'
-                value={updateProduct.blog_description1}
-                name='blog_description1'
-                placeholder='Blog description1'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
-            </div>
-            <div>
-              <span className='edit-tit'>Blog Title 2:</span>
-
-              <input
-                type='text'
-                value={updateProduct.blog_title2}
-                name='blog_title2'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
-                placeholder='blog title 2' />
+                <textarea
+                  className='edit-textarea-blog'
+                  rows={8}
+                  type='text'
+                  value={updateProduct.blog_description1}
+                  name='blog_description1'
+                  placeholder='Blog description1'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+              </div>
             </div>
 
-            <div>
-              <span className='edit-tit'> Blog Description 2</span>
 
-              <textarea
-                className='edit-textarea'
-                rows={8}
-                type='text'
-                value={updateProduct.blog_description2}
-                name='blog_description2'
-                placeholder='Blog description 2'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+
+            <div className='edit-input-field-row'>
+              <div>
+                <span className='edit-tit'>Blog Title 2</span>
+
+                <input
+                  type='text'
+                  value={updateProduct.blog_title2}
+                  name='blog_title2'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
+                  placeholder='blog title 2' />
+              </div>
             </div>
-            <div>
-              <span className='edit-tit'>Blog Title 3:</span>
+
+            <div className='edit-input-field-row'>
+              <div>
+                <span className='edit-tit'> Blog Description 2</span>
+
+                <textarea
+                  className='edit-textarea-blog'
+                  rows={8}
+                  type='text'
+                  value={updateProduct.blog_description2}
+                  name='blog_description2'
+                  placeholder='Blog description2'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+              </div>
+            </div>
+
+            <div className='edit-input-field-row'>
+              <div>
+              <span className='edit-tit'>Blog Title 3</span>
 
               <input
                 type='text'
@@ -307,18 +319,21 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                 onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
                 placeholder='blog title 3' />
             </div>
+            </div>
 
-            <div>
-              <span className='edit-tit'> Blog Description 3:</span>
+            <div className='edit-input-field-row'>
+              <div>
+                <span className='edit-tit'> Blog Description 3</span>
 
-              <textarea
-                className='edit-textarea'
-                rows={8}
-                type='text'
-                value={updateProduct.blog_description3}
-                name='blog_description3'
-                placeholder='Blog description 3'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+                <textarea
+                  className='edit-textarea-blog'
+                  rows={8}
+                  type='text'
+                  value={updateProduct.blog_description3}
+                  name='blog_description3'
+                  placeholder='Blog description3'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+              </div>
             </div>
 
           </div>

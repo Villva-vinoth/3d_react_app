@@ -6,10 +6,12 @@ import { ToastContainer,toast } from 'react-toastify';
 import axios from 'axios';
 import { CREATE_BLOG, IMAGE_UPLOAD } from '../../../../apiServices';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddBlog = () => {
 
+    const nav =useNavigate()
     const [blog, setBlog] = useState({
         blog_image: "",
         blog_title: "",
@@ -85,8 +87,10 @@ const AddBlog = () => {
             imageRef.current.value = null
         }
     }
-
+    
+    console.log(blog)
     const addPost = async () => {
+       
         const accessToken = localStorage.getItem('Token');
         const formData = new FormData();
         formData.append('image', blog.blog_image);
@@ -97,6 +101,7 @@ const AddBlog = () => {
                 }
             }).then((res) => {
                 if (res) {
+                    // resetPost()
                     blog.blog_image = res.data.image
                     axios.post(CREATE_BLOG,blog, {
                         headers: {
@@ -108,6 +113,7 @@ const AddBlog = () => {
                             console.log("submitted !", blog)
                             toast.success(' Added Succefully  !');
                             resetPost()
+                            nav("/admin/blogs")
                         }
                     }).catch((err) => {
                         toast.error(err.response.data.message)

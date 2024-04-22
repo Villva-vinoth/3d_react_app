@@ -35,7 +35,7 @@ const Blogs = () => {
               return (<BlogCard key={blog.blog_id}
                 blogTitle={blog.blog_title}
                 blogImage={blog.blog_image}
-                blogDate={blog.createAt}
+                blogDate={blog.create_At}
                 blogId={blog.blog_id}
                 blogDesc={blog.blog_description}
                 blogTitle1={blog.blog_title1}
