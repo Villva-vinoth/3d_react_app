@@ -6,9 +6,15 @@
 
 .Product-content-picture{
     flex-basis: 50%;
+    /* background-color: red; */
+    width: 590px;
+    height: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .Product-content-picture img{
-    width: 90%;
+    width: 100%;
     height: 100%;
     object-fit: contain;
 }

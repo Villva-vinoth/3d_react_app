@@ -35,13 +35,18 @@
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
-    color: white;
+    color: white !important;
     padding: 0.2rem 0.7rem;
     background-image: linear-gradient(125deg ,rgb(0, 0, 0),rgb(0, 0, 0),rgb(180, 179, 182));
 }
 .product-color{
-    background-image:linear-gradient(to right, white,white);
+    /* background-image:linear-gradient(to right, white,white); */
     color: black;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.2rem 0.7rem;
+
 }
 
 .product-icon-num{

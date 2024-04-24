@@ -39,13 +39,23 @@
 }
 .login-form div{
     display:flex;
- 
     padding: 0;
     margin: 0;
     margin-bottom: 15px;
     height: 50px;
+    position: relative;
 }
-.login-form  div span{
+.lock-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+    z-index: 11;
+
+}
+.login-form  div .login-icon{
     width: 15%;
     background-color: #00254a;
     height: 100%;

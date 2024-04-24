@@ -4,10 +4,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios  from 'axios';
 import { ADD_PRODUCT } from '../../../../apiServices';
+import { useNavigate } from 'react-router-dom';
 
 const AddProducts = () => {
 
   const fileInput = useRef(null)
+  const nav =useNavigate();
 
   const [product, setProduct] = useState(
     { 
@@ -153,6 +155,7 @@ const AddProducts = () => {
 
           });
           resetProduct();
+          nav("/admin/products")
         }
       }).catch((err) => {
         console.log(err)

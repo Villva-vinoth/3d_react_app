@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
-
+import { useCookies } from 'react-cookie'
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { CiUser } from "react-icons/ci";
 import { FaUserAlt } from "react-icons/fa";
@@ -21,7 +21,13 @@ const Login = ({set}) => {
     })
 
     const nav = useNavigate()
-
+    const [cookies,setCookie,removeCookie] =useCookies([])
+    useEffect(()=>{
+        if(cookies.jwt) {
+            nav("/admin")
+           }
+     },[])
+  
     useEffect(()=>{
         set(true)
     },[]) 
@@ -54,7 +60,7 @@ const Login = ({set}) => {
 
         if(handleValidation())
         {
-            await axios.post(LOGIN_ADMIN,loginData).then((response) => {
+            await axios.post(LOGIN_ADMIN,loginData,{withCredentials:true}).then((response) => {
                 if(response.data.success)
                 {
                     console.log(response.data)
@@ -73,8 +79,20 @@ const Login = ({set}) => {
                 }
             });
         }
-       
-       
+    }
+
+    const [showPassword, setShowPassword] = useState(<FaEyeSlash />)
+    const passwordRef = useRef(null);
+    const isPasswordOpen = () => {
+        if (passwordRef.current.type == "password") {
+            passwordRef.current.type = "text"
+            setShowPassword(<FaEye />)
+        }
+        else {
+            passwordRef.current.type = "password"
+            setShowPassword(<FaEyeSlash />)
+        }
+
     }
 
  
@@ -85,7 +103,7 @@ const Login = ({set}) => {
           <div className='login-form'>
             <span className='login-logo'><CiUser/></span>
             <div>
-                 <span><FaUserAlt/></span>
+                 <span className='login-icon'><FaUserAlt/></span>
                 <input  type="email" 
                 placeholder='Email' 
                 name='email'
@@ -93,11 +111,14 @@ const Login = ({set}) => {
             </div>
 
             <div>
-                <span><FaLock/></span>
-                <input  type="password" placeholder='Password'
+                <span className='login-icon'><FaLock/></span>
+                <input  type="password"
+                 placeholder='Password'
+                 ref={passwordRef}
                 name='password'
                 onChange={(e)=>{setLoginData({...loginData,[e.target.name]:e.target.value})}}
                 />
+                 <span onClick={isPasswordOpen} className = "lock-icon">{showPassword}</span>
             </div>
             <div>
                 <input type='submit' value="Login" onClick={handleLogin}/>

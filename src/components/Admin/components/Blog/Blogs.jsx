@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import BlogCard from './BlogCard';
 import { GET_ALL_BLOG } from '../../../../apiServices';
 import axios from 'axios';
+import ReactPaginate from 'react-paginate';
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+
 
 
 const Blogs = () => {
@@ -20,6 +24,25 @@ const Blogs = () => {
     console.log("refresh", refreshFlag)
     getAllBlog()
   }, [deleteFlag, refreshFlag])
+
+
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 6;
+
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const currentItems = blogItems.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(blogItems.length / itemsPerPage);
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % blogItems.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+
   const nav = useNavigate();
   return (
     <div className='admin-products'>
@@ -50,6 +73,20 @@ const Blogs = () => {
           }
 
         </div>
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel={<MdKeyboardDoubleArrowRight/>}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          pageCount={pageCount}
+          previousLabel={<MdKeyboardDoubleArrowLeft/>}
+          renderOnZeroPageCount={null}
+          containerClassName='pagination-container-admin'
+          pageLinkClassName='page-num'
+          previousLinkClassName='page-num'
+          nextLinkClassName='page-num'
+          activeLinkClassName='active'
+        />
       </div>
     </div>
   )

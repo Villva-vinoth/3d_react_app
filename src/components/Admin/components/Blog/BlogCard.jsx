@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import './addProducts.css'
 import { HiDotsVertical } from "react-icons/hi";
 import axios from 'axios';
-import { DELETE_BLOG, IMAGE_UPLOAD, UPDATE_PRODUCT, UPDATE_PRODUCT_URL2 } from '../../../../apiServices';
+import { DELETE_BLOG, IMAGE_UPLOAD, UPDATE_BLOG, UPDATE_PRODUCT, UPDATE_PRODUCT_URL2 } from '../../../../apiServices';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -148,7 +148,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
           if (res) {
             console.log("url 1")
             updateProduct.blog_image = res.data.image
-            axios.patch(UPDATE_PRODUCT, updateProduct, {
+            axios.patch(UPDATE_BLOG, updateProduct, {
               headers: {
                 Authorization: `Bearer ${accessToken}`
               }
@@ -169,7 +169,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
       }
       else {
         console.log("url 2")
-        axios.patch(UPDATE_PRODUCT, updateProduct, {
+        axios.patch(UPDATE_BLOG, updateProduct, {
           headers: {
             Authorization: `Bearer ${accessToken}`
           }

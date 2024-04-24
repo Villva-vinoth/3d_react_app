@@ -22,7 +22,7 @@ const SiteSettings = () => {
         }
         getStatus()
     }
-        , [])
+        , [getAllStatus])
 
    
     let showCaseData ={

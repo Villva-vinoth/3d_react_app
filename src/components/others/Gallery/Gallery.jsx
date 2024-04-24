@@ -61,7 +61,7 @@ const Gallery = () => {
                 <p>Journey through the visual tapestry of our Axial Flux Motors and Controllers, where cutting-edge technology meets unparalleled craftsmanship. In our gallery, we invite you to witness the intricate details and revolutionary design that define our commitment to excellence.  Embark on a visual journey through our gallery, where innovation comes to life. Our Axial Flux Motors and Controllers redefine industry standards, and we invite you to be a part of the evolution. Witness the power, precision, and passion that shape the future of electric propulsion.</p>
 
                 <Swiper
-                    slidesPerView={4}
+                    slidesPerView={2}
                     ref={SlideRef}
                     spaceBetween={20}
                     modules={[Navigation, Pagination]}

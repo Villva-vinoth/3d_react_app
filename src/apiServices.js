@@ -27,4 +27,5 @@ export const UPDATE_TESTIMONIALS = BASE_URL + '/testimonials/updateTestimonialsD
 export const DELETE_TESTIMONAILS = BASE_URL + '/testimonials/deleteTestimonialsDetailById'
 
 export const GET_ALL_BLOG = BASE_URL +'/blog/getAllBlog'
-export const DELETE_BLOG = BASE_URL +'/blog/deleteAdminProductDetailById'
+export const DELETE_BLOG = BASE_URL +'/blog/deleteBlogDetailById'
+export const UPDATE_BLOG = BASE_URL +'/blog/updateBlogDetailById'

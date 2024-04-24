@@ -6,10 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { CREATE_TESTIMONIALS, IMAGE_UPLOAD } from '../../../../apiServices';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddTestimonials = () => {
 
+
+    const nav=useNavigate()
     const [testimonials, setTestimonials] = useState({
         testimonials_image: "",
         testimonials_name: "",
@@ -20,7 +23,6 @@ const AddTestimonials = () => {
 
     const [Image, setImage] = useState("")
     const imageRef = useRef()
-
 
 
     const handlechangeImageUpload = () => {
@@ -100,6 +102,7 @@ const AddTestimonials = () => {
                             console.log("submitted !", testimonials)
                             toast.success(' Added Succefully  !');
                             resetTestimonials()
+                            nav("/admin/testimonials")
                         }
                     }).catch((err) => {
                         toast.error(err.response.data.message)
