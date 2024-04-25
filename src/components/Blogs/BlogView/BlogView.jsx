@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import Mimagenew from '../../Assets/handshake.png'
 import BlogDetail from './Blogdetail/BlogDetail'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +8,8 @@ const BlogView = ({id,img,month,day,topic,describe}) => {
     const handleClick =(id)=>{
         nav('/blogs/blogid',{id:id})
     }
+
+
 
     return (
         <div className="blogs-content">
