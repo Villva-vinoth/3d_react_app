@@ -53,7 +53,7 @@ const Blogs = () => {
         </div>
         <div className='Admin-product-container'>
           {
-            blogItems && blogItems.map(blog => {
+            currentItems && currentItems.map(blog => {
               console.log("mapped times ")
               return (<BlogCard key={blog.blog_id}
                 blogTitle={blog.blog_title}

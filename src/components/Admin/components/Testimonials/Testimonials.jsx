@@ -52,7 +52,7 @@ const Testimonials = () => {
         </div>
         <div className='Admin-product-container'>
           {
-            testimonialItems && testimonialItems.map(item =>{
+            currentItems && currentItems.map(item =>{
               console.log("mapped times ")
               return(
                 <TestimonialCard

@@ -10,6 +10,7 @@ import { TbReportSearch } from "react-icons/tb";
 import { FaUsersBetweenLines } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 import { LiaComments } from "react-icons/lia";
+import { BsAward } from "react-icons/bs";
 const SideBar = ({sidebarRef}) => {
   const nav = useNavigate()
   const [active, SetActive] = useState("/admin");
@@ -42,10 +43,14 @@ const SideBar = ({sidebarRef}) => {
       <div className={window.location.pathname === "/admin/testimonials" ? "list list-active" : window.location.pathname ==="/admin/add-testimonials" ? "list list-active": "list"} onClick={() => { setPath('/admin/testimonials') }}>
         <span><FaUsersBetweenLines/></span> <h4>Testimonials</h4>
       </div>
+     
+
+      <div className={window.location.pathname === "/admin/awards" ? "list list-active" :window.location.pathname === "/admin/add-awards" ? "list list-active" :"list" } onClick={() => { setPath('/admin/awards') }}><span><BsAward/></span><h4>Awards</h4></div>
+
       <div className={window.location.pathname === "/admin/reports" ? "list list-active" : "list"} onClick={() => { setPath('/admin/reports') }}>
         <span><TbReportSearch /></span> <h4>Reports</h4>
       </div>
-
+      
       <div className={window.location.pathname === "/admin/site-settings" ? "list list-active" : "list"} onClick={() => { setPath('/admin/site-settings') }}><span><IoSettingsOutline/></span><h4>Site settings</h4></div>
 
       <div className={window.location.pathname === "/admin/logout" ? "list list-active" : "list"} onClick={() => { setPath('') }}>

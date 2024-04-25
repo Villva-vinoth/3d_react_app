@@ -6,6 +6,7 @@ import { DELETE_BLOG, IMAGE_UPLOAD, UPDATE_BLOG, UPDATE_PRODUCT, UPDATE_PRODUCT_
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import loader from "../../../Assets/loader/Gear@1.25x-0.2s-200px-200px.svg"
 import Modal from 'react-modal';
 const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
   blogDesc, blogTitle1, blogTitle2, blogTitle3, blogDescription1, blogDescription2,
@@ -16,7 +17,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
   const [isOpen, setIsOpen] = useState(false)
   const [imageIsOpen, setImageIsOpen] = useState(false)
   const [imageIsSet, setImageIsSet] = useState("")
-
+  const [isLoading,setIsLoading] =useState(true)
   const [updateProduct, setUpdateProduct] = useState(
     {
       user_id: 1,
@@ -45,7 +46,13 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
   }
   const deleteProduct = async () => {
     setDeleteFlag(false);
-    await axios.patch(`${DELETE_BLOG}/${blogId}`, null).then(
+    const accessToken = localStorage.getItem('Token');
+    await axios.patch(`${DELETE_BLOG}/${blogId}`, null,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    }).then(
       (res) => {
         if (res) {
           setDeleteFlag(true);
@@ -135,6 +142,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
 
   const saveChanges = async () => {
     const accessToken = localStorage.getItem('Token');
+    setIsLoading(false)
     if (handleValidation()) {
       if (imageIsSet != "") {
         console.log("url 1")
@@ -157,6 +165,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                 console.log("update without image", res.data)
                 toast.success(' Updated  Succefully  !')
                 setRefreshFlag(true)
+                setIsLoading(true)
                 closeModel()
               }
             }).catch((err) => {
@@ -178,6 +187,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
             console.log("update with image", res.data)
             toast.success(' Updated  Succefully  !')
             setRefreshFlag(true)
+            setIsLoading(true)
             closeModel()
           }
         }).catch((err) => {
@@ -211,7 +221,8 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
         style={customStyles}
       >
 
-        <h2>Edit Blog Post</h2>
+        { isLoading?(<div>
+          <h2>Edit Blog Post</h2>
         <div className='edit-form'>
 
           <div className='main-field-container'>
@@ -342,8 +353,12 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
           <button onClick={saveChanges}>Save Changes</button>
           <button onClick={closeModel}> Cancel</button>
         </div>
+          </div>):(<div className='loader-component'>
+                  <img src={loader}/>
+                </div>)}
+        
         <ToastContainer
-          position="bottom-right"
+          position="top-right"
           autoClose={1000}
           hideProgressBar={false}
           newestOnTop={false}
