@@ -6,6 +6,7 @@ import { DELETE_PRODUCT, IMAGE_UPLOAD, UPDATE_PRODUCT, UPDATE_PRODUCT_URL2 } fro
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import loader from "../../../Assets/loader/Gear@1.25x-0.2s-200px-200px.svg"
 import Modal from 'react-modal';
 const ProductCard = ({ productTitle, productImage, productDate, productId, setDeleteFlag,
   productDesc, voltageRange, nominalVoltage, ratedVoltage, ratedPower, absoluteMaxVoltage, maxCurrent,
@@ -17,6 +18,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
   const [isOpen, setIsOpen] = useState(false)
   const [imageIsOpen, setImageIsOpen] = useState(false)
   const [imageIsSet, setImageIsSet] = useState("")
+  const [isLoading,setIsLoading] =useState(true)
 
   const [updateProduct, setUpdateProduct] = useState(
     {
@@ -55,7 +57,12 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
   }
   const deleteProduct = async () => {
     setDeleteFlag(false);
-    await axios.patch(`${DELETE_PRODUCT}/${productId}`, null).then(
+    const accessToken = localStorage.getItem('Token');
+    await axios.patch(`${DELETE_PRODUCT}/${productId}`, null, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    }).then(
       (res) => {
         if (res) {
           setDeleteFlag(true);
@@ -105,8 +112,6 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
     // setDeleteFlag(false);
     setRefreshFlag(false);
     console.log("Cancel", updateProduct)
-
-
   }
 
   const closeImage = () => {
@@ -155,6 +160,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
 
   const saveChanges = async () => {
     const accessToken = localStorage.getItem('Token');
+    setIsLoading(false)
     if (handleValidation()) {
       if (imageIsSet != "") {
         console.log("url 1")
@@ -177,6 +183,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
                 console.log("update without image", res.data)
                 toast.success(' Updated  Succefully  !')
                 setRefreshFlag(true)
+                setIsLoading(true)
                 closeModel()
               }
             }).catch((err) => {
@@ -197,6 +204,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
           if (res) {
             console.log("update with image", res.data)
             toast.success(' Updated  Succefully  !')
+            setIsLoading(true)
             setRefreshFlag(true)
             closeModel()
           }
@@ -230,8 +238,8 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
         contentLabel="Edit Modal"
         style={customStyles}
       >
-
-        <h2>Edit Product</h2>
+          {isLoading?(<div>
+            <h2>Edit Product</h2>
         <div className='edit-form'>
 
           <div className='main-field-container'>
@@ -461,8 +469,12 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
           <button onClick={saveChanges}>Save Changes</button>
           <button onClick={closeModel}> Cancel</button>
         </div>
-        <ToastContainer
-          position="bottom-right"
+          </div>):(<div className='loader-component'>
+                  <img src={loader}/>
+                </div>)}
+        
+                <ToastContainer
+          position="top-right"
           autoClose={1000}
           hideProgressBar={false}
           newestOnTop={false}
@@ -473,7 +485,6 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
           pauseOnHover
           theme="dark"
         />
-
       </Modal>
     </div>
   )

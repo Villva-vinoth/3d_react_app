@@ -86,6 +86,7 @@ const AddBlog = () => {
         if (imageRef) {
             imageRef.current.value = null
         }
+        nav("/admin/blogs")
     }
     
     console.log(blog)
@@ -162,12 +163,15 @@ const AddBlog = () => {
                             value={blog.blog_title1}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
 
+                        
                         <textarea
                             rows={10}
                             placeholder=' Description'
                             name='blog_description1'
                             value={blog.blog_description1}
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
+                          
+                  
                     </div>
 
                     <div className='blog-input-container'>

@@ -21,6 +21,7 @@
     gap: 15px;
     align-items: center;
     transition: 0.6s;
+    cursor: pointer;
   
 }
 .list span{

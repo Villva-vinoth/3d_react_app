@@ -14,6 +14,8 @@ import Report from '../components/Reports/Report'
 import SiteSettings from '../components/SiteSetting/SiteSettings'
 import Testimonials from '../components/Testimonials/Testimonials'
 import AddTestimonials from '../components/Testimonials/AddTestimonials'
+import Awards from '../components/Awards & Recogination/Awards'
+import AddImage from '../components/Awards & Recogination/AddImage'
 
 const Admin = ({set}) => {
     useEffect(()=>{
@@ -25,9 +27,7 @@ const Admin = ({set}) => {
     }
   return (
     <div className='admin-main-console'>
-      <ToastContainer
-      
-      />
+      <ToastContainer/>
         <AdminHeader  title='torus' handelSideClose={handelSideClose}/>
         <div className='admin-console'>
         <SideBar sidebarRef={sidebarRef}/>
@@ -42,6 +42,8 @@ const Admin = ({set}) => {
             <Route path='/site-settings' element={<SiteSettings/>} />
             <Route path='/testimonials' element={<Testimonials/>} />
             <Route path='/add-testimonials' element={<AddTestimonials/>} />
+            <Route path='/awards' element={<Awards/>} />
+            <Route path='/add-awards' element={<AddImage/>} />
 
         </Routes>
        </div>
