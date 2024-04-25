@@ -11,8 +11,10 @@ import { FaUsersBetweenLines } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 import { LiaComments } from "react-icons/lia";
 import { BsAward } from "react-icons/bs";
+import { useCookies } from 'react-cookie';
 const SideBar = ({sidebarRef}) => {
   const nav = useNavigate()
+  const [cookies,setCookie,removeCookie]=useCookies([])
   const [active, SetActive] = useState("/admin");
   const setPath = (path) => {
     SetActive(path)
@@ -24,6 +26,13 @@ const SideBar = ({sidebarRef}) => {
 
   const handleSideBarCloseAction =() => {
     sidebarRef.current.classList.remove("sidebar-close")
+  }
+  const handleLogout =() =>{
+      if(cookies.jwtToken)
+      {
+        removeCookie('jwtToken')
+        nav('/login')
+      }
   }
 
   return (
@@ -53,7 +62,7 @@ const SideBar = ({sidebarRef}) => {
       
       <div className={window.location.pathname === "/admin/site-settings" ? "list list-active" : "list"} onClick={() => { setPath('/admin/site-settings') }}><span><IoSettingsOutline/></span><h4>Site settings</h4></div>
 
-      <div className={window.location.pathname === "/admin/logout" ? "list list-active" : "list"} onClick={() => { setPath('') }}>
+      <div className="list" onClick={handleLogout}>
         <span><RiLogoutCircleLine /></span> <h4>Logout</h4>
       </div>
 

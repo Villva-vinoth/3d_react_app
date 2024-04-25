@@ -23,7 +23,8 @@ const Login = ({set}) => {
     const nav = useNavigate()
     const [cookies,setCookie,removeCookie] =useCookies([])
     useEffect(()=>{
-        if(cookies.jwt) {
+        console.log("prsent-cookie",cookies.jwtToken)
+        if(cookies.jwtToken) {
             nav("/admin")
            }
      },[])

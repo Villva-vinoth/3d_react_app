@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Dashboard from '../components/Dashboard/Dashboard'
 import SideBar from '../components/sidebar/SideBar'
 import './admin.css'
@@ -16,10 +16,40 @@ import Testimonials from '../components/Testimonials/Testimonials'
 import AddTestimonials from '../components/Testimonials/AddTestimonials'
 import Awards from '../components/Awards & Recogination/Awards'
 import AddImage from '../components/Awards & Recogination/AddImage'
+import { useCookies } from 'react-cookie'
+import axios from 'axios'
+import { VERFIY_USER } from '../../../apiServices'
 
 const Admin = ({set}) => {
+  const nav = useNavigate()
+  const [cookies,setCookie,removeCookie]=useCookies([])
     useEffect(()=>{
         set(true)
+    },[])
+    useEffect (()=>{
+          
+          const token=cookies.jwtToken
+          const verifyToken =async () =>{
+            if(!cookies.jwtToken)
+          {
+            nav("/login")
+          }
+             await axios.post(VERFIY_USER,{},{
+              withCredentials:true,
+              headers: {
+              Authorization: `Bearer ${token}`
+            }}).then((res)=>{
+                    
+             }).catch((err)=>{
+              console.log("error",err)
+              if(err.response.data.success == 0){
+                removeCookie('jwtToken')
+                nav("/login")
+              }
+              
+             })
+          }
+          verifyToken();
     },[])
     const sidebarRef=useRef();
     const handelSideClose =() =>{
