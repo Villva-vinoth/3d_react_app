@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './award.css'
 import { award } from './awardData';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 const TorusAward = () => {
+
+  // useEffect(())
 
   const PrevButton = ({ onClick, currentSlide, style, ...props }) => {
     return (
