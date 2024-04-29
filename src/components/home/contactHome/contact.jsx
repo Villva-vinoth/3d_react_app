@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
-import { CREATE_HOME_FORM } from '../../../apiServices'
+import { CREATE_HOME_FORM, SEND_MAIL_ADMIN } from '../../../apiServices'
 const Contact = () => {
     useEffect(() => {
         Aos.init({
@@ -38,16 +38,36 @@ const Contact = () => {
             }
             else{
                 // console.log("submitted !")
-                await axios.post(CREATE_HOME_FORM,contactDetails).then((res)=>{
-                    setContactDetails({
-                        name: "",
-                        email: "",
-                        comments: ""
-                    })
-                    toast.success("submitted !");
-                }).catch((err)=>{
+                // await axios.post(CREATE_HOME_FORM,contactDetails).then((res)=>{
+                    // setContactDetails({
+                    //     name: "",
+                    //     email: "",
+                    //     comments: ""
+                    // })
+                //     toast.success("submitted !");
+                // }).catch((err)=>{
+                //     toast.error(err.response.data.message)
+                // })
+                await axios.post(SEND_MAIL_ADMIN, contactDetails).then((res) => {
+                    if (res.data.success) {
+                        setContactDetails({
+                            name: "",
+                            email: "",
+                            comments: ""
+                        })
+
+                        console.log("mail sent")
+
+                        toast.success("submitted")
+                       
+                    }
+                    else {
+                        toast.error("mail not sent")
+                    }
+                }).catch((err) => {
                     toast.error(err.response.data.message)
                 })
+
             }
             
         }

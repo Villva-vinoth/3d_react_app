@@ -76,7 +76,7 @@ const Admin = ({set}) => {
             <Route path='/add-products' element={<AddProducts />} />
             <Route path='/blogs' element={<Blogs/>} />
             <Route path='/add-blog' element={<AddBlog/>} />
-            <Route path='/reports' element={<Report/>} />
+            {/* <Route path='/reports' element={<Report/>} /> */}
             <Route path='/site-settings' element={<SiteSettings/>} />
             <Route path='/testimonials' element={<Testimonials/>} />
             <Route path='/add-testimonials' element={<AddTestimonials/>} />

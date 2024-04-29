@@ -56,9 +56,9 @@ const SideBar = ({sidebarRef}) => {
 
       <div className={window.location.pathname === "/admin/awards" ? "list list-active" :window.location.pathname === "/admin/add-awards" ? "list list-active" :"list" } onClick={() => { setPath('/admin/awards') }}><span><BsAward/></span><h4>Awards</h4></div>
 
-      <div className={window.location.pathname === "/admin/reports" ? "list list-active" : "list"} onClick={() => { setPath('/admin/reports') }}>
+      {/* <div className={window.location.pathname === "/admin/reports" ? "list list-active" : "list"} onClick={() => { setPath('/admin/reports') }}>
         <span><TbReportSearch /></span> <h4>Reports</h4>
-      </div>
+      </div> */}
       
       <div className={window.location.pathname === "/admin/site-settings" ? "list list-active" : "list"} onClick={() => { setPath('/admin/site-settings') }}><span><IoSettingsOutline/></span><h4>Site settings</h4></div>
 

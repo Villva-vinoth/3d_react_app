@@ -11,7 +11,7 @@ import email from '../Assets/contact/email.png'
 import phone from '../Assets/contact/phone.png'
 import location from '../Assets/contact/loca.png'
 import axios from 'axios';
-import { CREATE_CONTACT_FORM } from '../../apiServices'
+import { CREATE_CONTACT_FORM, SEND_MAIL_ADMIN } from '../../apiServices'
 const Contact = () => {
 
     const [contactDetails, setContactDetails] = useState({
@@ -25,7 +25,7 @@ const Contact = () => {
     const contactRef = useRef(null)
 
 
-    const handleSubmit =  async () => {
+    const handleSubmit = async () => {
         // console.log("datas", contactDetails)
         // console.log("submitted")
         if (contactDetails.name != "" && contactDetails.company_name != "" && contactDetails.bussiness_email != "" &&
@@ -47,21 +47,40 @@ const Contact = () => {
             }
             else {
 
-                const send = await axios.post(CREATE_CONTACT_FORM, contactDetails ).then((res) => {
-                    setContactDetails({
-                        name: "",
-                        company_name: "",
-                        bussiness_email: "",
-                        comments: ""
-                    })
-                    toast.success("submitted")
+                // const send = await axios.post(CREATE_CONTACT_FORM, contactDetails ).then((res) => {
+                // setContactDetails({
+                //     name: "",
+                //     company_name: "",
+                //     bussiness_email: "",
+                //     comments: ""
+                // })
+                //     toast.success("submitted")
 
-                    contactRef.current.close();
+                //     contactRef.current.close();
 
-                }).catch((err)=>{
+                // }).catch((err)=>{
+                //     toast.error(err.response.data.message)
+                // })
+                await axios.post(SEND_MAIL_ADMIN, contactDetails).then((res) => {
+                    if (res.data.success) {
+                        setContactDetails({
+                            name: "",
+                            company_name: "",
+                            bussiness_email: "",
+                            comments: ""
+                        })
+
+                        console.log("mail sent")
+
+                        toast.success("submitted")
+                        contactRef.current.close();
+                    }
+                    else {
+                        toast.error("mail not sent")
+                    }
+                }).catch((err) => {
                     toast.error(err.response.data.message)
                 })
-
 
 
             }

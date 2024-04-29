@@ -1,5 +1,5 @@
-// const BASE_URL = "http://192.168.29.82:3001/api"
-const BASE_URL ="http://localhost:3001/api"
+const BASE_URL = "http://192.168.29.82:3001/api"
+// const BASE_URL ="http://localhost:3001/api"
 
 
 export const LOGIN_ADMIN = BASE_URL + "/users/login";
@@ -39,3 +39,5 @@ export const CREATE_AWARDS = BASE_URL + '/awards/createAwards'
 export const GET_ALL_AWARDS= BASE_URL + '/awards/getAllAwards'
 export const UPDATE_AWARDS= BASE_URL + '/awards/updateAwardsDetailById'
 export const DELETE_AWARDS = BASE_URL + '/awards/deleteAwardsDetailById'
+
+export const SEND_MAIL_ADMIN = BASE_URL+'/mail/sendMail'

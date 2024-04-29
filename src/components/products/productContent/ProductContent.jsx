@@ -7,7 +7,7 @@ import pdf from '../../Assets/Brochure/torus Brochure.pdf'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { CREATE_PRODUCT_FORM } from '../../../apiServices';
+import { CREATE_PRODUCT_FORM, SEND_MAIL_ADMIN } from '../../../apiServices';
 
 const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPower, maxRpm, peakTorque, overloadTorque, dutyCycle, weight, img, nominalVoltage, maxCurrent, phaseCurrent, batteryCurrent, voltage, Support, OperatingMode, PeakCurrent, ContinousCurrent, AbsoluteMaxVoltage, RatedVoltage, }) => {
 
@@ -36,7 +36,7 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
     // downloadRef.current.click()
   }
 
-  const handleSubmit = async (id) => {
+  const handleSubmit = async (id,type) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
     const phoneRegex = /^\d{10}$/
     console.log("hitting ", id)
@@ -67,18 +67,36 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
           setError('')
         }, 2000)
       } else {
-        const product = { ...productDetails, product_id: id }
-        const pro = await axios.post(CREATE_PRODUCT_FORM, product).then((res) => {
-          console.log(res)
-          contactRef.current.click();
-          // console.log(downloadCloseRef.current)
-          downloadCloseRef.current.open();
-          // downloadRef.current.click();
-          console.log("submitted !")
+        const product = { ...productDetails, product_id: id,product_name:type }
+        // const pro = await axios.post(CREATE_PRODUCT_FORM, product).then((res) => {
+        //   console.log(res)
+        //   contactRef.current.click();
+        //   // console.log(downloadCloseRef.current)
+        //   downloadCloseRef.current.open();
+        //   // downloadRef.current.click();
+        //   console.log("submitted !")
+        // }).catch((err) => {
+        //   toast.error(err.response.data.message);
+        // });
+
+        await axios.post(SEND_MAIL_ADMIN, product).then((res) => {
+          if (res.data.success) {
+            setProductDetails({
+              name: "",
+              contact_number: "",
+              email: "",
+              comments: ""
+            })
+            contactRef.current.click();
+            console.log("mail sent")
+            downloadCloseRef.current.open();
+          }
+          else {
+            console.log("mial not sent")
+          }
         }).catch((err) => {
-          toast.error(err.response.data.message);
-        });
-        console.log(pro)
+          console.log(err)
+        })
       }
     } else {
       setError("All Fields Are Required !");
@@ -217,7 +235,7 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
                 </div>
                 <div className='popup-actions'>
                   <div className="actions">
-                    <button className="contact-btn" onClick={() => { handleSubmit(id) }}>Submit</button>
+                    <button className="contact-btn" onClick={() => { handleSubmit(id,type) }}>Submit</button>
                   </div>
 
                 </div>
