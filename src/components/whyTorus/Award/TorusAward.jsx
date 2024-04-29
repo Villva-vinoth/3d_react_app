@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './award.css'
 import { award } from './awardData';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import axios from 'axios';
+import { GET_ALL_AWARDS } from '../../../apiServices';
 const TorusAward = () => {
+
+
+  const [awards,setAwards]= useState([])
+
+  useEffect(()=>{
+    const getAward = async()=>{
+      await axios.get(GET_ALL_AWARDS).then((res)=>{
+        console.log(res.data.data)
+        setAwards(res.data.data)
+              }).catch((error)=>{
+                console.log(error)
+              })
+    }
+    getAward()
+  },[])
 
   const PrevButton = ({ onClick, currentSlide, style, ...props }) => {
     return (
@@ -91,10 +108,10 @@ const TorusAward = () => {
       <div className='Awards-content'>
         <Slider {...settings}>
           {
-            award.map((item, index) => {
+            awards.map((item, index) => {
               return (
                 <div key={index} className='award-pic'>
-                  <img src={item.img} alt='' />
+                  <img src={item.awards_image} alt='' />
                 </div>
               )
             })

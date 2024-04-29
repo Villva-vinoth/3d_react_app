@@ -61,12 +61,12 @@ const Blogs = () => {
                 blogDate={blog.create_At}
                 blogId={blog.blog_id}
                 blogDesc={blog.blog_description}
-                blogTitle1={blog.blog_title1}
-                blogTitle2={blog.blog_title2}
-                blogTitle3={blog.blog_title3}
+                // blogTitle1={blog.blog_title1}
+                // blogTitle2={blog.blog_title2}
+                // blogTitle3={blog.blog_title3}
                 blogDescription1={blog.blog_description1}
-                blogDescription2={blog.blog_description2}
-                blogDescription3={blog.blog_description3}
+                // blogDescription2={blog.blog_description2}
+                // blogDescription3={blog.blog_description3}
                 setDeleteFlag={setDeleteFlag}
                 setRefreshFlag={setRefreshFlag} />)
             })

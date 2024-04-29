@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './Blog.css'
 import BlogView from "./BlogView/BlogView";
 import BlogHeader from "./BlogHeader/BlogHeader";
@@ -6,7 +6,9 @@ import image1 from '../Assets/blogs/Rectangle 38.png'
 import image2 from '../Assets/blogs/Rectangle 38 (1).png'
 import image3 from '../Assets/blogs/Rectangle 38 (2).png'
 import { Route, Routes } from "react-router-dom";
-import BlogDetail from "./BlogView/Blogdetail/BlogDetail";
+import BlogPage from "./BlogView/Blogdetail/BlogPage";
+import axios from 'axios'
+import { GET_ALL_BLOG } from '../../apiServices'
 const Blogs = ({btshow}) => {
 
 console.log("bt",btshow)
@@ -43,6 +45,27 @@ console.log("bt",btshow)
         window.scrollTo(0, 0);
       }, [])
 
+      const [passData,setPassData] =useState({
+        title:"",
+        img:"",
+        desc:"",
+        desc1:"",
+      })
+      
+      const [blogItem,setBlogItem]= useState([])
+
+      useEffect(()=>{
+        const getAllBlog = async()=>{
+            await axios.get(GET_ALL_BLOG).then((res)=>{
+                console.log(res.data.data)
+                setBlogItem(res.data.data)
+            }).catch((err)=>{
+                console.log(err)
+            })
+        }
+        getAllBlog()
+      },[passData])
+
     return (
     //  { btshow[0].showcase_value==1 ? 
          <div className="blogs-content-parent">
@@ -53,15 +76,15 @@ console.log("bt",btshow)
                         <BlogHeader />
                         <h1>RECENT</h1>
                         {
-                            data.map((item, index) => {
+                            blogItem.map((item, index) => {
                                 return (
-                                    <BlogView img={item.img} month={item.month} day={item.day} topic={item.topic} describe={item.describe} id={item.id} />
+                                    <BlogView img={item.blog_image} month={new Date(item.create_At).toLocaleString('en-US', { month: 'short' })} day={new Date(item.create_At).getDate()} topic={item.blog_title} describe={item.blog_description} id={item.blog_id}  setPassData={setPassData} desc2={item.blog_description1} />
                                 )
                             })
                         }
                     </div>
                 } />
-                <Route path="/blogid" element={<BlogDetail />} />
+                <Route path="/blogid" element={<BlogPage title={passData.title} img ={passData.img} desc={passData.desc} desc2={passData.desc1} />} />
             </Routes>
 
         </div>

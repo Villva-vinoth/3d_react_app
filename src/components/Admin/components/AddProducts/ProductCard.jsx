@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './addProducts.css'
 import { HiDotsVertical } from "react-icons/hi";
 import axios from 'axios';
@@ -19,7 +19,10 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
   const [imageIsOpen, setImageIsOpen] = useState(false)
   const [imageIsSet, setImageIsSet] = useState("")
   const [isLoading,setIsLoading] =useState(true)
-
+  const [errors,setErrors]=useState({
+    error_image:""
+  })
+  console.log(errors)
   const [updateProduct, setUpdateProduct] = useState(
     {
       user_id: 1,
@@ -112,6 +115,9 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
     // setDeleteFlag(false);
     setRefreshFlag(false);
     console.log("Cancel", updateProduct)
+    setErrors({
+      error_image:"",
+    })
   }
 
   const closeImage = () => {
@@ -126,11 +132,12 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
       setImageIsSet(URL.createObjectURL(file))
       setImageIsOpen(false)
       setUpdateProduct({ ...updateProduct, [e.target.name]: file })
-
+      setErrors({
+        error_image:"",
+      })
     }
   }
-
-
+ 
   const customStyles = {
     content: {
       // top: '50%',
@@ -152,7 +159,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
 
   const handleValidation = () => {
     if (updateProduct.product_image == "") {
-      toast.error("please upload Image!")
+      setErrors({...errors,error_image:'please upload Image'})
       return false;
     }
     return true;
@@ -160,8 +167,8 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
 
   const saveChanges = async () => {
     const accessToken = localStorage.getItem('Token');
-    setIsLoading(false)
     if (handleValidation()) {
+      setIsLoading(false)
       if (imageIsSet != "") {
         console.log("url 1")
         const formData = new FormData();
@@ -239,8 +246,10 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
         style={customStyles}
       >
           {isLoading?(<div>
+  
             <h2>Edit Product</h2>
         <div className='edit-form'>
+         
 
           <div className='main-field-container'>
             <div>
@@ -276,6 +285,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
                 <span onClick={closeImage}><IoMdCloseCircleOutline /></span>
               </div>
             }
+            <div className='error-box'>{errors.error_image!=" "?errors.error_image:''}</div>
           </div>
 
           <div className='input-field container'>
@@ -473,18 +483,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
                   <img src={loader}/>
                 </div>)}
         
-                <ToastContainer
-          position="top-right"
-          autoClose={1000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+             
       </Modal>
     </div>
   )

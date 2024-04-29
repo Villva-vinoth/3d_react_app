@@ -9,8 +9,7 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import loader from "../../../Assets/loader/Gear@1.25x-0.2s-200px-200px.svg"
 import Modal from 'react-modal';
 const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
-  blogDesc, blogTitle1, blogTitle2, blogTitle3, blogDescription1, blogDescription2,
-  blogDescription3, setRefreshFlag }) => {
+  blogDesc, blogDescription1, setRefreshFlag }) => {
 
   // console.log()
 
@@ -25,12 +24,12 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
       blog_title: blogTitle,
       blog_image: blogImage,
       blog_description: blogDesc,
-      blog_title1: blogTitle1,
+      // blog_title1: blogTitle1,
       blog_description1: blogDescription1,
-      blog_title2: blogTitle2,
-      blog_description2: blogDescription2,
-      blog_title3: blogTitle3,
-      blog_description3: blogDescription3,
+      // blog_title2: blogTitle2,
+      // blog_description2: blogDescription2,
+      // blog_title3: blogTitle3,
+      // blog_description3: blogDescription3,
 
     }
   )
@@ -74,12 +73,12 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
         blog_title: blogTitle,
         blog_image: blogImage,
         blog_description: blogDesc,
-        blog_title1: blogTitle1,
+        // blog_title1: blogTitle1,
         blog_description1: blogDescription1,
-        blog_title2: blogTitle2,
-        blog_description2: blogDescription2,
-        blog_title3: blogTitle3,
-        blog_description3: blogDescription3,
+        // blog_title2: blogTitle2,
+        // blog_description2: blogDescription2,
+        // blog_title3: blogTitle3,
+        // blog_description3: blogDescription3,
       }
     )
 
@@ -133,8 +132,9 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
   };
 
   const handleValidation = () => {
-    if (updateProduct.blog_image == "") {
+    if (updateProduct.blog_image ==="") {
       toast.error("please upload Image!")
+      console.log('hi')
       return false;
     }
     return true;
@@ -262,7 +262,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
           </div>
 
           <div className='input-field container'>
-            <div className='edit-input-field-row'>
+            {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'>Blog Title 1</span>
                 <input
@@ -272,7 +272,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                   onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
                   placeholder='blog title1' />
               </div>
-            </div>
+            </div> */}
 
             <div className='edit-input-field-row'>
               <div>
@@ -291,7 +291,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
 
 
 
-            <div className='edit-input-field-row'>
+            {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'>Blog Title 2</span>
 
@@ -302,9 +302,9 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                   onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
                   placeholder='blog title 2' />
               </div>
-            </div>
+            </div> */}
 
-            <div className='edit-input-field-row'>
+            {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'> Blog Description 2</span>
 
@@ -317,9 +317,9 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                   placeholder='Blog description2'
                   onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
               </div>
-            </div>
+            </div> */}
 
-            <div className='edit-input-field-row'>
+            {/* <div className='edit-input-field-row'>
               <div>
               <span className='edit-tit'>Blog Title 3</span>
 
@@ -330,9 +330,9 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                 onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
                 placeholder='blog title 3' />
             </div>
-            </div>
+            </div> */}
 
-            <div className='edit-input-field-row'>
+            {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'> Blog Description 3</span>
 
@@ -345,7 +345,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
                   placeholder='Blog description3'
                   onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>

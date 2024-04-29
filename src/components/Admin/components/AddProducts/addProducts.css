@@ -310,6 +310,10 @@
     background-color:black;
     color:white;
 }
+.error-box{
+    color: red;
+}
+
 @media (max-width: 768px) {
     .Admin-product-container>*{
         width: 100%;
