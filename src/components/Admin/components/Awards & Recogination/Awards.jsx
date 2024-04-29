@@ -59,7 +59,6 @@ const Awards = () => {
               return(
                 <AwardsCard
                  key={item.awards_id} 
-                 
                  awardsName={item.awards_name} 
                  awardsImage={item.awards_image}
                  awardsDate={item.create_At} 
