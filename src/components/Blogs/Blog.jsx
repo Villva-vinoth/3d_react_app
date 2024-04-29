@@ -6,7 +6,7 @@ import image1 from '../Assets/blogs/Rectangle 38.png'
 import image2 from '../Assets/blogs/Rectangle 38 (1).png'
 import image3 from '../Assets/blogs/Rectangle 38 (2).png'
 import { Route, Routes } from "react-router-dom";
-import BlogDetail from "./BlogView/Blogdetail/BlogDetail";
+import BlogPage from "./BlogView/Blogdetail/BlogPage";
 import axios from 'axios'
 import { GET_ALL_BLOG } from '../../apiServices'
 const Blogs = ({btshow}) => {
@@ -44,6 +44,13 @@ console.log("bt",btshow)
         // Scroll to the top of the page when the component mounts
         window.scrollTo(0, 0);
       }, [])
+
+      const [passData,setPassData] =useState({
+        title:"",
+        img:"",
+        desc:"",
+        desc1:"",
+      })
       
       const [blogItem,setBlogItem]= useState([])
 
@@ -57,7 +64,7 @@ console.log("bt",btshow)
             })
         }
         getAllBlog()
-      },[])
+      },[passData])
 
     return (
     //  { btshow[0].showcase_value==1 ? 
@@ -71,13 +78,13 @@ console.log("bt",btshow)
                         {
                             blogItem.map((item, index) => {
                                 return (
-                                    <BlogView img={item.blog_image} month={new Date(item.create_At).toLocaleString('en-US', { month: 'short' })} day={new Date(item.create_At).getDate()} topic={item.blog_title} describe={item.blog_description} id={item.blog_id} />
+                                    <BlogView img={item.blog_image} month={new Date(item.create_At).toLocaleString('en-US', { month: 'short' })} day={new Date(item.create_At).getDate()} topic={item.blog_title} describe={item.blog_description} id={item.blog_id}  setPassData={setPassData} desc2={item.blog_description1} />
                                 )
                             })
                         }
                     </div>
                 } />
-                <Route path="/blogid" element={<BlogDetail />} />
+                <Route path="/blogid" element={<BlogPage title={passData.title} img ={passData.img} desc={passData.desc} desc2={passData.desc1} />} />
             </Routes>
 
         </div>

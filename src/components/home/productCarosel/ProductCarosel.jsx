@@ -42,7 +42,15 @@ const ProductCarosel = () => {
     ul: ['Industry shift towards higher efficiency motors like IE2 standards for power conservation', 'Torus Axial Flux Motors offer 90% efficiency in S1 duty cycles', 'Significantly reduces power consumption, ideal for energy-conscious applications',] },
     { img: image, name: "Water Pumps" ,
      ul: ['Pumps in rural areas face voltage fluctuations and mobility challenges', `Torus Axial Flux Motor's lightweight design facilitates easy portability`, 'Achieved one-third reduction in overall system weight', 'Ideal for mobile use in rural areas', 'In urban settings, high-efficiency motors like Torus Axial Flux ensure power savings during operation',] },
+     {
+      img:image,
+      name:"EV",
+      ul:['Compact design suitable for space-limited EVs','Higher power density for improved acceleration and performance','High efficiency for maximizing driving range','More efficient cooling compared to radial flux motors','Effective regenerative braking capability','Cost-effective manufacturing processes','Potential for weight reduction in vehicles','Flexibility in integration and mounting orientations']
+     }
   ];
+
+  
+
   var settings = {
     dots: true,
     infinite: true,

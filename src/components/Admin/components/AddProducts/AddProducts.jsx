@@ -342,6 +342,7 @@ const AddProducts = () => {
 
         </div>
       </div>
+      <ToastContainer/>
 
     </div>
   )

@@ -9,6 +9,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import { ToastContainer } from 'react-toastify'
 
 
 const Products = () => {
@@ -34,7 +35,7 @@ const Products = () => {
   // Example items, to simulate fetching from another resources.
 
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
 
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
@@ -95,11 +96,11 @@ const Products = () => {
         </div>
         <ReactPaginate
           breakLabel="..."
-          nextLabel={<MdKeyboardDoubleArrowRight/>}
+          nextLabel={<MdKeyboardDoubleArrowRight />}
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
-          previousLabel={<MdKeyboardDoubleArrowLeft/>}
+          previousLabel={<MdKeyboardDoubleArrowLeft />}
           renderOnZeroPageCount={null}
           containerClassName='pagination-container-admin'
           pageLinkClassName='page-num'
@@ -108,6 +109,18 @@ const Products = () => {
           activeLinkClassName='active'
         />
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   )
 }

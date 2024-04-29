@@ -1,4 +1,4 @@
-import React, {  useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './productContent.css'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css';
@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { CREATE_PRODUCT_FORM } from '../../../apiServices';
 
-const ProductContent = ({ id,type, describe, voltageRange, ratedPower, peakPower, maxRpm, peakTorque, overloadTorque, dutyCycle, weight, img, nominalVoltage, maxCurrent, phaseCurrent, batteryCurrent, voltage, Support, OperatingMode, PeakCurrent, ContinousCurrent, AbsoluteMaxVoltage, RatedVoltage, }) => {
+const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPower, maxRpm, peakTorque, overloadTorque, dutyCycle, weight, img, nominalVoltage, maxCurrent, phaseCurrent, batteryCurrent, voltage, Support, OperatingMode, PeakCurrent, ContinousCurrent, AbsoluteMaxVoltage, RatedVoltage, }) => {
 
   const [productDetails, setProductDetails] = useState({
     name: "",
@@ -18,57 +18,77 @@ const ProductContent = ({ id,type, describe, voltageRange, ratedPower, peakPower
     comments: ""
   })
 
+  const [error, setError] = useState('')
+
 
   const contactRef = useRef(null)
 
   const clickDownloadRef = useRef(null)
-  
-  const downloadRef =useRef(null)
-  const downloadCloseRef =useRef(null)
 
+  const downloadRef = useRef(null)
+  const downloadCloseRef = useRef(null)
 
+  const handledownload = () => {
+    console.log(downloadCloseRef.current)
+    console.log(clickDownloadRef.current)
+    clickDownloadRef.current.click()
+    downloadCloseRef.current.close()
+    // downloadRef.current.click()
+  }
 
   const handleSubmit = async (id) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
     const phoneRegex = /^\d{10}$/
+    console.log("hitting ", id)
 
     if (productDetails.name !== "" && productDetails.email !== "" && productDetails.contact_number !== "" && productDetails.comments !== "") {
-        if (productDetails.name.length < 4) {
-            toast.warn("name at least have 5 characters !");
-        } else if (!phoneRegex.test(productDetails.contact_number)) {
-            toast.warn("Please enter valid Phone number !");
-        } else if (!emailRegex.test(productDetails.email)) {
-            toast.warn("Please enter valid Email !");
-        } else if (productDetails.comments.length < 10) {
-            toast.warn("comments at least have 10 characters !");
-        } else {
-          const product ={...productDetails,product_id:id}
-            await axios.post(CREATE_PRODUCT_FORM, product).then((res) => {
-              setProductDetails({
-                    name: "",
-                    email: "",
-                    contact_number: "",
-                    comments: ""
-                });
-                contactRef.current.click();
-                clickDownloadRef.current.click();
-                // console.log("1",clickDownloadRef.current)
-
-                setTimeout(()=>{
-                  //  console.log("2",clickDownloadRef.current)
-                  toast.success("submitted !")
-                  // clickDownloadRef.current.click();
-                },100)
-             
-              
-            }).catch((err) => {
-                toast.error(err.response.data.message);
-            });
-        }
+      if (productDetails.name.length < 4) {
+        // alert("name at least have 5 characters !");
+        setError('name at least have 5 characters !')
+        setTimeout(() => {
+          setError('')
+        }, 2000)
+      } else if (!phoneRegex.test(productDetails.contact_number)) {
+        // alert("Please enter valid Phone number !");
+        setError('Please enter valid Phone number !')
+        setTimeout(() => {
+          setError('')
+        }, 2000)
+      } else if (!emailRegex.test(productDetails.email)) {
+        // alert("Please enter valid Email !");
+        setError('Please enter valid Email !')
+        setTimeout(() => {
+          setError('')
+        }, 2000)
+      } else if (productDetails.comments.length < 10) {
+        // alert("comments at least have 10 characters !");
+        setError('comments at least have 10 characters !')
+        setTimeout(() => {
+          setError('')
+        }, 2000)
+      } else {
+        const product = { ...productDetails, product_id: id }
+        const pro = await axios.post(CREATE_PRODUCT_FORM, product).then((res) => {
+          console.log(res)
+          contactRef.current.click();
+          // console.log(downloadCloseRef.current)
+          downloadCloseRef.current.open();
+          // downloadRef.current.click();
+          console.log("submitted !")
+        }).catch((err) => {
+          toast.error(err.response.data.message);
+        });
+        console.log(pro)
+      }
     } else {
-        toast.error("All Fields Are Required !");
+      setError("All Fields Are Required !");
+      setTimeout(() => {
+        setError('')
+      }, 2000)
     }
-};
+  };
+
+  console.log("product Details", productDetails)
 
   return (
     <div className='product-content'>
@@ -163,7 +183,7 @@ const ProductContent = ({ id,type, describe, voltageRange, ratedPower, peakPower
           <Popup
             trigger={<button className='prouct-content-btn'>get</button>}
             modal
-            
+
             closeOnDocumentClick={false}
           >
             {close => (
@@ -192,18 +212,14 @@ const ProductContent = ({ id,type, describe, voltageRange, ratedPower, peakPower
                   <textarea type='text' placeholder='Write Your Message...' className='popup-comments' name='comments' value={productDetails.comments} onChange={(e) => setProductDetails({
                     ...productDetails, [e.target.name]: e.target.value
                   })} />
-                  {/* <span className='color-red'> All fields are required*</span> */}
+                  <span className='color-red'>{error}</span>
 
                 </div>
                 <div className='popup-actions'>
                   <div className="actions">
                     <button className="contact-btn" onClick={() => { handleSubmit(id) }}>Submit</button>
                   </div>
-                  <div className="actions" style={{ display: "none" }}>
-                    <a href={pdf} ref={clickDownloadRef} download style={{ textDecoration: "none" }} className="download-btn" >
-                      <span style={{ padding: "0 0.5rem 0 0.5rem", textAlign: "center" }}>
-                        <MdDownload /></span>Download Brochure</a>
-                  </div>
+
                 </div>
 
               </div>
@@ -213,25 +229,35 @@ const ProductContent = ({ id,type, describe, voltageRange, ratedPower, peakPower
         </div>
 
         <Popup
-            trigger={<button className='prouct-content-btn' ref={downloadRef} style={{display:"none"}}>promt</button>}
-            modal
-            ref={downloadCloseRef}
-            // closeOnDocumentClick={false}
-          >
-            {close => (
-                  <div>
-                    Downloading Brochure please wait
+          trigger={<button className='prouct-content-btn' ref={downloadRef} style={{ display: "none" }}>promt</button>}
+          modal
+          ref={downloadCloseRef}
+          closeOnDocumentClick={false}
+        >
+          {close => (
+            <div className="popup">
+              <div className='popup-form'>
+                Hit Okay To Downloading Brochure !
+              </div>
+              <div className='popup-actions'>
+                <div className="actions btns">
+                  <button className="second-form-2" onClick={() => { handledownload() }} >ok</button>
+                  <div className="actions" style={{ display: "none" }}>
+                    <a href={pdf} ref={clickDownloadRef} download style={{ textDecoration: "none" }} className="download-btn" >
+                      <span style={{ padding: "0 0.5rem 0 0.5rem", textAlign: "center" }}>
+                        <MdDownload /></span>Download Brochure</a>
                   </div>
-            )}
-          </Popup>
+                </div>
+              </div>
+            </div>
+          )}
+        </Popup>
 
       </div>
       <ToastContainer
         position="top-right"
         autoClose={1000}
-        theme="dark"
-
-      />
+        theme="dark" />
     </div>
 
   )

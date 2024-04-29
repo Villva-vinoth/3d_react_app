@@ -2,7 +2,7 @@ import image1 from '../../Assets/Why Torus/timeLine/2012-jan.jpeg'
 import image2 from '../../Assets/Why Torus/timeLine/2019-jan.png'
 import image3 from '../../Assets/Why Torus/timeLine/2020 -2 jan.jpg'
 import image4 from '../../Assets/Why Torus/timeLine/2024-jan.jpeg'
-import image5 from '../../Assets/Why Torus/timeLine/2020-2.jpeg'
+import image5 from '../../Assets/Why Torus/timeLine/2020-2.png'
 import image6 from '../../Assets/Why Torus/timeLine/2020-3 jan.jpeg'
 const TestData = [
     {

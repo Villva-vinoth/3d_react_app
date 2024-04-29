@@ -5,7 +5,6 @@ import TorusVideo from './torusVideo/TorusVideo'
 import TorusContent from './torusContents/TorusContent'
 import TorusAward from './Award/TorusAward'
 import Journey from './journey/Journey'
-import TimeLine from './timeLine/TimeLine'
 import TimeSheet from './TimeSheet/TimeSheet'
 const WhyTorus = () => {
   useEffect(() => {
@@ -18,7 +17,7 @@ const WhyTorus = () => {
         <TorusVideo />
         <TorusContent />
         {/* <Journey /> */}
-        {/* <TimeLine /> */}
+
         <TimeSheet />
         <TorusAward />
     </div>

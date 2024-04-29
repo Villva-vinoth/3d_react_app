@@ -16,12 +16,7 @@ const AddBlog = () => {
         blog_image: "",
         blog_title: "",
         blog_description: "",
-        blog_title1: "",
         blog_description1: "",
-        blog_title2: "",
-        blog_description2: "",
-        blog_title3: "",
-        blog_description3: "",
     });
 
     const [Image, setImage] = useState("")
@@ -74,12 +69,7 @@ const AddBlog = () => {
             blog_image: "",
             blog_title: "",
             blog_description: "",
-            blog_title1: "",
             blog_description1: "",
-            blog_title2: "",
-            blog_description2: "",
-            blog_title3: "",
-            blog_description3: "",
         })
         console.log(blog)
         setImage("")
@@ -157,11 +147,7 @@ const AddBlog = () => {
                     <h2>Blog Page Content</h2>
 
                     <div className='blog-input-container'>
-                        <input
-                            placeholder='Title -1'
-                            name='blog_title1'
-                            value={blog.blog_title1}
-                            onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
+                      
 
                         
                         <textarea
@@ -174,7 +160,7 @@ const AddBlog = () => {
                   
                     </div>
 
-                    <div className='blog-input-container'>
+                    {/* <div className='blog-input-container'>
                         <input
                             placeholder='Title -2'
                             name='blog_title2'
@@ -184,9 +170,9 @@ const AddBlog = () => {
                             placeholder=' Description'
                             name='blog_description2'
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
-                    </div>
+                    </div> */}
 
-                    <div className='blog-input-container'>
+                    {/* <div className='blog-input-container'>
                         <input
                             placeholder='Title -3'
                             name='blog_title3'
@@ -196,7 +182,7 @@ const AddBlog = () => {
                             placeholder=' Description'
                             name='blog_description3'
                             onChange={(e) => { setBlog({ ...blog, [e.target.name]: e.target.value }) }} />
-                    </div>
+                    </div> */}
 
                     <div className='blog-btn-cont'>
                         <button onClick={addPost}>Add Post</button>

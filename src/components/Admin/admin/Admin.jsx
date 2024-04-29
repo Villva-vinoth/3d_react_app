@@ -29,11 +29,14 @@ const Admin = ({set}) => {
     useEffect (()=>{
           
           const token=cookies.jwtToken
+          
           const verifyToken =async () =>{
             if(!cookies.jwtToken)
           {
             nav("/login")
           }
+          if(cookies.jwtToken)
+          {
              await axios.post(VERFIY_USER,{},{
               withCredentials:true,
               headers: {
@@ -42,14 +45,19 @@ const Admin = ({set}) => {
                     
              }).catch((err)=>{
               console.log("error",err)
+              if(err)
+              {
               if(err.response.data.success == 0){
                 removeCookie('jwtToken')
                 nav("/login")
               }
-              
+            } 
              })
+            }
           }
+        
           verifyToken();
+          
     },[])
     const sidebarRef=useRef();
     const handelSideClose =() =>{
