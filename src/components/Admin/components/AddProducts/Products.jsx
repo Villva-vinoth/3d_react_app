@@ -35,7 +35,7 @@ const Products = () => {
   // Example items, to simulate fetching from another resources.
 
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
 
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
