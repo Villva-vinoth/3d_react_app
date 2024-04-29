@@ -16,7 +16,10 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
   const [isOpen, setIsOpen] = useState(false)
   const [imageIsOpen, setImageIsOpen] = useState(false)
   const [imageIsSet, setImageIsSet] = useState("")
-  const [isLoading,setIsLoading] =useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [errors, setErrors] = useState({
+    error_image: ""
+  })
   const [updateProduct, setUpdateProduct] = useState(
     {
       user_id: 1,
@@ -47,18 +50,18 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
     setDeleteFlag(false);
     const accessToken = localStorage.getItem('Token');
     await axios.patch(`${DELETE_BLOG}/${blogId}`, null,
-    {
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
-    }).then(
-      (res) => {
-        if (res) {
-          setDeleteFlag(true);
-          toast.success(' Deleted Succefully  !');
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`
         }
-      }
-    )
+      }).then(
+        (res) => {
+          if (res) {
+            setDeleteFlag(true);
+            toast.success(' Deleted Succefully  !');
+          }
+        }
+      )
   }
 
   const editProduct = () => {
@@ -91,14 +94,16 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
     // setDeleteFlag(false);
     setRefreshFlag(false);
     console.log("Cancel", updateProduct)
-
+    setErrors({
+      error_image: "",
+    })
 
   }
 
   const closeImage = () => {
     setImageIsOpen(true); //
     setImageIsSet("")
-    updateProduct.product_image = "";
+    updateProduct.blog_image = "";
   }
   console.log(updateProduct)
   const handleUploadImage = (e) => {
@@ -107,7 +112,9 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
       setImageIsSet(URL.createObjectURL(file))
       setImageIsOpen(false)
       setUpdateProduct({ ...updateProduct, [e.target.name]: file })
-
+      setErrors({
+        error_image: "",
+      })
     }
   }
 
@@ -132,18 +139,17 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
   };
 
   const handleValidation = () => {
-    if (updateProduct.blog_image ==="") {
-      toast.error("please upload Image!")
-      console.log('hi')
+    if (updateProduct.blog_image == "") {
+      setErrors({ ...errors, error_image: 'please upload Image' })
       return false;
     }
     return true;
   }
-
   const saveChanges = async () => {
     const accessToken = localStorage.getItem('Token');
-    setIsLoading(false)
+
     if (handleValidation()) {
+      setIsLoading(false)
       if (imageIsSet != "") {
         console.log("url 1")
         const formData = new FormData();
@@ -221,48 +227,49 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
         style={customStyles}
       >
 
-        { isLoading?(<div>
+        {isLoading ? (<div>
           <h2>Edit Blog Post</h2>
-        <div className='edit-form'>
+          <div className='edit-form'>
 
-          <div className='main-field-container'>
-            <div>
-              <span className='edit-tit'>Blog Title</span>
+            <div className='main-field-container'>
+              <div>
+                <span className='edit-tit'>Blog Title</span>
 
-              <input
-                type='text'
-                value={updateProduct.blog_title}
-                name='blog_title'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
-                placeholder='blog title' />
-            </div>
-
-            <div>
-              <span className='edit-tit'> Blog Description</span>
-
-              <textarea
-                className='edit-textarea'
-                rows={8}
-                type='text'
-                value={updateProduct.blog_description}
-                name='blog_description'
-                placeholder='Blog description'
-                onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
-            </div>
-
-            {imageIsOpen ? <input type="file"
-              name='blog_image'
-              accept='image/*'
-              onChange={(e) => { handleUploadImage(e) }} /> :
-              <div className='edit-image-cont'>
-                <img src={imageIsSet ? imageIsSet : blogImage} />
-                <span onClick={closeImage}><IoMdCloseCircleOutline /></span>
+                <input
+                  type='text'
+                  value={updateProduct.blog_title}
+                  name='blog_title'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }}
+                  placeholder='blog title' />
               </div>
-            }
-          </div>
 
-          <div className='input-field container'>
-            {/* <div className='edit-input-field-row'>
+              <div>
+                <span className='edit-tit'> Blog Description</span>
+
+                <textarea
+                  className='edit-textarea'
+                  rows={8}
+                  type='text'
+                  value={updateProduct.blog_description}
+                  name='blog_description'
+                  placeholder='Blog description'
+                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+              </div>
+
+              {imageIsOpen ? <input type="file"
+                name='blog_image'
+                accept='image/*'
+                onChange={(e) => { handleUploadImage(e) }} /> :
+                <div className='edit-image-cont'>
+                  <img src={imageIsSet ? imageIsSet : blogImage} />
+                  <span onClick={closeImage}><IoMdCloseCircleOutline /></span>
+                </div>
+              }
+              <div className='error-box'>{errors.error_image != " " ? errors.error_image : ''}</div>
+            </div>
+
+            <div className='input-field container'>
+              {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'>Blog Title 1</span>
                 <input
@@ -274,24 +281,24 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
               </div>
             </div> */}
 
-            <div className='edit-input-field-row'>
-              <div>
-                <span className='edit-tit'> Blog Description 1</span>
+              <div className='edit-input-field-row'>
+                <div>
+                  <span className='edit-tit'> Blog Description 1</span>
 
-                <textarea
-                  className='edit-textarea-blog'
-                  rows={8}
-                  type='text'
-                  value={updateProduct.blog_description1}
-                  name='blog_description1'
-                  placeholder='Blog description1'
-                  onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+                  <textarea
+                    className='edit-textarea-blog'
+                    rows={8}
+                    type='text'
+                    value={updateProduct.blog_description1}
+                    name='blog_description1'
+                    placeholder='Blog description1'
+                    onChange={(e) => { setUpdateProduct({ ...updateProduct, [e.target.name]: e.target.value }) }} />
+                </div>
               </div>
-            </div>
 
 
 
-            {/* <div className='edit-input-field-row'>
+              {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'>Blog Title 2</span>
 
@@ -304,7 +311,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
               </div>
             </div> */}
 
-            {/* <div className='edit-input-field-row'>
+              {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'> Blog Description 2</span>
 
@@ -319,7 +326,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
               </div>
             </div> */}
 
-            {/* <div className='edit-input-field-row'>
+              {/* <div className='edit-input-field-row'>
               <div>
               <span className='edit-tit'>Blog Title 3</span>
 
@@ -332,7 +339,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
             </div>
             </div> */}
 
-            {/* <div className='edit-input-field-row'>
+              {/* <div className='edit-input-field-row'>
               <div>
                 <span className='edit-tit'> Blog Description 3</span>
 
@@ -347,16 +354,16 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
               </div>
             </div> */}
 
+            </div>
           </div>
-        </div>
-        <div className='edit-btn-cont'>
-          <button onClick={saveChanges}>Save Changes</button>
-          <button onClick={closeModel}> Cancel</button>
-        </div>
-          </div>):(<div className='loader-component'>
-                  <img src={loader}/>
-                </div>)}
-        
+          <div className='edit-btn-cont'>
+            <button onClick={saveChanges}>Save Changes</button>
+            <button onClick={closeModel}> Cancel</button>
+          </div>
+        </div>) : (<div className='loader-component'>
+          <img src={loader} />
+        </div>)}
+
         <ToastContainer
           position="top-right"
           autoClose={1000}
