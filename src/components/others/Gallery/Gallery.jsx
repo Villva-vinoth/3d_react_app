@@ -7,16 +7,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Arrow from "../../Assets/arrow.png"
 import { Navigation, Pagination } from 'swiper/modules';
-import { gallery ,celebration,Teams ,motor } from './galleryData';
+import { gallery ,Teams ,motor } from './galleryData';
 import Scroll from './Celebration';
 
 const Gallery = () => {
     useEffect(() => {
-        // Scroll to the top of the page when the component mounts
         window.scrollTo(0, 0);
       }, [])
-    // const swiper = useSwiper();
-    const [contentToRender,setContentToRender]=useState(<Scroll title='celebration' data={celebration}/>)
+   
+    const [contentToRender,setContentToRender]=useState(<Scroll title='TEAMS' data={Teams}/>)
     const SlideRef = useRef()
     const handleNext = () => {
         console.log(SlideRef.current.swiper.slideNext())
@@ -28,10 +27,10 @@ const Gallery = () => {
 
     const changeRender =(change) =>{
         console.log(change)
-        if(change=="CELEBRATIONS")
-        {
-            setContentToRender(<Scroll title='celebration' data={celebration} />)
-        }
+        // if(change=="CELEBRATIONS")
+        // {
+        //     setContentToRender(<Scroll title='celebration' data={celebration} />)
+        // }
         if(change=="MOTORS")
         {
             
@@ -42,11 +41,11 @@ const Gallery = () => {
             
             setContentToRender(<Scroll title='TEAMS' data={Teams}/>)
         }
-        if(change=="EVENTS")
-        {
+        // if(change=="EVENTS")
+        // {
             
-            setContentToRender(<Scroll title='EVENTS' data={[]}/>)
-        }
+        //     setContentToRender(<Scroll title='EVENTS' data={[]}/>)
+        // }
 
     }
     return (
@@ -57,8 +56,8 @@ const Gallery = () => {
                     <img src={Arrow} onClick={handlePrev}></img>
                     <img src={Arrow} onClick={handleNext}></img>
                 </div>
-                <h1>GALLERY</h1>
-                <p>Journey through the visual tapestry of our Axial Flux Motors and Controllers, where cutting-edge technology meets unparalleled craftsmanship. In our gallery, we invite you to witness the intricate details and revolutionary design that define our commitment to excellence.  Embark on a visual journey through our gallery, where innovation comes to life. Our Axial Flux Motors and Controllers redefine industry standards, and we invite you to be a part of the evolution. Witness the power, precision, and passion that shape the future of electric propulsion.</p>
+                <h1 className='gallery-header'>GALLERY</h1>
+                <p className='gallery-content-p poppins'>Embark on a visual journey through our Torus gallery, where cutting-edge technology and unparalleled craftsmanship converge in our Axial Flux Motors and Controllers. Explore the meticulous details and revolutionary designs that underscore Torus's commitment to excellence. Witness the innovation that redefines industry standards and shapes the future of electric propulsion. Experience the power, precision, and passion that drive Torus's advancements in sustainable mobility.</p>
 
                 <Swiper
                     slidesPerView={2}

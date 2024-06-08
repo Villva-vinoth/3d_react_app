@@ -4,13 +4,18 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './ProductCarosel.css'
 import prev from '../../Assets/prevArrow.png'
-import image from '../../Assets/home/productCaroselimg/Rectangle 61.png'
+import image from '../../Assets/home/productCaroselimg/ev.png'
+import image1 from '../../Assets/home/productCaroselimg/robotic.png'
+import image2 from '../../Assets/home/productCaroselimg/industrial.png'
+import image3 from '../../Assets/home/productCaroselimg/turbine.png'
+import image4 from '../../Assets/home/productCaroselimg/waterpump.png'
+
 import { PiStarFourFill } from "react-icons/pi";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 const PrevButton = ({ ...props }) => {
   return (
-    <img src={prev} {...props} style={{ boxShadow: "0 0 5px rgb(207, 207, 207)", backgroundColor: "white" }} />
+    <img src={prev} {...props} style={{ boxShadow: "0 0 5px rgb(207, 207, 207)", backgroundColor: "white",zIndex:"1" }} />
   )
 }
 
@@ -34,32 +39,35 @@ const ProductCarosel = () => {
   })
 
   const data = [
-    { img: image, name: "Robotics" ,
-     ul: ['Tailored for AMR and AGV applications', 'Compact form factor enhances mobility', 'Bundled components include EM Brake, Encoder, Gearbox, and wheel', 'Ensures a comprehensive solution for enhanced maneuverability'] },
-    { img: image, name: "Power Generator" , 
-    ul: ['Exceptional operational efficiency exceeding 94% ', 'Outperforms conventional models in power generation', 'Significantly reduced size and weight, up to 50% less', 'Facilitates effortless installation atop wind turbines', 'Ensures reliable and stable power production '] },
-    { img: image, name: "Industrial" , 
-    ul: ['Industry shift towards higher efficiency motors like IE2 standards for power conservation', 'Torus Axial Flux Motors offer 90% efficiency in S1 duty cycles', 'Significantly reduces power consumption, ideal for energy-conscious applications',] },
-    { img: image, name: "Water Pumps" ,
-     ul: ['Pumps in rural areas face voltage fluctuations and mobility challenges', `Torus Axial Flux Motor's lightweight design facilitates easy portability`, 'Achieved one-third reduction in overall system weight', 'Ideal for mobile use in rural areas', 'In urban settings, high-efficiency motors like Torus Axial Flux ensure power savings during operation',] },
-     {
+    {
       img:image,
       name:"EV",
       ul:['Compact design suitable for space-limited EVs','Higher power density for improved acceleration and performance','High efficiency for maximizing driving range','More efficient cooling compared to radial flux motors','Effective regenerative braking capability','Cost-effective manufacturing processes','Potential for weight reduction in vehicles','Flexibility in integration and mounting orientations']
-     }
+     },
+     { img: image4, name: "Water Pump" ,
+      ul: ['Pumps in rural areas face voltage fluctuations and mobility challenges', `Torus Axial Flux Motor's lightweight design facilitates easy portability`, 'Achieved one-third reduction in overall system weight', 'Ideal for mobile use in rural areas', 'In urban settings, high-efficiency motors like Torus Axial Flux ensure power savings during operation',] },
+      { img: image2, name: "Industries" , 
+        ul: ['Industry shift towards higher efficiency motors like IE2 standards for power conservation', 'Torus Axial Flux Motors offer 90% efficiency in S1 duty cycles', 'Significantly reduces power consumption, ideal for energy-conscious applications',] },
+    { img: image1, name: "Robotics" ,
+     ul: ['Tailored for AMR and AGV applications', 'Compact form factor enhances mobility', 'Bundled components include EM Brake, Encoder, Gearbox, and wheel', 'Ensures a comprehensive solution for enhanced maneuverability'] },
+    { img: image3, name: "Power Generation" , 
+    ul: ['Exceptional operational efficiency exceeding 94% ', 'Outperforms conventional models in power generation', 'Significantly reduced size and weight, up to 50% less', 'Facilitates effortless installation atop wind turbines', 'Ensures reliable and stable power production '] },
+    
+    
+     
   ];
 
   
 
   var settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
 
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: <NextButton />,
-    // prevArrow: <PrevButton />,
+    prevArrow: <PrevButton />,
     responsive: [
       {
         breakpoint: 1023,

@@ -15,7 +15,7 @@ const MainDisplay = () => {
         })
     })
     const parallax = useParallax({
-        scale: [0.7,1,"easeInQuad"],
+        scale: [0.9,1.2,"easeInQuad"],
       });
 
 
@@ -32,11 +32,18 @@ const MainDisplay = () => {
             </div>
 
             <div className='mainDisplay-innerContent'>
-                <div><label className='mainDisplay-topic' data-aos='fade-up'>AXIAL FLUX <br className='break-tag' /> MOTOR </label></div>
+                <div><label className='mainDisplay-topic' data-aos='fade-up'>Torus AXIAL FLUX MOTOR </label></div>
                 <div className='mainDisplay-subtopic' data-aos='zoom-in'><h4>WHERE SPEED, RANGE AND AFFORDABILITY MEETS</h4></div>
-                <div><p className='main-display-para' data-aos='zoom-out'>The world is moving towards sustainability, efficient and intelligent motors
+                <div><p className='main-display-para' data-aos='zoom-out'>
+                    {/* The world is moving towards sustainability, efficient and intelligent motors
                     will be at the heart of this transition powering everything from our vehicles
-                    to industries and appliances.</p></div>
+                    to industries and appliances. */}
+                    At Torus, we manufacture axial flux motors and controllers
+                     designed for compactness, lightweight, and high-power density.
+                      Our products deliver exceptional efficiency and performance across
+                       a wide range, featuring high regenerative capabilities. Discover the future
+                     of motor technology with Torus, where innovation meets excellence.
+                    </p></div>
             </div>
         </div>
     )

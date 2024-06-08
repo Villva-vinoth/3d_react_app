@@ -24,7 +24,11 @@ const Contact = () => {
 
     const contactRef = useRef(null)
 
+    const [error,setError] = useState('')
 
+
+    const [visi,setVisi]=useState(false)
+    
     const handleSubmit = async () => {
         // console.log("datas", contactDetails)
         // console.log("submitted")
@@ -34,16 +38,32 @@ const Contact = () => {
             const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
 
             if (contactDetails.name.length < 4) {
-                toast.warn("name atleast have 5 characters !")
+                // toast.warn("name atleast have 5 characters !")
+                setError('name atleast have 5 characters !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else if (contactDetails.company_name.length < 4) {
-                toast.warn("Please enter valid Company Name !")
+                // toast.warn("Please enter valid Company Name !")
+                setError('Please enter valid Company Name !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else if (EmailRegex.test(contactDetails.bussiness_email) == false) {
-                toast.warn("Please enter valid Email !")
+                // toast.warn("Please enter valid Email !")
+                setError('Please enter valid Email !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else if (contactDetails.comments.length < 10) {
-                toast.warn("comments atleast have 10 characters !")
+                // toast.warn("comments atleast have 10 characters !")
+                setError('comments atleast have 10 characters !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else {
 
@@ -61,6 +81,7 @@ const Contact = () => {
                 // }).catch((err)=>{
                 //     toast.error(err.response.data.message)
                 // })
+                setVisi(true)
                 await axios.post(SEND_MAIL_ADMIN, contactDetails).then((res) => {
                     if (res.data.success) {
                         setContactDetails({
@@ -70,6 +91,7 @@ const Contact = () => {
                             comments: ""
                         })
 
+                        setVisi(false)
                         console.log("mail sent")
 
                         toast.success("submitted")
@@ -86,7 +108,11 @@ const Contact = () => {
             }
         }
         else {
-            toast.error("All Fields are Required !")
+            // toast.error("All Fields are Required !")
+            setError('All Fields are Required !')
+            setTimeout(()=>{
+                setError('')
+            },2000)
         }
 
     }
@@ -118,23 +144,21 @@ const Contact = () => {
                             <img src={location} alt='' className='contact-icons' />
                         </picture>
                         <h4>ADDRESS</h4>
-                        <div>New No.28, 2nd Main Rd,
-                            Kalaimagal Nagar, Ekkatuthangal,
-                            Chennai, Tamil Nadu-600032.</div>
+                        <div>New No.28, 2nd Main Road, Kalaimagal Nagar, Ekkatuthangal, Chennai, Tamil Nadu- 600032.</div>
                     </div>
                     <div className='contact-address' data-aos='flip-out'>
                         <picture>
                             <img src={email} alt='' className='contact-icons' />
                         </picture>
                         <h4>EMAIL</h4>
-                        <div>info@torusrobotics.com</div>
+                        <div>info@torusrobotics.com </div>
                     </div>
                     <div className='contact-address' data-aos='flip-in'>
                         <picture>
                             <img src={phone} alt='' className='contact-icons' />
                         </picture>
                         <h4>PHONE</h4>
-                        <div>+91 6438293810</div>
+                        <div>+0091 89395 65425</div>
                     </div>
                 </div>
             </div>
@@ -188,11 +212,11 @@ const Contact = () => {
                                     <textarea type='text' placeholder='Write Your message' className='popup-comments' name='comments' onChange={(e) => setContactDetails({
                                         ...contactDetails, [e.target.name]: e.target.value
                                     })} />
-                                    {/* <span className='color-red'> All fields are required*</span> */}
+                                    <span className='color-red'>{error}</span>
 
                                 </div>
                                 <div className="actions">
-                                    <button className="contact-btn" onClick={() => { handleSubmit() }}>Submit</button>
+                                    <button className="contact-btn" disabled={visi} onClick={() => { handleSubmit() }}>Submit</button>
                                 </div>
                             </div>
                         )}
@@ -212,6 +236,7 @@ const Contact = () => {
                 draggable
                 pauseOnHover
                 theme="dark"
+                limit={1}
 
             />
         </div>

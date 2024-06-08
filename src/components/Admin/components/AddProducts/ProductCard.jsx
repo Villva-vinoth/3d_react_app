@@ -244,6 +244,7 @@ const ProductCard = ({ productTitle, productImage, productDate, productId, setDe
         onRequestClose={closeModel}
         contentLabel="Edit Modal"
         style={customStyles}
+        ariaHideApp={false}
       >
           {isLoading?(<div>
   

@@ -31,12 +31,15 @@ const TorusAward = () => {
           cursor: 'pointer',
           boxShadow: "0 0 5px rgb(207, 207, 207)",
           backgroundColor: "white",
-          width:"20px",
+          width:"30px",
           textAlign:"center",
           position:"absolute",
           top:"40%",
           zIndex:"10",
           left:"0",
+          borderRadius:"20px",
+          backgroundColor:"black",
+          color:"white",
           ...style 
         }}
         {...props}
@@ -58,12 +61,15 @@ const TorusAward = () => {
           boxShadow: "0 0 5px rgb(207, 207, 207)",
           backgroundColor: "white",
           width:"max-content",
-          width:"20px",
+          width:"30px",
           textAlign:"center",
           position:"absolute",
           top:"40%",
           right:"0",
           zIndex:"10",
+          borderRadius:"20px",
+          backgroundColor:"black",
+          color:"white",
           ...style
         }}
         {...props}

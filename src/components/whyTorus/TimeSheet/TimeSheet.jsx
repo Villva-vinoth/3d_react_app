@@ -89,7 +89,7 @@ const TimeSheet = () => {
               datas.map((item,index) => {
                 
                 return (
-                  <div>
+                  <div key={item.ar}>
                     {
                       item.ul.map((itm) => {
                         console.log(itm.ar )
@@ -99,12 +99,13 @@ const TimeSheet = () => {
                           // data-aos-offset="300"
                           // data-aos-duration="2000"
                           // data-aos-easing="ease-in-sine"
+                          key={itm.ar}
                           >
                             <div className='timeSheet-img'>
                               <img src={itm.img} alt='' />
                             </div>
                             <div className='timesheet-content-2'>
-                              <h3 style={{ padding: "0.5rem 0", margin: "0%" }}>{itm.h1}</h3>
+                              <h3 style={{ padding: "0.5rem 0",textAlign:"justify", margin: "0%" }}>{itm.h1}</h3>
                               <p className='timeSheet-para'>
                                 {itm.description}
                               </p>

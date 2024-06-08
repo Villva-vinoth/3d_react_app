@@ -22,19 +22,34 @@ const Contact = () => {
 
     })
 
+    const [error,setError] = useState('')
+
+    const [visi,setVisi]=useState(false)
 
     const handleSubmit = async () => {
         const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,}$/
         // console.log("data",contactDetails)
         if (contactDetails.name != "" && contactDetails.email != "" && contactDetails.comments != "") {
             if(contactDetails.name.length <4){
-                toast.warn("name atleast have 5 characters !")
+                // toast.warn("name atleast have 5 characters !") 
+                setError('name atleast have 5 characters !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else if(EmailRegex.test(contactDetails.email)==false){
-                toast.warn("please enter the valid email !")
+                // toast.warn("please enter the valid email !")
+                setError('please enter the valid email !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else if(contactDetails.comments.length<10){
-                toast.warn("comments atleast have 10 characters !")
+                // toast.warn("comments atleast have 10 characters !")
+                setError('comments atleast have 10 characters !')
+                setTimeout(()=>{
+                    setError('')
+                },2000)
             }
             else{
                 // console.log("submitted !")
@@ -48,6 +63,7 @@ const Contact = () => {
                 // }).catch((err)=>{
                 //     toast.error(err.response.data.message)
                 // })
+                setVisi(true)
                 await axios.post(SEND_MAIL_ADMIN, contactDetails).then((res) => {
                     if (res.data.success) {
                         setContactDetails({
@@ -57,6 +73,7 @@ const Contact = () => {
                         })
 
                         console.log("mail sent")
+                        setVisi(false)
 
                         toast.success("submitted")
                        
@@ -72,8 +89,14 @@ const Contact = () => {
             
         }
         else {
-            toast.error("All Fields are Required !")
+            // toast.error("All Fields are Required !")
+            setError('All Fields are Required !')
+            setTimeout(()=>{
+                setError('')
+            },2000)
         }   
+
+        
     }
 
     return (
@@ -95,8 +118,8 @@ const Contact = () => {
                 </div>
             </div>
             <div className='home-contact-container-three' >
-                <label className='home-contact-container-three-label' style={{ visibility: "hidden" }} >All fields are required <sup className='color-red'>*</sup></label>
-                <div className='home-contact-submit-btn' onClick={()=>{handleSubmit()}}>submit</div>
+                <label className='home-contact-container-three-label' id='error' >{error}</label>
+                <button className='home-contact-submit-btn' disabled={visi} onClick={()=>{handleSubmit()}}>submit</button>
             </div>
             <ToastContainer
                 position="top-right"
@@ -109,6 +132,7 @@ const Contact = () => {
                 draggable
                 pauseOnHover
                 theme="dark"
+                limit={1}
 
             />
         </div>

@@ -159,7 +159,7 @@ const TestimonialCard = ({ setDeleteFlag, setRefreshFlag, testimonialName, testi
     setImageIsOpen(false);
     // setDeleteFlag(false);
     setRefreshFlag(false);
-    console.log("Cancel", updateTestimonials)
+    // console.log("Cancel", updateTestimonials)
     setErrors({
       error_image: "",
     })
@@ -227,6 +227,7 @@ const TestimonialCard = ({ setDeleteFlag, setRefreshFlag, testimonialName, testi
         onRequestClose={closeModel}
         contentLabel="Edit Modal"
         style={customStyles}
+        ariaHideApp={false}
       >
 
         {isLoading ? (<div>

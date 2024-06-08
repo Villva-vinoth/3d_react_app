@@ -42,6 +42,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 0 0.5rem;
 }
 .footer-inner-header{
     font-weight: 600;
@@ -50,12 +51,14 @@
 }
 .footer-social{
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    /* background-color: red; */
 }
 
 .footer-icons{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 
 .footer-inside-div{
@@ -116,8 +119,8 @@
         padding: 1rem 0rem;
     }
     .footer-icons{
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
     }
     .footer-inner{
         padding: 0 2rem;

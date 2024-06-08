@@ -15,6 +15,7 @@
     opacity: 0.6;
     color: grey;
     font-size: 6rem;
+    font-family: Imported;
 }
 .Timesheet-display{
     display: flex;
@@ -89,6 +90,7 @@
 .timeSheet-para{
     padding: 0.5rem 0;
     margin: 0;
+    text-align: justify;
 }
 
 @media (min-width:768px) and (max-width:1024px) {

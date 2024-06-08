@@ -53,13 +53,19 @@
 
 .product-carosel-container ul >li{
     list-style-type: none;
-    padding: 0.25rem 0.50rem 0.25rem 0 !important;
+    padding: 0.30rem 0.50rem 0.25rem 0 !important;
     display: flex;
+    /* align-items: center; */
+    /* background-color: red; */
     gap: 10px;   
     font-size: 1rem;
+    /* text-align: center; */
 }
 .product-carosel-container ul>li>span{
-    text-align: center;    
+    text-align: center; 
+    padding: 0.1rem 0;
+    /* display: flex;
+    align-items: center;    */
 }
 #star-icon{
     color: aliceblue;
@@ -113,12 +119,12 @@
     }
     .slick-prev{
         top: 52%;
-        /* display: none; */
+        display: none;
     }
     .slick-next{
         top: 40%;
         right: -5%;
-        /* display: none; */
+        display: none;
     }
     .slick-slide > div{
         margin: 0px 5px;

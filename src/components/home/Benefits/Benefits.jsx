@@ -5,7 +5,7 @@ import motor from '../../Assets/home/Benefit/image.png'
 import CaroselBenefit from './CaroselBenefit';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import image1 from '../../Assets/mainpageMotor.png'
+import image1 from '../../Assets/home/motor.png'
 const Benefits = () => {
 
     useEffect(() => {

@@ -33,6 +33,7 @@
     padding: 2rem 1.5rem;
     box-shadow: 0px 5px 5px grey;
     border-radius: 10px;
+    /* background-color: red; */
 }
 .career-opt-card-header{
     font-size: 1rem;
@@ -42,10 +43,16 @@
     text-transform: uppercase;
 }
 .career-opt-card-para{
-    text-align: center;
+    text-align: justify;
     padding: 0 1.5rem;
     font-size: 1rem;
     /* background-color: red; */
+}
+
+.career-opt-card-pic img{
+  object-fit: contain;
+  width: 100px;
+  height: 90px;
 }
 
 @media (max-width:768px) {

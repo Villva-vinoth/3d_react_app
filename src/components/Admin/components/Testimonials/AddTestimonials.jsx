@@ -186,6 +186,7 @@ const AddTestimonials = () => {
                 draggable
                 pauseOnHover
                 theme="dark"
+                limit={1}
 
             />
         </div>

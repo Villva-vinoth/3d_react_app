@@ -7,11 +7,11 @@ const ProductHeader = () => {
        <h2> Products</h2>
       </div>
       <div className="product-header-description">
-        <p>
-        At Torus, we stand at the forefront of innovation in the realm of Axial Flux Motors and Controllers. Our product and technology page is your gateway to understanding the 
-transformative power and unmatched engineering excellence that define our offerings. At Torus, we don't just manufacture motors and controllers; we engineer possibilities. Explore 
-our product and technology page to embark on a journey into the future of electric propulsion – where power, precision, and sustainability converge. Join us in redefining the 
-dynamics of motion with Torus Robotics.</p>
+        <p className="poppins">
+        At Torus, we revolutionize the world of power
+         trains with our cutting-edge motor and controller systems.
+          Our products are designed where power, precision, and sustainability
+         converge to deliver unparalleled performance.</p>
       </div>
     </div>
   );

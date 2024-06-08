@@ -20,6 +20,7 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
 
   const [error, setError] = useState('')
 
+  const [visi,setVisi]=useState(false)
 
   const contactRef = useRef(null)
 
@@ -78,7 +79,7 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
         // }).catch((err) => {
         //   toast.error(err.response.data.message);
         // });
-
+        setVisi(true)
         await axios.post(SEND_MAIL_ADMIN, product).then((res) => {
           if (res.data.success) {
             setProductDetails({
@@ -87,6 +88,7 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
               email: "",
               comments: ""
             })
+            setVisi(false)
             contactRef.current.click();
             console.log("mail sent")
             downloadCloseRef.current.open();
@@ -235,9 +237,8 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
                 </div>
                 <div className='popup-actions'>
                   <div className="actions">
-                    <button className="contact-btn" onClick={() => { handleSubmit(id,type) }}>Submit</button>
+                    <button className="contact-btn" disabled={visi} onClick={() => { handleSubmit(id,type) }}>Submit</button>
                   </div>
-
                 </div>
 
               </div>
@@ -275,6 +276,7 @@ const ProductContent = ({ id, type, describe, voltageRange, ratedPower, peakPowe
       <ToastContainer
         position="top-right"
         autoClose={1000}
+        limit={1}
         theme="dark" />
     </div>
 

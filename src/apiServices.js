@@ -1,5 +1,5 @@
-const BASE_URL = "http://192.168.29.82:3001/api"
-// const BASE_URL ="http://localhost:3001/api"
+// const BASE_URL = "http://192.168.29.82:3001/api"
+const BASE_URL = "http://localhost:3001/api"
 
 
 export const LOGIN_ADMIN = BASE_URL + "/users/login";

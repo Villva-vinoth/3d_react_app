@@ -13,7 +13,7 @@ const CareerGallery = () => {
                 <div className='career-gallery-container-one'>
                     <div className='career-gallery-container-one-content'>
                         <h2>Meet our team</h2>
-                        <p>Get to Know the Faces Behind Torus. Our diverse team brings together a wealth of experience, expertise, and passion for high efficient Powertrain system for EV industry. From our visionary leaders to our dedicated professionals, each member of our team plays a pivotal role in driving our company forward. Discover the individuals shaping our success and driving innovation every day.</p>
+                        <p className='career-gallery-description-p-tag'>Get to Know the Faces Behind Torus. Our diverse team brings together a wealth of experience, expertise, and passion for high efficient Powertrain system for EV industry. From our visionary leaders to our dedicated professionals, each member of our team plays a pivotal role in driving our company forward. Discover the individuals shaping our success and driving innovation every day.</p>
                     </div>
                     <div className='career-gallery-container-one-img'>
                         <img src={image1} alt='' id='corner1' />

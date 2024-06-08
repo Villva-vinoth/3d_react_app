@@ -26,6 +26,7 @@
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  cursor: pointer;
 }
 .add-pro{
     padding: 2rem 0px;
@@ -39,6 +40,7 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .product-form img{
     width: 300px;
     height: 300px;
@@ -61,6 +63,7 @@
     
  
 }
+
 .product-form-field > *{
     flex: 1;
     display: flex;
@@ -293,7 +296,8 @@
     justify-content:center;
     align-items:center;
     gap:10px;
-    font-size:1.2rem
+    font-size:1.2rem;
+    cursor:pointer
     
 }
 .pagination-container-admin .page-num{

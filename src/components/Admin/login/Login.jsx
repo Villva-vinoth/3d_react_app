@@ -21,17 +21,17 @@ const Login = ({set}) => {
     })
 
     const nav = useNavigate()
-    const [cookies,setCookie,removeCookie] =useCookies([])
-    useEffect(()=>{
-        console.log("prsent-cookie",cookies.jwtToken)
-        if(cookies.jwtToken) {
-            nav("/admin")
-           }
-     },[])
+    // const [cookies,setCookie,removeCookie] =useCookies([])
+    // useEffect(()=>{
+    //     console.log("local storage",localStorage.getItem('Token'))
+    //     if(localStorage.getItem('Token') !== null ) {
+    //         nav("/admin")
+    //        }
+    //  },[])
   
-    useEffect(()=>{
-        set(true)
-    },[]) 
+    // useEffect(()=>{
+    //     set(true)
+    // },[]) 
 
     const handleValidation = () =>{
         const {email, password} =loginData;
@@ -61,10 +61,10 @@ const Login = ({set}) => {
 
         if(handleValidation())
         {
-            await axios.post(LOGIN_ADMIN,loginData,{withCredentials:true}).then((response) => {
+            await axios.post(LOGIN_ADMIN,loginData).then((response) => {
                 if(response.data.success)
                 {
-                    console.log(response.data)
+                   
                     localStorage.setItem('Token',response.data.token);
                     nav("/admin")
                 }

@@ -19,10 +19,10 @@ import motor5 from '../../Assets/gallery/motor/motor5.JPG'
 
 
 const gallery = [
-    {
-        img: image1,
-        name: "CELEBRATIONS"
-    },
+    // {
+    //     img: image1,
+    //     name: "CELEBRATIONS"
+    // },
     {
         img: image2,
         name: "TEAMS"
@@ -31,13 +31,13 @@ const gallery = [
         img: image3,
         name: "MOTORS"
     },
-    {
-        img: image4,
-        name: "EVENTS"
-    },
+    // {
+    //     img: image4,
+    //     name: "EVENTS"
+    // },
 ]
 
-const celebration = [celebration1,celebration2,celebration3,celebration4,celebration5,celebration6,celebration7]
-const Teams = [image2]
+// const celebration = [celebration1,celebration2,celebration3,celebration4,celebration5,celebration6,celebration7]
+const Teams = [image2,celebration1,celebration2,celebration3,celebration4,celebration5,celebration6,celebration7]
 const motor =[motor1,motor2,motor3,motor4,motor5]
-export { gallery,celebration,Teams,motor }
+export { gallery,Teams,motor }

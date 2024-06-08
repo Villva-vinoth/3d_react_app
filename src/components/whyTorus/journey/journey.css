@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Imported;
+    src: url('../../Assets/fonts/conthrax-sb.otf');
+}
 .jorney-display{
     display: flex;
     flex-direction: column;
@@ -22,6 +26,7 @@
     font-size: 6rem;
     opacity: 0.5;
     color: grey;
+    font-family: Imported;
 }
 
 .journey-content ul{

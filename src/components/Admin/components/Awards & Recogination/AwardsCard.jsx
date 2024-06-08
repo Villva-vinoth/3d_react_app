@@ -227,6 +227,7 @@ const AwardsCard = ({ setDeleteFlag, setRefreshFlag, awardsName, awardsImage, aw
         onRequestClose={closeModel}
         contentLabel="Edit Modal"
         style={customStyles}
+        ariaHideApp={false}
       >
 
         {isLoading ? (<div>

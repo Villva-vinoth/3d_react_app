@@ -27,6 +27,7 @@ const Product = () => {
   },[])
 
 
+
  
 
   const [itemOffset, setItemOffset] = useState(0);
@@ -39,6 +40,11 @@ const Product = () => {
   
     setItemOffset(newOffset);
   };
+
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[currentItems])
 
   // useEffect(()=>{
   //   setCurrentItems(currentItems)

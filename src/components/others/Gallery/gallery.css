@@ -1,3 +1,13 @@
+
+.gallery-header{
+  font-family: Imported;
+  font-size: 1.5rem;
+}
+.gallery-content-p{
+  font-family: 'Poppins';
+  font-size: 16px;
+  text-align: justify;
+}
 .gallery{
     padding: 3rem 0px;
     box-sizing: border-box;

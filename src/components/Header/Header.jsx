@@ -21,14 +21,14 @@ const Header = ({ blog, testimonial }) => {
   }
 
   const handleImage = () => {
-    nav('/login')
+    nav('/')
   }
 
   return (
     <div className='Header-display'>
       <picture className='header-picture'>
-        {/* onDoubleClick={()=>handleImage()} */}
-        <img src={Logo} alt='' className='Header-logo' />
+        
+        <img src={Logo} alt='' className='Header-logo' onClick={()=>handleImage()}/>
       </picture>
       <div className='Header-inner'>
 

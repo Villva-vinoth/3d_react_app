@@ -10,7 +10,7 @@ const CareerHeader = () => {
                 {/* <img src={userline} alt="loading" />     */}
             </div>
             <div className="career-header-description">
-                <p>
+                <p className='poppins'>
                     At Torus, we are more than just a workplace; we are a community of passionate individuals dedicated to pushing the boundaries of innovation in Research and Development (R&D)
                     and Motor Manufacturing. As a leading player in the industry, we take pride in fostering a dynamic and collaborative environment that encourages creativity and excellence. </p>
             </div>

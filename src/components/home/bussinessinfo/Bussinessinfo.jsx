@@ -127,94 +127,9 @@ const Bussinessinfo = () => {
             </h2></div>
             <div className='Bussiness-upper' >
                 <div className='Bussiness-inner' data-aos="fade-down"
-                    // data-aos-easing="linear"
-                    // data-aos-duration="1500"
-                    >
-                    <CircularProgressbar
-                        value={percentage}
-                        text={`${percentage}%`}
-                        styles={{
-                            root: {
-                                // maxWidth: '100%',
-                                width: '100%',
-                                height: 'auto',
-                                maxWidth: '130px',
-                                maxHeight: '130px',
-                            },
-                            path: {
-                                stroke: 'black',
-                                strokeLinecap: 'round',
-                                transition: 'stroke-dashoffset .1s ease ',
-                                transform: 'rotate(0.25turn)',
-                                transformOrigin: 'center center',
-                            },
-                            trail: {
-                                stroke: '#e1e1e1',
-                            },
-                            text: {
-                                fill: 'black',
-                                fontSize: '16px',
-                            },
-                            background: {
-                                fill: 'white',
-                            },
-                        }}
-                    />
-                    <div>
-                        <div className='bussiness-head' >More Efficient range
-                        </div>
-                        <div><pre className='bussiness-para'>Torus Axial Flux Motors achieves 15% higher range because of the minimal energy
-                            losses incurred during the operation, setting new standards in electric motor
-                            technology.
-                        </pre></div>
-                    </div>
-                </div>
-
-                <div className='Bussiness-inner' data-aos="fade-up"
-                    // data-aos-anchor-placement="center-center"
-                    >
-                    <CircularProgressbar
-                        value={Apercentage}
-                        text={`${Apercentage}%`}
-                        styles={{
-                            root: {
-                                // maxWidth: '100%',
-                                width: '100%',
-                                height: 'auto',
-                                maxWidth: '130px',
-                                maxHeight: '130px',
-                            },
-                            path: {
-                                stroke: 'black',
-                                strokeLinecap: 'round',
-                                transition: 'stroke-dashoffset .1s ease ',
-                                transform: 'rotate(0.25turn)',
-                                transformOrigin: 'center center',
-                            },
-                            trail: {
-                                stroke: '#e1e1e1',
-                            },
-                            text: {
-                                fill: 'black',
-                                fontSize: '16px',
-                            },
-                            background: {
-                                fill: 'white',
-                            },
-                        }}
-                    />
-                    <div>
-                        <div className='bussiness-head'>Cost efficiency</div>
-                        <div><pre className='bussiness-para'>Torus Axial Flux Motors are cost efficient because of the utilization of unique materials
-                            and manufacturing processes, coupled with a reduction in overall material usage,
-                            resulting in lowered production costs without compromising quality or performance,
-                            thus ensuring affordability and sustainability.</pre></div>
-                    </div>
-                </div>
-                <div className='Bussiness-inner' data-aos="fade-down"
-                    // data-aos-easing="linear"
-                    // data-aos-duration="1500"
-                    >
+                // data-aos-easing="linear"
+                // data-aos-duration="1500"
+                >
                     <CircularProgressbar
                         value={Bpercentage}
                         text={`${Bpercentage}%`}
@@ -248,22 +163,105 @@ const Bussinessinfo = () => {
                     <div>
                         <div className='bussiness-head'>Compact and lightweight motors
                         </div>
-                        <div><pre className='bussiness-para'>Torus Axial Flux Motors offer a remarkable advantage with their 50% reduction in
-                            weight and compact size is attributed to its parallel magnetic flux path design, which
-                            optimizes magnetic field distribution, enabling significant weight and size reduction
-                            without compromising performance.</pre></div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors (TAFM) offer a remarkable advantage with their 50% reduction in weight and compact
+                             size is attributed to its parallel magnetic flux path design, which optimizes magnetic field distribution, enabling significant weight and size
+                             reduction without compromising performance.</pre></div>
                     </div>
                 </div>
+                <div className='Bussiness-inner' data-aos="fade-down"
+                // data-aos-easing="linear"
+                // data-aos-duration="1500"
+                >
+                    <CircularProgressbar
+                        value={percentage}
+                        text={`${percentage}%`}
+                        styles={{
+                            root: {
+                                // maxWidth: '100%',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '130px',
+                                maxHeight: '130px',
+                            },
+                            path: {
+                                stroke: 'black',
+                                strokeLinecap: 'round',
+                                transition: 'stroke-dashoffset .1s ease ',
+                                transform: 'rotate(0.25turn)',
+                                transformOrigin: 'center center',
+                            },
+                            trail: {
+                                stroke: '#e1e1e1',
+                            },
+                            text: {
+                                fill: 'black',
+                                fontSize: '16px',
+                            },
+                            background: {
+                                fill: 'white',
+                            },
+                        }}
+                    />
+                    <div>
+                        <div className='bussiness-head' >More Efficient 
+                        </div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors & controller achieves 95% combined efficiency range
+                             because of the
+                             minimal energy losses incurred during the operation,
+                             setting new standards in electric motor technology.
+                        </pre></div>
+                    </div>
+                </div>
+
                 <div className='Bussiness-inner' data-aos="fade-up"
-                //   data-aos-easing="linear"
-                //   data-aos-duration="1500"
-                  >
+                // data-aos-anchor-placement="center-center"
+                >
+                    <CircularProgressbar
+                        value={Apercentage}
+                        text={`${Apercentage}%`}
+                        styles={{
+                            root: {
+                                // maxWidth: '100%',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '130px',
+                                maxHeight: '130px',
+                            },
+                            path: {
+                                stroke: 'black',
+                                strokeLinecap: 'round',
+                                transition: 'stroke-dashoffset .1s ease ',
+                                transform: 'rotate(0.25turn)',
+                                transformOrigin: 'center center',
+                            },
+                            trail: {
+                                stroke: '#e1e1e1',
+                            },
+                            text: {
+                                fill: 'black',
+                                fontSize: '16px',
+                            },
+                            background: {
+                                fill: 'white',
+                            },
+                        }}
+                    />
+                    <div>
+                        <div className='bussiness-head'>Cost efficiency</div>
+                        <div><pre className='bussiness-para'>Torus Axial Flux Motors (TAFM) are cost-efficient due to the utilization of unique materials and manufacturing processes, coupled with a reduction in overall material usage. This results in lowered production costs without compromising quality or
+                             performance, ensuring affordability and sustainability.
+                              Additionally, they are 10% more cost-effective compared to radial
+                               flux motors.</pre></div>
+                    </div>
+                </div>
+                {/* <div className='Bussiness-inner' data-aos="fade-up"
+          
+                >
                     <CircularProgressbar
                         value={Cpercentage}
                         text={`${Cpercentage}%`}
                         styles={{
                             root: {
-                                // maxWidth: '100%',
                                 width: '100%',
                                 height: 'auto',
                                 maxWidth: '130px',
@@ -296,7 +294,7 @@ const Bussinessinfo = () => {
                             electrical energy, significantly enhancing overall energy efficiency and extending vehicle
                             range.</pre></div>
                     </div>
-                </div>
+                </div> */}
 
 
 

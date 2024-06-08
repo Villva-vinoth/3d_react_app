@@ -1,14 +1,15 @@
 import React,{useState} from 'react'
 import './caroselBenefit.css'
 import ReactSimplyCarousel from 'react-simply-carousel';
-import carosel from '../../Assets/home/Benefit/carosel.png'
+import carosel from '../../Assets/home/Benefit/motor.png'
+import carosel2 from '../../Assets/home/Benefit/application.png'
 const CaroselBenefit = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     const data = [
         { topic: "Benefits of TAFM", describe: `Torus Axial Flux Motors deliver unparalleled power density, boasting a motor design that is at least 50% lighter, 15% more efficient, and exceptionally cost-effective. 
         `, logo: carosel },
-        { topic: "Application Benefits of using TAFM", describe: `When integrated into automotive vehicles, Torus Axial Flux Motors (TAFM) present a multitude of advantages, emphasizing efficiency and lightweight design. Notably, our motors boast the highest regenerative braking potential, enabling vehicles to achieve up to 10% greater speed and distance.`, logo: carosel }
+        { topic: "Application Benefits of using TAFM", describe: `When integrated into automotive vehicles, Torus Axial Flux Motors (TAFM) present a multitude of advantages, emphasizing efficiency and lightweight design. Notably, our motors boast the highest regenerative braking potential, enabling vehicles to achieve up to 10% greater speed and distance.`, logo: carosel2 }
     ];
 
 

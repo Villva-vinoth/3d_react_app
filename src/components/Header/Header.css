@@ -29,6 +29,7 @@
     filter: brightness(0) grayscale(100%);
     object-fit: contain;
     padding: 2rem 0rem 1rem 3rem;
+    cursor: pointer;
 }
 
 .header-div {
@@ -38,6 +39,9 @@
     cursor: pointer;
     user-select: none;
     position: relative;
+    /* font-family: Imported;
+    font-size: 14px;
+    letter-spacing: 0.4px; */
 }
 
 .header-div:hover {

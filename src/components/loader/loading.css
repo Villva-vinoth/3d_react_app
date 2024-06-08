@@ -1,0 +1,13 @@
+.loading{
+    width: 20%;
+    height: 300px;
+    /* background-color: red; */
+    margin-inline: auto;
+}
+
+
+@media (max-width:767px) {
+    .loading{
+        width: 50%;
+    }
+}

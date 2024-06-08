@@ -28,11 +28,11 @@ const SideBar = ({sidebarRef}) => {
     sidebarRef.current.classList.remove("sidebar-close")
   }
   const handleLogout =() =>{
-      if(cookies.jwtToken)
-      {
-        removeCookie('jwtToken')
+    
+      
+        localStorage.removeItem('Token')
         nav('/login')
-      }
+      
   }
 
   return (

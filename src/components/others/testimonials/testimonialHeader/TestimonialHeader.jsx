@@ -9,11 +9,9 @@ const TestimonialHeader = () => {
       {/* <img src= {userline} alt="loading"/> */}
     </div>
     <div className="Testimonial-header-description">
-      <p>
-      Benefits of TAFM Torus Axial Flux Motors deliver unparalleled power density, boasting a motor design that is at least 50% lighter, 15% more efficient, and 
-exceptionally cost-effective. Application Benefits of using TAFM When integrated into automotive vehicles, Torus Axial Flux Motors (TAFM) present a multitude 
-of advantages, emphasizing efficiency and lightweight design. Notably, our motors boast the highest regenerative braking potential, enabling vehicles to 
-achieve up to 10% greater speed and distance. </p>
+      <p className='poppins'>
+      Testimonials of satisfied clients who have experienced the transformative power of Torus Axial Flux Motors (TAFM). Explore their stories and learn how our motors have enhanced their applications’ performance with unmatched power density, efficiency, and performance. Join our community of happy customers who trust Torus for their electric vehicle powertrain solutions.
+</p>
     </div>
   </div>
   )

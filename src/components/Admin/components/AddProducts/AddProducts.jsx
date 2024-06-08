@@ -120,6 +120,7 @@ const AddProducts = () => {
         draggable: true,
         progress: undefined,
         theme: "dark",
+        limit:1,
 
       });
       return false
@@ -141,7 +142,13 @@ const AddProducts = () => {
     // 
     // formData.append('product',JSON.stringify(newproduct))
     if (handleValidation()) {
-      await axios.post(ADD_PRODUCT,formData).then((res) => {
+      const accessToken =localStorage.getItem('Token')
+      console.log("token product",accessToken)
+      await axios.post(ADD_PRODUCT,formData,{
+        headers:{
+          Authorization:`Bearer ${accessToken}`
+        }
+      }).then((res) => {
         if (res) {
           toast.success(' Added Succefully  !', {
             position: "top-right",
@@ -169,7 +176,7 @@ const AddProducts = () => {
 
       <div className='wrapper-container'>
         <div className='product-form'>
-          <h2>Add Products</h2>
+          <h2 >Add Products</h2>
           <input type='text'
             value={product.product_title}
             name='product_title'

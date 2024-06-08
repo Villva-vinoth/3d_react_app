@@ -29,11 +29,11 @@ const Home = ({set}) => {
     <ParallaxProvider>  
         <div className='Home-display'>
       <div ><MainDisplay /></div>
-      <div data-aos='fade-in'><ParallaxContainer /></div>
+      {/* <div data-aos='fade-in'><ParallaxContainer /></div> */}
       <div ><Bussinessinfo /></div>
       <div ><Benefits /></div>
       <div ><ProductCarosel /></div>
-      <div > <Contact  data-aos="fade-up" data-aos-anchor-placement="top-bottom" /></div>
+      <div ><Contact  data-aos="fade-up" data-aos-anchor-placement="top-bottom" /></div>
     </div> 
     </ParallaxProvider>
 

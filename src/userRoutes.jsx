@@ -14,6 +14,7 @@ import Footer from "./components/Footer/Footer";
 
 import {GET_ALL_TOGGLE} from './apiServices'
 import axios from 'axios';
+import Loading from './components/loader/Loading';
 
 const UserRoutes = () => {
     const [loginRoute, setLoginRoute] = useState(false);
@@ -58,6 +59,8 @@ const UserRoutes = () => {
             {blogs[0]?.showcase_value ==1 ?<Route path="/blogs/*" element={<Blogs set={setLoginRoute}  />} />:('')}
             <Route path="/gallery" element={<Gallery  set={setLoginRoute}/>} />
             <Route path="/why-torus" element={<WhyTorus set={setLoginRoute}/>} />
+            {/* <Route path="/Loader" element={<Loading set={setLoginRoute}/>} /> */}
+
         </Routes>
         <Footer blog={blogs} testimonial={testimonials}/>
     </div>

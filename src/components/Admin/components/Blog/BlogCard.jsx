@@ -225,6 +225,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
         onRequestClose={closeModel}
         contentLabel="Edit Modal"
         style={customStyles}
+        ariaHideApp={false}
       >
 
         {isLoading ? (<div>
@@ -375,6 +376,7 @@ const BlogCard = ({ blogTitle, blogImage, blogDate, blogId, setDeleteFlag,
           draggable
           pauseOnHover
           theme="dark"
+          limit={1}
         />
 
       </Modal>

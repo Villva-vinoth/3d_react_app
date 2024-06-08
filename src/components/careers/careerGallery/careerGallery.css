@@ -22,9 +22,10 @@
     background-color: white
 }
 .career-gallery-container-one-content p{
-    font-size: 1.5rem   ;
-    background-color: white
+    font-size: 1.5rem;
+    background-color: white;
 }
+
 
 .career-gallery-container-one-img{
     flex-basis: 37.3%;
@@ -42,6 +43,11 @@
 .career-gallery-container-one-content p{
     text-align: left;
 }
+
+/* .career-gallery-description-p-tag{
+    background-color: red !important;
+} */
+
 .career-gallery-container-two-content{
     display: flex;
     grid-template-columns: repeat(3,1.5fr);

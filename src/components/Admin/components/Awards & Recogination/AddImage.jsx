@@ -174,6 +174,7 @@ const AddImage = () => {
                 draggable
                 pauseOnHover
                 theme="dark"
+                limit={1}
 
             />
         </div>)

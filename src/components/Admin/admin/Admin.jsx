@@ -16,29 +16,26 @@ import Testimonials from '../components/Testimonials/Testimonials'
 import AddTestimonials from '../components/Testimonials/AddTestimonials'
 import Awards from '../components/Awards & Recogination/Awards'
 import AddImage from '../components/Awards & Recogination/AddImage'
-import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import { VERFIY_USER } from '../../../apiServices'
-
 const Admin = ({set}) => {
   const nav = useNavigate()
-  const [cookies,setCookie,removeCookie]=useCookies([])
+  const token = localStorage.getItem('Token')
     useEffect(()=>{
         set(true)
     },[])
-    useEffect (()=>{
-          
-          const token=cookies.jwtToken
-          
-          const verifyToken =async () =>{
-            if(!cookies.jwtToken)
+    useEffect (()=>{          
+          const token= localStorage.getItem("Token")
+          if(!token)
           {
+            console.log("cookies not preset so navigating to login page")
             nav("/login")
           }
-          if(cookies.jwtToken)
+          const verifyToken =async () =>{
+          if(token)
           {
              await axios.post(VERFIY_USER,{},{
-              withCredentials:true,
+              // withCredentials:true,
               headers: {
               Authorization: `Bearer ${token}`
             }}).then((res)=>{
@@ -47,8 +44,7 @@ const Admin = ({set}) => {
               console.log("error",err)
               if(err)
               {
-              if(err.response.data.success == 0){
-                removeCookie('jwtToken')
+              if(err.response.data.success == 0){ 
                 nav("/login")
               }
             } 
@@ -58,7 +54,7 @@ const Admin = ({set}) => {
         
           verifyToken();
           
-    },[])
+    },[token])
     const sidebarRef=useRef();
     const handelSideClose =() =>{
           sidebarRef.current.classList.add("sidebar-close")
